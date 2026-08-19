@@ -120,7 +120,7 @@ needs afterward.
 
 This skill implements rule 1 of `prototyping-system.md` (design pipeline
 is local and sequential, before or alongside code) — see that file for
-the general rules (2-11) this stage sequence operates under, including
+the general rules (2-12) this stage sequence operates under, including
 why every stage's own output must name its open questions (rule 6), why
 the always-latest folder staying in sync is treated as structural, not
 optional, and why Stage 0's fields map onto the Initiative/Milestone/

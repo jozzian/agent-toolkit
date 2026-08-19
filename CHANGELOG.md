@@ -6,6 +6,14 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-19
+
+### Added
+- `rules/prototyping-system.md` rule 12 — before every commit, check for
+  secrets/credentials, files that don't belong in version control, and
+  leftover debug/scratch files; ask before committing rather than
+  guessing whether to include or drop something found.
+
 ## [0.2.0] - 2026-08-19
 
 ### Added
@@ -34,6 +42,7 @@ follows [Semantic Versioning](https://semver.org/).
   session-boundary state check (rule 3), auto-discovering sibling repos
   instead of a hardcoded list.
 
-[Unreleased]: https://github.com/jozzian/agent-toolkit/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/jozzian/agent-toolkit/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/jozzian/agent-toolkit/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/jozzian/agent-toolkit/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jozzian/agent-toolkit/releases/tag/v0.1.0

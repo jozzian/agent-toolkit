@@ -203,6 +203,29 @@ A milestone whose outcome can't be checked, or that has no deliverable, is
 not a milestone yet — sharpen it or cut it. A sequence of numbered phases
 with no stated outcome is a useful artifact, but it isn't a plan.
 
+## 12. Before every commit, check for what shouldn't be in it
+
+Staging changes (especially a broad `git add`) and committing is not
+verifiable the way a test run is — nothing catches a mistake here except a
+look before it happens. Before running `git commit`, review what's
+actually staged (`git status`, `git diff --cached` for anything non-obvious)
+and check specifically for:
+
+- Secrets or credentials — even in a file whose name looks innocuous;
+  check contents, not just the filename, before committing anything that
+  could plausibly hold one
+- Files that don't belong in version control — build output, local config,
+  editor/OS artifacts, anything a `.gitignore` should have caught but
+  didn't yet
+- Debug/scratch files left over from the session that aren't part of the
+  actual change being committed
+
+If anything turns up, ask before committing rather than silently dropping
+it from the commit or committing anyway — the human may want it excluded,
+gitignored going forward, or handled some other way, and guessing wrong in
+either direction (leaking a secret, or silently losing a file the human
+meant to keep) is worse than a short pause to confirm.
+
 ---
 
 ## Learnings — evolving, not fixed
