@@ -6,6 +6,14 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-19
+
+### Added
+- `conventions/okf.md` — Open Knowledge Format documentation convention
+  (frontmatter spec, linking strategy, file naming, quality checklist),
+  extracted from a prior product's documentation guidelines and
+  generalized. Missed in the initial 0.1.0 import — flagged by review.
+
 ## [0.1.0] - 2026-08-19
 
 ### Added
@@ -26,5 +34,6 @@ follows [Semantic Versioning](https://semver.org/).
   session-boundary state check (rule 3), auto-discovering sibling repos
   instead of a hardcoded list.
 
-[Unreleased]: https://github.com/jozzian/agent-toolkit/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/jozzian/agent-toolkit/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/jozzian/agent-toolkit/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jozzian/agent-toolkit/releases/tag/v0.1.0

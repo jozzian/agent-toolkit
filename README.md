@@ -21,6 +21,9 @@ attached, it doesn't belong here — it belongs in that product's own docs.
 - `conventions/repo-structure.md` — how to split a product into several
   small, independently-replaceable repos (docs / design system / app(s) /
   backend(s)) instead of one repo or an unstructured monorepo.
+- `conventions/okf.md` — Open Knowledge Format: the documentation
+  convention (frontmatter spec, linking rules, file naming, quality
+  checklist) used across a project's docs.
 - `conventions/release-process.md` — the VERSION + CHANGELOG + SemVer tag
   convention this repo itself uses (see `VERSION` / `CHANGELOG.md`).
 - `claude-config/` — a working `settings.json` + hook script that
