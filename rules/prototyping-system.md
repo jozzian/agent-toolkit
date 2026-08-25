@@ -58,8 +58,8 @@ rather than here, since it's a staged procedure with steps to go through,
 not an invariant. This rule's number stays reserved as a pointer rather
 than being removed, since it may already be cited by number from a
 consuming project. Packaged for Claude Code as the `design-pipeline`
-skill (`skills/design-pipeline/SKILL.md`), which points at the same file
-rather than duplicating it (rule 4).
+skill (`agent-config/claude/skills/design-pipeline/SKILL.md`), which
+points at the same file rather than duplicating it (rule 4).
 
 ## 2. Propose before executing, when the result can't be verified first
 
@@ -86,9 +86,9 @@ function to notice).
 **Rule:** the coding-agent's first action, every session, before anything
 else: check current state against last known state (uncommitted changes,
 undocumented work, drift between docs and code) and report it back before
-proceeding. Baked into tooling (see `claude-config/` in this toolkit for a
-working implementation), not a separate step the human has to remember to
-invoke.
+proceeding. Baked into tooling (see `agent-config/claude/` in this
+toolkit for a working implementation), not a separate step the human has
+to remember to invoke.
 
 ## 4. Single source of truth per fact, not per file
 
@@ -241,8 +241,9 @@ meant to keep) is worse than a short pause to confirm.
 ## Learnings — evolving, not fixed
 
 **2026-08-25 — Rules vs. patterns split; rule 1 becomes a pointer.**
-Rule 1 already deferred its content to `skills/design-pipeline/SKILL.md`
-rather than stating it here — a sign, on a second look, that it was never
+Rule 1 already deferred its content to
+`agent-config/claude/skills/design-pipeline/SKILL.md` rather than
+stating it here — a sign, on a second look, that it was never
 really an invariant, but a staged procedure with steps to go through.
 Made that distinction explicit: a `patterns/` directory now holds staged
 procedures generally, `design-pipeline`'s content moved there

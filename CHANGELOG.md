@@ -31,6 +31,12 @@ follows [Semantic Versioning](https://semver.org/).
   "pattern" gets from this split. Rule numbers unchanged.
 - `README.md` restructured around the rules-vs-patterns split, with an
   updated repo map and usage steps.
+- `claude-config/` moved to `agent-config/claude/`, and the skill wrapper
+  moved with it to `agent-config/claude/skills/design-pipeline/SKILL.md`
+  — everything Claude-Code-specific now lives under one tool-named
+  folder, leaving room for `agent-config/codex/` or
+  `agent-config/opencode/` alongside it without the top level implying
+  Claude is the only supported agent.
 
 ## [0.3.0] - 2026-08-19
 

@@ -42,9 +42,6 @@ be fed and refined over time rather than written complete on day one.
   MVP (`idea-to-mvp.md`), splitting work across more than one agent
   session (`multi-agent-collaboration.md`), and capturing small usage
   friction without losing it (`papercuts.md`).
-- `skills/design-pipeline/SKILL.md` — a thin Claude Code skill wrapper
-  that points at `patterns/design-pipeline.md` rather than duplicating
-  it, so Claude Code can discover the pattern as a skill.
 - `conventions/repo-structure.md` — how to split a product into several
   small, independently-replaceable repos (docs / design system / app(s) /
   backend(s)) instead of one repo or an unstructured monorepo — the
@@ -54,26 +51,37 @@ be fed and refined over time rather than written complete on day one.
   checklist) used across a project's docs, including this repo's own.
 - `conventions/release-process.md` — the VERSION + CHANGELOG + SemVer tag
   convention this repo itself uses (see `VERSION` / `CHANGELOG.md`).
-- `claude-config/` — a working `settings.json` + hook script that
-  implements the session-boundary state check (`rules/prototyping-system.md`
-  rule 3) by auto-discovering sibling git repos in the workspace.
+- `agent-config/` — tool-specific wiring, one subfolder per agent tool.
+  Everything above this line is tool-agnostic: plain files any agent (or
+  human) can read. `agent-config/claude/` is the only one that exists
+  today — a working `settings.json` + hook script implementing the
+  session-boundary state check (`rules/prototyping-system.md` rule 3),
+  and `skills/design-pipeline/SKILL.md` underneath it, a thin wrapper
+  that points at `patterns/design-pipeline.md` so Claude Code can
+  discover it as a skill. A Codex or OpenCode integration would get its own
+  `agent-config/codex/` or `agent-config/opencode/` sibling rather than
+  anything changing at the top level.
 
 ## Using this in a new project
 
 1. Clone this repo as a sibling of your product repos, e.g.
    `<workspace>/agent-toolkit` next to `<workspace>/my-product-app`.
-2. Copy `claude-config/settings.json` and
-   `claude-config/session-start-repo-check.sh` into your workspace's own
-   `.claude/` folder (workspace root, not inside any one product repo) —
-   the hook auto-discovers whatever git repos sit alongside it, no
-   per-project repo list to maintain.
+2. If you're using Claude Code, copy
+   `agent-config/claude/settings.json` and
+   `agent-config/claude/session-start-repo-check.sh` into your
+   workspace's own `.claude/` folder (workspace root, not inside any one
+   product repo) — the hook auto-discovers whatever git repos sit
+   alongside it, no per-project repo list to maintain. Using a different
+   agent tool: there's nothing tool-specific to install yet, only the
+   plain rules/patterns/conventions files below, which any tool can read
+   directly.
 3. Point your workspace or product `AGENTS.md`/`CLAUDE.md` at
    `agent-toolkit/rules/prototyping-system.md` instead of restating its
    rules — reference it, don't copy it (rule 4: single source of truth).
 4. Skim `patterns/index.md` and adopt whichever patterns actually apply —
    not all of them will, on day one. `design-pipeline` is also installable
-   as a Claude Code skill directly (`skills/design-pipeline/`) wherever
-   your setup looks for project or user skills.
+   as a Claude Code skill directly (`agent-config/claude/skills/design-pipeline/`)
+   wherever your setup looks for project or user skills.
 
 ## Updating
 

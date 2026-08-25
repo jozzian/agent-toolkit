@@ -4,7 +4,7 @@ title: Design Pipeline
 description: Fixed, ordered set of design-artifact stages for building a new screen or flow — from initiative framing through two hi-fi rounds to ongoing iteration.
 timestamp: 2026-08-25
 tags: [process, design, prototyping]
-status: adopted — also packaged for Claude Code as the `design-pipeline` skill (`skills/design-pipeline/SKILL.md`), which points here rather than duplicating this content.
+status: adopted — also packaged for Claude Code as the `design-pipeline` skill (`agent-config/claude/skills/design-pipeline/SKILL.md`), which points here rather than duplicating this content.
 ---
 
 # Design Pipeline

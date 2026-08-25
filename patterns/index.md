@@ -15,7 +15,7 @@ be complete on day one.
 
 | Pattern | What it's for |
 |---|---|
-| [Design Pipeline](design-pipeline.md) | Taking a new screen or flow from initiative framing through two hi-fi rounds to ongoing iteration. Also packaged as a Claude Code skill — see `skills/design-pipeline/SKILL.md`, which points here rather than duplicating this file. |
+| [Design Pipeline](design-pipeline.md) | Taking a new screen or flow from initiative framing through two hi-fi rounds to ongoing iteration. Also packaged as a Claude Code skill — see `agent-config/claude/skills/design-pipeline/SKILL.md`, which points here rather than duplicating this file. |
 | [Idea to MVP](idea-to-mvp.md) | Taking an idea through discovery to a shippable MVP, phase by phase. |
 | [Multi-Agent Collaboration](multi-agent-collaboration.md) | Splitting work across more than one AI-agent session without them silently working from different facts. |
 | [Papercuts](papercuts.md) | Capturing small usage friction found only by actually using the built thing, without losing it or letting it derail planned work. |
