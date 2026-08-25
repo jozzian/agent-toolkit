@@ -6,6 +6,32 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- `patterns/` directory and `patterns/index.md` catalog — repeatable,
+  staged processes, distinct from the invariant rules in
+  `rules/prototyping-system.md`.
+- `patterns/idea-to-mvp.md` — a growable phase-gate process (Idea →
+  Discovery → Delivery) for taking an idea to a shippable MVP, abstracted
+  from a team checklist and deliberately minimal to start.
+- `patterns/multi-agent-collaboration.md` — splitting work across more
+  than one AI-agent session without them silently working from different
+  facts, generalized from a real multi-repo build.
+- `patterns/papercuts.md` — capturing small usage friction found only by
+  actually using the built thing, without losing it or letting it
+  derail planned work.
+
+### Changed
+- `skills/design-pipeline/SKILL.md`'s content moved to
+  `patterns/design-pipeline.md`; the skill file is now a thin pointer to
+  it (rule 4: single source of truth per fact).
+- `rules/prototyping-system.md` rule 1 now states a pointer to
+  `patterns/design-pipeline.md` rather than the content itself. Rule 10's
+  heading changed from "Patterns worth watching" to "Practices worth
+  watching" to stop colliding with the new, more specific meaning
+  "pattern" gets from this split. Rule numbers unchanged.
+- `README.md` restructured around the rules-vs-patterns split, with an
+  updated repo map and usage steps.
+
 ## [0.3.0] - 2026-08-19
 
 ### Added

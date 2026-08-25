@@ -26,6 +26,14 @@ unrelated product with none of the first one's context? If a rule only
 makes sense because of one product's specific facts, it doesn't belong
 here — it belongs in that product's own process notes instead.
 
+This file holds *rules* — invariants that hold regardless of what stage a
+project is in. A repeatable, staged procedure (a fixed sequence of steps
+to go through) is a *pattern* instead, and lives in `patterns/` — see
+`patterns/index.md` for the catalog. Rule 1 below is the one rule here
+that is actually a pointer to a pattern rather than a rule itself, kept
+at that number rather than removed, since it may already be cited by
+number from a consuming project.
+
 A recurring root cause underneath several unrelated-looking failures:
 **no structural tripwire between what the docs say and what the app
 actually does.** Docs describing a feature that was never built, and
@@ -44,12 +52,14 @@ assuming they match.*
 ## 1. Design pipeline is local and sequential, before or alongside code
 
 The fixed, ordered set of design-artifact stages (Stage 0 problem framing
-→ Flows → Screens → Wireframes → Hi-fi v1 → Hi-fi v2 → ongoing iteration),
-each a frozen folder once superseded except the always-latest working
-folder, lives in the `design-pipeline` skill in this same toolkit
-(`skills/design-pipeline/SKILL.md`) rather than here — it's a large enough
-piece of process to deserve its own file, and other tooling (templates,
-folder conventions) hangs off it directly.
+→ Flows → Screens → Wireframes → Hi-fi v1 → Hi-fi v2 → ongoing iteration)
+is a *pattern*, not a rule — it lives in `patterns/design-pipeline.md`
+rather than here, since it's a staged procedure with steps to go through,
+not an invariant. This rule's number stays reserved as a pointer rather
+than being removed, since it may already be cited by number from a
+consuming project. Packaged for Claude Code as the `design-pipeline`
+skill (`skills/design-pipeline/SKILL.md`), which points at the same file
+rather than duplicating it (rule 4).
 
 ## 2. Propose before executing, when the result can't be verified first
 
@@ -149,7 +159,7 @@ just don't add up to one coherent system, and nothing forces the question
 
 ---
 
-## 10. Patterns worth watching, not yet rules
+## 10. Practices worth watching, not yet rules
 
 Two things that worked well in practice but aren't mature enough to be
 stated as rules — noted here so they aren't lost, not to be treated as
@@ -229,6 +239,20 @@ meant to keep) is worse than a short pause to confirm.
 ---
 
 ## Learnings — evolving, not fixed
+
+**2026-08-25 — Rules vs. patterns split; rule 1 becomes a pointer.**
+Rule 1 already deferred its content to `skills/design-pipeline/SKILL.md`
+rather than stating it here — a sign, on a second look, that it was never
+really an invariant, but a staged procedure with steps to go through.
+Made that distinction explicit: a `patterns/` directory now holds staged
+procedures generally, `design-pipeline`'s content moved there
+(`patterns/design-pipeline.md`), and the Claude Code skill file became a
+thin pointer to it instead of the canonical copy. Rule 1's number stays,
+now stating the pointer itself rather than the content, since a consuming
+project may already cite it by number. Rule 10's heading changed from
+"Patterns worth watching" to "Practices worth watching" so it stops
+colliding with the new, more specific meaning "pattern" gets from this
+split.
 
 This section is expected to grow. Add an entry whenever a rule above turns
 out incomplete, wrong, or insufficient in practice — don't silently patch
