@@ -44,7 +44,13 @@ scope beyond what was actually said.
 
 1. **Capture verbatim.** Record the impulse as given, unedited, before
    any classification or rewriting starts. This is what a later
-   placement can be checked against if it is ever challenged.
+   placement can be checked against if it is ever challenged. A capture
+   that cannot be filed immediately still needs a home: a dated note
+   inside a real repository, this toolkit or the relevant product
+   repository, not a loose file at a workspace root with no repository
+   of its own. Triage it promptly rather than letting it stand; a pile
+   of unfiled captures is this approach not being run, not a second kind
+   of artifact.
 2. **Route by kind.** Friction found by using the product itself hands
    off to `approaches/product-use-learning-loop.md`. Friction or a
    lesson about how the work itself gets planned, prompted, built,

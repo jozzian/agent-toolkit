@@ -38,6 +38,51 @@ carries out drafting and updates inside a stage, and must flag rather
 than guess when a stage's own gate cannot yet be answered (rule 6 of
 `rules/prototyping-system.md`).
 
+## Before Stage 0: raw impulse intake
+
+A new screen or flow rarely arrives as a clean Stage 0 note. It usually
+arrives as a raw, unstructured batch: bug reports, feature requests,
+terminology changes, and references to visual material not yet in the
+repo, mixed together with no structure imposed by whoever wrote it, nor
+should there be, that is not their job. Something has to sit between
+"here are my notes" and Stage 0, or three failure modes recur: a
+truncated or ambiguous item gets silently dropped or guessed at; a rename
+request gets applied without checking whether it collides with an
+earlier one; or a vague note gets padded with plausible-sounding detail
+nobody actually stated.
+
+Before a raw batch becomes Stage 0 notes, milestone entries, or
+`current/` edits:
+
+1. Capture the batch verbatim, unedited, before any decomposition
+   starts. See `approaches/toolkit-intake.md` for the same discipline
+   applied to a new impulse about the toolkit itself, rather than about
+   the product.
+2. Classify each item without reshaping it yet:
+   - **Screen fix**: a bug or a small change to an existing,
+     already-built screen. Goes straight to that screen's `current/`
+     doc, plus a milestone if it is non-trivial.
+   - **New surface**: a new screen, flow step, or section. Needs a
+     Stage 0 Initiative note or a milestone entry, not a `current/` edit,
+     since there is nothing to describe as current yet.
+   - **Naming or terminology**: anything renaming a screen, concept, or
+     term. Triggers an explicit check against existing naming before
+     being scoped (rules 7 and 9 of `rules/prototyping-system.md`,
+     applied to product vocabulary rather than component vocabulary).
+   - **Cross-cutting decision**: a change affecting multiple screens at
+     once. Gets its own milestone rather than being folded into
+     whichever screen happened to mention it first.
+   - **Blocked or incomplete**: the item is truncated, references an
+     unattached asset, or is otherwise not actionable as written.
+     Recorded as explicitly blocked, with what is missing named, not
+     guessed past.
+3. Give every blocked item a named owner action, not a silent skip,
+   visible in the same doc the rest of the batch landed in.
+4. Surface, rather than silently resolve, any conflict with something
+   already recorded in `current/` or in a milestone. Name the conflict
+   and the resolution chosen, even a reasonable default, in the
+   milestone that picks it up.
+
 ## Stage 0 — Initiative framing
 
 Before any design artifact gets created, write a short Initiative note.
@@ -169,3 +214,7 @@ Deliverable hierarchy in rule 11.
 Once a project's discovery work reaches the point of needing this
 sequence, see `approaches/idea-to-mvp.md`'s Discovery phase for where
 this approach is handed off from.
+
+`approaches/toolkit-intake.md` covers the same verbatim-capture
+discipline for a new impulse about this toolkit itself, rather than
+about a product's screens or flows.

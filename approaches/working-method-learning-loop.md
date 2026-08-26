@@ -45,8 +45,10 @@ before there is a second instance to compare it against.
 
 ## Method
 
-1. **Observe** a working-method problem or a useful practice, as it
-   happens.
+1. **Observe** a working-method problem or a useful practice. Record it
+   as it happens, not at session wrap-up; noticing the thought "I should
+   remember this for next time" mid-task is itself the trigger to stop
+   and write it down, not a cue to keep going and reconstruct it later.
 2. **Record** the observation without product-specific detail in the
    toolkit. Keep concrete incident detail in the product's own
    documentation; the toolkit keeps the generalized shape of the lesson.

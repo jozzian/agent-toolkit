@@ -6,6 +6,28 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- `approaches/review-protocol.md`: a file-based handoff protocol
+  (`reviews/next-to-execute.md`, `reviews/log.md`) for a genuinely
+  separate agent session to review a plan or a diff before work
+  proceeds, generalized from a real multi-session deployment where it
+  was exercised across four milestones with no format changes needed.
+- `approaches/design-pipeline.md` gained a "Before Stage 0: raw impulse
+  intake" section: classify a raw, unstructured batch of findings
+  (screen fix, new surface, naming or terminology, cross-cutting
+  decision, or blocked) before any of it is decomposed into Stage 0
+  notes or milestone entries, so nothing is silently dropped, silently
+  renamed, or silently padded with invented scope.
+
+### Changed
+- `approaches/working-method-learning-loop.md`'s Method now states the
+  immediacy trigger for step 1 explicitly: record an observation as it
+  happens, not at session wrap-up.
+- `approaches/toolkit-intake.md`'s capture step now states where an
+  unfiled impulse belongs while it waits: a dated note inside a real
+  repository, never a loose file at a workspace root with no repository
+  of its own.
+
 ## [1.0.0] - 2026-08-26
 
 ### Added
