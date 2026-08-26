@@ -6,6 +6,8 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-08-26
+
 ### Added
 - An explicit artifact model with six kinds: rules, approaches, routines,
   conventions, outputs, and agent configuration. `README.md` states the
@@ -101,7 +103,8 @@ follows [Semantic Versioning](https://semver.org/).
   session-boundary state check (rule 3), auto-discovering sibling repos
   instead of a hardcoded list.
 
-[Unreleased]: https://github.com/jozzian/agent-toolkit/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/jozzian/agent-toolkit/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/jozzian/agent-toolkit/compare/v0.3.0...v1.0.0
 [0.3.0]: https://github.com/jozzian/agent-toolkit/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/jozzian/agent-toolkit/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jozzian/agent-toolkit/releases/tag/v0.1.0
