@@ -1,6 +1,8 @@
 ---
+type: Convention
 title: Release Process
 description: VERSION + CHANGELOG + SemVer tag convention, and the five-edit two-push sequence for cutting a release.
+timestamp: 2026-08-19
 ---
 
 # Release Process

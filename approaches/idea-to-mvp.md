@@ -1,13 +1,17 @@
 ---
-type: Guideline
+type: Approach
 title: Idea to MVP Process
 description: A generic, growable phase-gate process for taking an idea through discovery to a shippable MVP — deliberately minimal to start.
-timestamp: 2026-08-25
+timestamp: 2026-08-26
 tags: [process, product, prototyping]
 status: draft — v1, deliberately minimal; see Open questions for what's left out on purpose
 ---
 
 # Idea to MVP Process
+
+**Kind:** lifecycle.
+
+## Purpose
 
 Three phases an idea should pass through before it becomes a shippable MVP.
 Each phase ends in a gate — a question that must be answerable, not just
@@ -20,8 +24,23 @@ thing as an Initiative in rule 11 of `rules/prototyping-system.md` — this
 file is the lifecycle view of what an initiative passes through; rule 11
 is what its planning units (milestones, deliverables) look like once
 you're inside a phase. When Discovery's work includes building a
-prototype, that work is handed off to the `design-pipeline` skill (Stage 0
-onward) rather than re-described here.
+prototype, that work is handed off to `approaches/design-pipeline.md`
+(Stage 0 onward) rather than re-described here.
+
+## When it applies
+
+An idea is proposed for real evaluation, from first framing through to a
+shipped MVP. Applies once per idea, across all three phases below.
+
+## Human and AI responsibilities
+
+The human holds final judgment on each phase's gate question: whether an
+idea is worth discovery time, whether the estimated gain justifies the
+estimated cost, whether the MVP is actually ready to ship. An AI can draft
+the evidence, feasibility sketch, and readiness check that each gate
+needs, and must say plainly when a gate question cannot yet be answered
+rather than defaulting to an optimistic guess (rule 2 and rule 6 of
+`rules/prototyping-system.md`).
 
 ## Overview
 
@@ -77,7 +96,7 @@ Two threads, which can interleave:
   smallest version that delivers real value (as value, not as a technical
   spec); name risks; define what success looks like. If the idea would
   benefit from being seen or tried before committing further, this is
-  where that happens — see the `design-pipeline` skill for a staged way
+  where that happens — see `approaches/design-pipeline.md` for a staged way
   to take a screen or flow from framing through wireframes to a
   higher-fidelity prototype.
 - **Feasibility & estimate** — sketch how this would actually be built,
@@ -120,7 +139,8 @@ questions for what comes after.
 - **Sizing scale.** No S/M/L (or similar) definition is included yet —
   add one once there's a repeated, real need to calibrate how much of
   this process an idea's size warrants.
-- **Rules vs. patterns.** This file is a first instance of a "pattern" — a
-  repeating staged process — as distinct from a "rule" (an invariant) in
-  `rules/prototyping-system.md`. If that file is later split along that
-  line, this note should move or be removed so the two don't drift apart.
+- **Rules vs. approaches.** This file is a lifecycle-kind approach, as
+  distinct from a "rule" (an invariant) in `rules/prototyping-system.md`.
+  That split is now explicit in the toolkit's artifact model; this note
+  stays only as a pointer to `approaches/index.md` for the full
+  classification.

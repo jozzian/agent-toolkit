@@ -1,96 +1,102 @@
 # agent-toolkit
 
-A transferable, product-agnostic process layer for AI-supported
-prototyping and coding — the rules, patterns, and conventions that
-shouldn't be reinvented (or silently drift) per project. Explicit files
-under version control, not stashed in an assistant's memory.
+A transferable, product-agnostic working approach for a human working
+with AI, and a process layer for AI-supported prototyping and coding. It
+holds structures, guides, and processes that should not be reinvented or
+allowed to drift silently from project to project. They live in explicit
+files under version control, not in an assistant's memory.
 
-This repo contains **process**, not any specific product's content. If
-something only makes sense with one product's names, repo layout, or
-incidents attached, it doesn't belong here — it belongs in that product's
-own docs.
+This repository contains process, not any specific product's content. If
+something only makes sense with one product's names, repository layout,
+or incidents attached, it belongs in that product's own docs, not here.
 
-## Rules vs. patterns
+## Artifacts
 
-Two different kinds of process live here, deliberately kept apart:
+Six kinds of artifact live here, each with its own catalog:
 
-- **Rules** (`rules/prototyping-system.md`) are invariants — true
-  regardless of what stage a project is in or what's being built. "Check
-  current state against last known state before assuming they match" is a
-  rule: it has no steps, it's just always true.
-- **Patterns** (`patterns/`) are staged procedures — a fixed sequence of
-  steps to go through, that recurs every time a certain kind of work comes
-  up. "Take a screen from idea to shipped" is a pattern: it has an order,
-  and the agent's job is to recognize when one applies and walk through
-  it.
+- **[Rules](rules/index.md)**: stable, numbered invariants that govern
+  work regardless of stage or task.
+- **[Approaches](approaches/index.md)**: reusable ways of working that a
+  human and an AI apply together. An approach may be a lifecycle, a
+  staged workflow, a continuous practice, or a coordination method; it
+  does not need to be a fixed sequence.
+- **[Routines](routines/index.md)**: self-contained, task-specific
+  instruction sets that can be invoked in a local agent or pasted into an
+  AI chat.
+- **[Conventions](conventions/index.md)**: shared standards for
+  structuring, naming, documenting, or releasing work.
+- **[Outputs](outputs/index.md)**: required structure and format for
+  recurring deliverables, with a template where one adds practical value.
+- **[Agent configuration](agent-config/index.md)**: optional,
+  tool-specific discovery, automation, and enforcement. It points to
+  canonical artifacts; it does not redefine them.
 
-Rules are cited by number and don't get renumbered once adopted (see
-`rules/prototyping-system.md`'s own header — a rule can still become a
-pointer to a pattern without losing its number, which is what happened to
-rule 1). Patterns are cataloged in `patterns/index.md` and are expected to
-be fed and refined over time rather than written complete on day one.
+Each catalog's own index explains its artifacts in more depth than this
+overview does; this file states the model, not the governance detail
+behind each type.
 
-## What's in here
+## Three ways this gets used
 
-- `rules/prototyping-system.md` — the invariant rules for working with an
-  AI coding agent across a session and across a project's lifetime (when
-  to propose vs. execute, single source of truth, how work is scoped as
-  initiatives/milestones/deliverables, and more).
-- `patterns/` — staged, repeatable processes. See `patterns/index.md` for
-  the catalog: taking a screen from idea through hi-fi design
-  (`design-pipeline.md`), taking an idea through discovery to a shippable
-  MVP (`idea-to-mvp.md`), splitting work across more than one agent
-  session (`multi-agent-collaboration.md`), and capturing small usage
-  friction without losing it (`papercuts.md`).
-- `conventions/repo-structure.md` — how to split a product into several
-  small, independently-replaceable repos (docs / design system / app(s) /
-  backend(s)) instead of one repo or an unstructured monorepo — the
-  boundary `patterns/multi-agent-collaboration.md` assumes already exists.
-- `conventions/okf.md` — Open Knowledge Format: the documentation
-  convention (frontmatter spec, linking rules, file naming, quality
-  checklist) used across a project's docs, including this repo's own.
-- `conventions/release-process.md` — the VERSION + CHANGELOG + SemVer tag
-  convention this repo itself uses (see `VERSION` / `CHANGELOG.md`).
-- `agent-config/` — tool-specific wiring, one subfolder per agent tool.
-  Everything above this line is tool-agnostic: plain files any agent (or
-  human) can read. `agent-config/claude/` is the only one that exists
-  today — a working `settings.json` + hook script implementing the
-  session-boundary state check (`rules/prototyping-system.md` rule 3),
-  and `skills/design-pipeline/SKILL.md` underneath it, a thin wrapper
-  that points at `patterns/design-pipeline.md` so Claude Code can
-  discover it as a skill. A Codex or OpenCode integration would get its own
-  `agent-config/codex/` or `agent-config/opencode/` sibling rather than
-  anything changing at the top level.
+- **A human reads a file directly.** Every canonical artifact is plain
+  Markdown, readable in any editor with no tooling.
+- **A local coding agent reads or is pointed at a file.** Where the
+  agent's own project can reference this repository, point it there
+  instead of copying content into the project (rule 4 of
+  `rules/prototyping-system.md`: single source of truth per fact).
+- **An AI chat session uses an artifact with no access to this
+  repository.** A self-contained routine (see `routines/index.md`) can be
+  pasted directly into the chat. This is why routines carry everything
+  they need in one file rather than linking out to the rest of the
+  toolkit.
 
-## Using this in a new project
+## Tool-neutral by default
 
-1. Clone this repo as a sibling of your product repos, e.g.
-   `<workspace>/agent-toolkit` next to `<workspace>/my-product-app`.
-2. If you're using Claude Code, copy
-   `agent-config/claude/settings.json` and
-   `agent-config/claude/session-start-repo-check.sh` into your
-   workspace's own `.claude/` folder (workspace root, not inside any one
-   product repo) — the hook auto-discovers whatever git repos sit
-   alongside it, no per-project repo list to maintain. Using a different
-   agent tool: there's nothing tool-specific to install yet, only the
-   plain rules/patterns/conventions files below, which any tool can read
-   directly.
-3. Point your workspace or product `AGENTS.md`/`CLAUDE.md` at
+Canonical content is ordinary, tool-neutral Markdown under `rules/`,
+`approaches/`, `routines/`, `conventions/`, and `outputs/`. Any tool, or a
+human with no tool at all, can read it directly.
+
+`agent-config/` holds optional adapters that make a canonical artifact
+easier to discover or enforce inside one specific tool. Claude is the one
+currently implemented example, under `agent-config/claude/`, not this
+repository's default identity. A Codex, OpenCode, or any other adapter
+gets its own sibling directory once there is a working, verified
+integration to add, not ahead of one existing.
+
+## Setting this up in a new project
+
+1. Clone this repository as a sibling of your product repositories, for
+   example `<workspace>/agent-toolkit` next to
+   `<workspace>/my-product-app`.
+2. Point your workspace or product's own agent-facing instruction file
+   (see rule 8 of `rules/prototyping-system.md`) at
    `agent-toolkit/rules/prototyping-system.md` instead of restating its
-   rules — reference it, don't copy it (rule 4: single source of truth).
-4. Skim `patterns/index.md` and adopt whichever patterns actually apply —
-   not all of them will, on day one. `design-pipeline` is also installable
-   as a Claude Code skill directly (`agent-config/claude/skills/design-pipeline/`)
-   wherever your setup looks for project or user skills.
+   rules. Reference it; do not copy it.
+3. Skim `approaches/index.md`, `conventions/index.md`, and
+   `outputs/index.md`, and adopt whichever artifacts actually apply. Not
+   all of them will, on day one; see `outputs/artifact-adoption-ledger.md`
+   for a way to track which ones your project has adopted.
+4. If a routine such as `routines/sharpen.md` should run by default in
+   your project, say so in your project's own agent configuration; the
+   routine itself does not make that automatic.
+
+Using Claude Code specifically: `agent-config/claude/index.md` documents
+the implemented adapter, including the settings and hook that enforce
+rule 3 automatically and the `design-pipeline` skill wrapper. Using a
+different tool: there is nothing tool-specific to install yet beyond the
+plain Markdown artifacts above, which any tool can read directly; see
+`agent-config/index.md` for how a new adapter gets added.
 
 ## Updating
 
-This repo evolves independently of any one product. Pull it for updates;
-if you're proposing a change, edit and commit here directly rather than
-in a product session, then pull the update into consuming projects. Rule
-numbers in `prototyping-system.md` are stable and may be cited by number
-from consuming projects — a citing project should note which
-`agent-toolkit` version (`VERSION` / git tag) it was written against, since
-rule *numbers* don't shift but rule *content* can evolve. Patterns carry
-no such numbering contract and can be revised more freely. See
-`CHANGELOG.md` for what changed between versions.
+This repository evolves independently of any one product. Pull it for
+updates. If you are proposing a change, edit and commit here directly
+rather than in a product session, then pull the update into consuming
+projects.
+
+Rule numbers in `rules/prototyping-system.md` are stable and may be cited
+by number from consuming projects; a citing project should note which
+`agent-toolkit` version (`VERSION` or git tag) it was written against,
+since rule numbers do not shift but rule content can evolve. Other
+artifact types carry no such numbering contract and can be revised more
+freely. See `CHANGELOG.md` for what changed between versions, and
+`conventions/release-process.md` for how a release is cut.

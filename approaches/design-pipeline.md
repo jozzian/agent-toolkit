@@ -1,21 +1,42 @@
 ---
-type: Guideline
+type: Approach
 title: Design Pipeline
 description: Fixed, ordered set of design-artifact stages for building a new screen or flow — from initiative framing through two hi-fi rounds to ongoing iteration.
-timestamp: 2026-08-25
+timestamp: 2026-08-26
 tags: [process, design, prototyping]
 status: adopted — also packaged for Claude Code as the `design-pipeline` skill (`agent-config/claude/skills/design-pipeline/SKILL.md`), which points here rather than duplicating this content.
 ---
 
 # Design Pipeline
 
+**Kind:** staged workflow.
+
+## Purpose
+
 A product-agnostic sequence for taking a new screen or flow from "we think
 we need this" to "it's live and iterating." Each stage after Stage 0
 produces an artifact; each artifact folder is a frozen, point-in-time
-snapshot once superseded — never edited again, kept as historical record.
+snapshot once superseded, never edited again, kept as historical record.
 The always-latest working folder (e.g. `current/`) is the one exception:
 edited in the same pass as whatever change it describes, never left stale
 "for later."
+
+## When it applies
+
+A new screen or flow needs a design artifact before or alongside code, or
+an existing screen's documentation has drifted from its actual behavior
+and needs to be brought back in sync.
+
+## Human and AI responsibilities
+
+Both sides read and write the same stage artifacts; there is no stage
+here that only one side touches. The human owns judgment calls that
+require product context: whether a required Stage 0 field can honestly be
+answered, whether feedback on a wireframe or hi-fi round warrants another
+iteration, when a screen is done drifting and ready to freeze. An AI
+carries out drafting and updates inside a stage, and must flag rather
+than guess when a stage's own gate cannot yet be answered (rule 6 of
+`rules/prototyping-system.md`).
 
 ## Stage 0 — Initiative framing
 
@@ -120,10 +141,25 @@ folder. Numbered folders are for full redesign rounds; the always-latest
 folder is for the normal drift-free maintenance every shipped screen
 needs afterward.
 
-## Related principles
+## Outputs
 
-This pattern implements rule 1 of `rules/prototyping-system.md` (design
-pipeline is local and sequential, before or alongside code) — see that
+Per stage: a frozen artifact folder (Wireframes, Hi-fi v1, Hi-fi v2), or
+an always-editable folder kept in sync with actual behavior (Flows,
+Screens, the post-v2 always-latest folder).
+
+## Completion or review condition
+
+A stage is done, and the next stage's work can start, once its own gate
+question is answered: Stage 0's required fields are all answerable, a
+wireframe has had a feedback round before moving to Hi-fi v1, a hi-fi
+round has had its own feedback round before moving to the next. There is
+no single end state after Hi-fi v2; ongoing iteration continues for as
+long as the screen exists.
+
+## Related artifacts
+
+This approach implements rule 1 of `rules/prototyping-system.md` (design
+pipeline is local and sequential, before or alongside code); see that
 file for the general rules this stage sequence operates under, including
 why every stage's own output must name its open questions (rule 6), why
 the always-latest folder staying in sync is treated as structural, not
@@ -131,5 +167,5 @@ optional, and why Stage 0's fields map onto the Initiative/Milestone/
 Deliverable hierarchy in rule 11.
 
 Once a project's discovery work reaches the point of needing this
-sequence, see `patterns/idea-to-mvp.md`'s Discovery phase for where this
-pattern is handed off from.
+sequence, see `approaches/idea-to-mvp.md`'s Discovery phase for where
+this approach is handed off from.

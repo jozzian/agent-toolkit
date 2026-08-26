@@ -1,18 +1,36 @@
 ---
-type: Guideline
+type: Approach
 title: Multi-Agent Collaboration
 description: How to split work across more than one AI-agent session on the same product without them silently working from different facts.
-timestamp: 2026-08-25
+timestamp: 2026-08-26
 tags: [process, multi-agent, prototyping]
 status: draft — v1, first pass at generalizing a real multi-repo/multi-session setup
 ---
 
 # Multi-Agent Collaboration
 
-A pattern for when a product is being built by more than one AI-agent
-session at once — one per repo, one per subsystem, or simply more than
-one running in parallel — rather than a single continuous session doing
-everything in order.
+**Kind:** coordination.
+
+## Purpose
+
+An approach for when a product is being built by more than one AI-agent
+session at once, whether one per repo, one per subsystem, or simply more
+than one running in parallel, rather than a single continuous session
+doing everything in order.
+
+## When it applies
+
+More than one AI-agent session works on the same product at the same
+time, and each session risks acting on a fact another session already
+changed.
+
+## Human and AI responsibilities
+
+The human draws the scope boundary between sessions and decides what
+counts as the one shared fact each session must defer to. An AI session
+works within its own scope's `AGENTS.md`, references the shared fact by
+name or ID instead of re-deciding it locally, and states plainly when its
+own environment cannot verify a change rather than reporting it as done.
 
 ## Scope by boundary, not by task
 
@@ -58,9 +76,9 @@ rule 2 (propose before executing, when the result can't be verified
 first) applied at multi-session scale: another session or a human with
 the missing capability has to close the loop before that work is trusted.
 
-## Related
+## Related artifacts
 
-- `conventions/repo-structure.md` — the boundary this pattern assumes
+- `conventions/repo-structure.md`: the boundary this approach assumes
   already exists.
-- `rules/prototyping-system.md` rules 2 and 4 — the two invariants this
-  pattern applies at multi-session scale.
+- `rules/prototyping-system.md` rules 2 and 4: the two invariants this
+  approach applies at multi-session scale.

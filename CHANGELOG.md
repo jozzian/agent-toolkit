@@ -7,36 +7,63 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
-- `patterns/` directory and `patterns/index.md` catalog — repeatable,
-  staged processes, distinct from the invariant rules in
-  `rules/prototyping-system.md`.
-- `patterns/idea-to-mvp.md` — a growable phase-gate process (Idea →
-  Discovery → Delivery) for taking an idea to a shippable MVP, abstracted
-  from a team checklist and deliberately minimal to start.
-- `patterns/multi-agent-collaboration.md` — splitting work across more
-  than one AI-agent session without them silently working from different
-  facts, generalized from a real multi-repo build.
-- `patterns/papercuts.md` — capturing small usage friction found only by
-  actually using the built thing, without losing it or letting it
-  derail planned work.
+- An explicit artifact model with six kinds: rules, approaches, routines,
+  conventions, outputs, and agent configuration. `README.md` states the
+  model; each kind has its own catalog under `rules/index.md`,
+  `approaches/index.md`, `routines/index.md`, `conventions/index.md`,
+  `outputs/index.md`, and `agent-config/index.md`.
+- `approaches/product-use-learning-loop.md`, replacing the earlier
+  Papercuts pattern: exercise the product, capture friction as it is
+  found, triage each finding into an immediate fix, planned work, an
+  explicit deferral, or an accepted gap, apply the response, then revisit
+  the affected experience to check whether it helped.
+- `approaches/working-method-learning-loop.md`: a conservative loop for
+  observing, recording, and promoting a lesson about how work itself gets
+  planned, prompted, built, reviewed, handed off, coordinated, or
+  documented, kept distinct from product-use friction.
+- `approaches/toolkit-intake.md`: the general front door for a new
+  impulse about the toolkit itself, capturing it verbatim before it is
+  reshaped and routing it to the correct artifact or to one of the two
+  learning loops above.
+- `routines/sharpen.md`: a self-contained, tool-neutral editing routine,
+  portable enough to paste into an AI chat with no access to this
+  repository. `routines/index.md` catalogs it.
+- `outputs/artifact-adoption-ledger.md`: a specification and template for
+  a project-local, optionally tracked Markdown file recording which
+  toolkit artifacts a project has adopted, adapted, found not
+  applicable, or flagged for review, with totals derived from its own
+  entries.
+- `agent-config/index.md` and `agent-config/claude/index.md`, documenting
+  agent configuration as optional and tool-specific, Claude as the one
+  currently implemented adapter, and the concrete condition for adding a
+  Codex or OpenCode sibling.
 
 ### Changed
-- `skills/design-pipeline/SKILL.md`'s content moved to
-  `patterns/design-pipeline.md`; the skill file is now a thin pointer to
-  it (rule 4: single source of truth per fact).
-- `rules/prototyping-system.md` rule 1 now states a pointer to
-  `patterns/design-pipeline.md` rather than the content itself. Rule 10's
-  heading changed from "Patterns worth watching" to "Practices worth
-  watching" to stop colliding with the new, more specific meaning
-  "pattern" gets from this split. Rule numbers unchanged.
-- `README.md` restructured around the rules-vs-patterns split, with an
-  updated repo map and usage steps.
-- `claude-config/` moved to `agent-config/claude/`, and the skill wrapper
-  moved with it to `agent-config/claude/skills/design-pipeline/SKILL.md`
-  — everything Claude-Code-specific now lives under one tool-named
-  folder, leaving room for `agent-config/codex/` or
-  `agent-config/opencode/` alongside it without the top level implying
-  Claude is the only supported agent.
+- `patterns/` renamed to `approaches/`, since the kind now covers
+  coordination methods and continuous practices, not only staged
+  sequences. Every internal path, link, and description updated to
+  match.
+- `conventions/okf.md` corrected to match this repository's actual
+  artifacts: a closed list of `type` values (`Rule`, `Approach`,
+  `Routine`, `Convention`, `Output`, `Index`, `Plan`), an explicit
+  exemption for `README.md` and `CHANGELOG.md`, and an explicit rule for
+  which directories require an `index.md`. Every in-scope Markdown file
+  in the repository brought into compliance with the corrected
+  convention.
+- `rules/prototyping-system.md`: the rules-versus-patterns explanation
+  replaced with the artifact model and a link to `rules/index.md`. Rule 1
+  now points to `approaches/design-pipeline.md`. Rule 3 reworded to state
+  the session-boundary check as tool-independent, with the Claude Code
+  hook named as one implementation rather than the rule's substance.
+  Rule 8 reworded so it no longer claims one filename is universal across
+  every local agent and AI chat, while keeping its single-canonical-file
+  intent. No rule number changed.
+- `README.md` restructured around the six-kind artifact model, the three
+  ways this toolkit gets used, and setup guidance that does not assume
+  Claude Code.
+- `claude-config/` moved to `agent-config/claude/` in a prior pass; this
+  change adds its index and updates the `design-pipeline` skill wrapper
+  to point at `approaches/design-pipeline.md`.
 
 ## [0.3.0] - 2026-08-19
 

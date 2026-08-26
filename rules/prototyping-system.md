@@ -1,10 +1,10 @@
 ---
-type: system
+type: Rule
 title: Prototyping & Coding System — Rules
 description: Product-agnostic rules for AI-supported prototyping and coding, derived from real process postmortems. General mechanics only — no product-specific naming or content.
 tags: [prototyping, coding-agent, process]
-timestamp: 2026-08-19
-status: adopted — general, cross-cutting rules. Rule numbers are stable and may be cited by number from consuming projects — don't renumber when editing.
+timestamp: 2026-08-26
+status: adopted — general, cross-cutting rules. Rule numbers are stable and may be cited by number from consuming projects; do not renumber when editing.
 ---
 
 # Prototyping & Coding System — Rules
@@ -26,13 +26,20 @@ unrelated product with none of the first one's context? If a rule only
 makes sense because of one product's specific facts, it doesn't belong
 here — it belongs in that product's own process notes instead.
 
-This file holds *rules* — invariants that hold regardless of what stage a
-project is in. A repeatable, staged procedure (a fixed sequence of steps
-to go through) is a *pattern* instead, and lives in `patterns/` — see
-`patterns/index.md` for the catalog. Rule 1 below is the one rule here
-that is actually a pointer to a pattern rather than a rule itself, kept
-at that number rather than removed, since it may already be cited by
-number from a consuming project.
+This file holds one artifact type in this toolkit's model: *rules*,
+invariants that hold regardless of what stage a project is in. The other
+artifact types (approaches, routines, conventions, outputs, agent
+configuration) are cataloged from the repository's own `README.md`; see
+`rules/index.md` for this file's own numbering contract and a one-line
+catalog of the rules below.
+
+A repeatable way of working that a human and an AI apply together,
+whether staged, continuous, or coordination-shaped, is an *approach*
+instead, and lives in `approaches/`. See `approaches/index.md` for the
+catalog. Rule 1 below is the one rule here that is actually a pointer to
+an approach rather than a rule itself, kept at that number rather than
+removed, since it may already be cited by number from a consuming
+project.
 
 A recurring root cause underneath several unrelated-looking failures:
 **no structural tripwire between what the docs say and what the app
@@ -53,10 +60,10 @@ assuming they match.*
 
 The fixed, ordered set of design-artifact stages (Stage 0 problem framing
 → Flows → Screens → Wireframes → Hi-fi v1 → Hi-fi v2 → ongoing iteration)
-is a *pattern*, not a rule — it lives in `patterns/design-pipeline.md`
-rather than here, since it's a staged procedure with steps to go through,
-not an invariant. This rule's number stays reserved as a pointer rather
-than being removed, since it may already be cited by number from a
+is an *approach*, not a rule — it lives in `approaches/design-pipeline.md`
+rather than here, since it is a staged way of working with steps to go
+through, not an invariant. This rule's number stays reserved as a pointer
+rather than being removed, since it may already be cited by number from a
 consuming project. Packaged for Claude Code as the `design-pipeline`
 skill (`agent-config/claude/skills/design-pipeline/SKILL.md`), which
 points at the same file rather than duplicating it (rule 4).
@@ -86,9 +93,16 @@ function to notice).
 **Rule:** the coding-agent's first action, every session, before anything
 else: check current state against last known state (uncommitted changes,
 undocumented work, drift between docs and code) and report it back before
-proceeding. Baked into tooling (see `agent-config/claude/` in this
-toolkit for a working implementation), not a separate step the human has
-to remember to invoke.
+proceeding. This holds regardless of which tool runs the session; the
+invariant is the check itself, not any one tool's way of triggering it.
+
+`agent-config/claude/` in this toolkit is one working implementation, a
+Claude Code `SessionStart` hook that runs this check automatically. A
+different local agent needs its own equivalent trigger under a sibling
+`agent-config/<tool>/`; a chat session with no hook mechanism at all still
+carries the rule, it just falls back to being a step the human or the AI
+has to remember to run manually, which is the weaker form this rule
+exists to avoid wherever a stronger form is available.
 
 ## 4. Single source of truth per fact, not per file
 
@@ -124,15 +138,22 @@ explicit question at the start (Ideation), not left to accrete session by
 session. This doesn't mean the decision is permanent; it means it's a
 decision, made and recorded, not a default nobody chose.
 
-## 8. AGENTS.md is the agent-instruction file; README is for humans
+## 8. Agent-facing instructions have one canonical file per project; README stays for humans
 
-One file for agent-facing rules and instructions (AGENTS.md), kept
-separate from the human-facing orientation doc (README.md), which
-continues to serve its own purpose (what this is, how to run it, published
-alongside the code). If a tool-specific instruction file is also needed
-(e.g. Claude Code's own convention), it should point at AGENTS.md rather
-than duplicating its content — a symlink, not a second copy to keep in
-sync by hand.
+A project's agent-facing rules and instructions live in one canonical
+file, kept separate from the human-facing orientation doc (`README.md`),
+which continues to serve its own purpose: what this is, how to run it,
+published alongside the code.
+
+`AGENTS.md` is a common choice for that canonical file and is not itself
+guaranteed to be present or read by every local agent or AI chat; a
+project may instead use a tool-specific file such as `CLAUDE.md`, or more
+than one, if more than one tool needs its own discovery path. What this
+rule requires is not one specific filename, but that the project decide
+which file is canonical and make every other tool-specific instruction
+file a pointer to it rather than a second copy kept in sync by hand. A
+symlink is one way to enforce that; a short "see X" line at the top of the
+tool-specific file is another.
 
 ## 9. A shared building-block vocabulary is a closed, audited list
 
@@ -239,6 +260,28 @@ meant to keep) is worse than a short pause to confirm.
 ---
 
 ## Learnings — evolving, not fixed
+
+This section keeps concise, rule-specific rationale for why a rule's text
+changed. The general process for observing, recording, and promoting a
+working-method lesson, whether or not it ends up here, is
+`approaches/working-method-learning-loop.md`; this section is where that
+process's output lands when the promoted artifact is a rule.
+
+**2026-08-26: Patterns become Approaches inside a full artifact model.**
+The rules-versus-patterns split from the previous entry turned out to be
+the first two artifact types of a larger model: rules, approaches,
+routines, conventions, outputs, and agent configuration (see this
+repository's `README.md`). `patterns/` was renamed to `approaches/`
+because "approach" covers coordination methods and continuous practices,
+such as the new working-method learning loop, that are not staged
+sequences the way "pattern" implied. Rule 1 now points to
+`approaches/design-pipeline.md`. Rule 3 was reworded to state the
+session-boundary check as tool-independent, with the Claude Code hook
+named explicitly as one implementation rather than the rule's substance.
+Rule 8 was reworded because it claimed `AGENTS.md` as a universal
+filename; the single-canonical-file intent is preserved, but the rule no
+longer asserts one filename works across every local agent and AI chat.
+No rule number changed.
 
 **2026-08-25 — Rules vs. patterns split; rule 1 becomes a pointer.**
 Rule 1 already deferred its content to

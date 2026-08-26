@@ -1,6 +1,8 @@
 ---
+type: Convention
 title: Multi-Repo Workspace Structure
 description: Convention for splitting a product's docs, design system, frontend(s), and backend(s) into separate, independently-replaceable repos under one flat workspace.
+timestamp: 2026-08-19
 ---
 
 # Multi-Repo Workspace Structure
