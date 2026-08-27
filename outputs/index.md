@@ -16,3 +16,4 @@ generated files.
 | Output | Specifies |
 |---|---|
 | [Artifact Adoption Ledger](artifact-adoption-ledger.md) | A project-local record of which toolkit artifacts a project uses, its adoption status, and any deliberate deviation. |
+| [Findings Log](findings-log.md) | The append-only, update-in-place log each of the two learning-loop approaches keeps per adopting repository. |

@@ -18,8 +18,23 @@ follows [Semantic Versioning](https://semver.org/).
   decision, or blocked) before any of it is decomposed into Stage 0
   notes or milestone entries, so nothing is silently dropped, silently
   renamed, or silently padded with invented scope.
+- `outputs/findings-log.md`: the concrete, shared file shape
+  (`findings/product-use.md`, `findings/working-method.md`) that makes
+  the two learning-loop approaches operational rather than only
+  descriptive — append-only, entries updated in place through an explicit
+  set of lifecycle statuses derived from each loop's own Method steps.
+- `findings/working-method.md` and `findings/product-use.md`: this
+  toolkit's own two logs, as the reference implementation. The former's
+  first entry migrates the Codex `apply_patch`/bubblewrap-namespace
+  finding from the workspace root's `BUGS.md` (now removed — one durable
+  source of truth inside a real repository, not a loose root file).
 
 ### Changed
+- `approaches/working-method-learning-loop.md` and `approaches/product-
+  use-learning-loop.md` each gained a concrete `Status` value list in
+  their Outputs section, derived from and explicitly mapped to their
+  existing Method steps and outcomes, and now point at
+  `outputs/findings-log.md` for the file they produce.
 - `approaches/working-method-learning-loop.md`'s Method now states the
   immediacy trigger for step 1 explicitly: record an observation as it
   happens, not at session wrap-up.
