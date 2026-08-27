@@ -35,6 +35,7 @@ silently editing it away.
 | 10 | Practices worth watching, not yet rules. |
 | 11 | Work is scoped as initiatives, decomposed into milestones and deliverables. |
 | 12 | Before every commit, check for what should not be in it. |
+| 13 | An ID is never referenced without its title. |
 
 Full text, rationale, and the evolving "Learnings" record live in
 `prototyping-system.md`. This index does not restate rule content; if a

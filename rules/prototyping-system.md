@@ -257,6 +257,31 @@ gitignored going forward, or handled some other way, and guessing wrong in
 either direction (leaking a secret, or silently losing a file the human
 meant to keep) is worse than a short pause to confirm.
 
+## 13. An ID is never referenced without its title
+
+A milestone, deliverable, phase, or any other planning-unit ID (`M1`,
+`DV-2`, `kickoff-M3`, `Phase 9`, or any other scheme a project uses) is
+meaningless on its own to anyone who isn't holding the full index in
+their head. State the title alongside the ID every time it's introduced
+or referenced — in prose, a proposal, a review entry, a status update, a
+handoff — not just "DV-2" but "DV-2, Hosted Apertus path proven and
+provider economics decided." A table row where the title already sits in
+an adjacent column is the one place a bare ID is fine.
+
+This matters most exactly where it's easiest to get wrong: a workspace
+running several numbering schemes at once (see the disposition-table
+practice of qualifying every source-specific ID, e.g. `kickoff-M3`, so
+schemes don't collide) is also the workspace where a human tracking a
+multi-agent session has the least chance of holding every scheme's titles
+in memory. Re-pairing the title costs one clause; making a human stop and
+ask "which one was that again" costs the whole thread of the conversation.
+
+**Why this is its own rule, not folded into rule 11:** rule 11 defines
+what a milestone or deliverable *is*; this rule is about how it's
+*referred to* once it exists — a different failure mode (context lost
+through compression in conversation, not scope lost through ambiguity in
+definition).
+
 ---
 
 ## Learnings — evolving, not fixed
@@ -266,6 +291,19 @@ changed. The general process for observing, recording, and promoting a
 working-method lesson, whether or not it ends up here, is
 `approaches/working-method-learning-loop.md`; this section is where that
 process's output lands when the promoted artifact is a rule.
+
+**2026-08-27 — Rule 13 added: bare IDs lose a human tracking a
+multi-agent session.** A human collaborator reviewing a fast-moving
+sequence of milestone/deliverable handoffs across several colliding
+numbering schemes at once reported losing track whenever an ID was
+mentioned bare, with no title attached — correctly: a bare ID is only
+legible to whoever is holding the full index in memory, and a human
+reading a running conversation isn't. This was a clean, generalizable
+working-method observation on first occurrence, not something that
+needed a second instance to compare against, since the underlying cause
+(compression of a reference down to an opaque token) applies to any
+project using this toolkit's Initiative/Milestone/Deliverable model, not
+just the one where it was noticed.
 
 **2026-08-26: Patterns become Approaches inside a full artifact model.**
 The rules-versus-patterns split from the previous entry turned out to be

@@ -27,6 +27,11 @@ follows [Semantic Versioning](https://semver.org/).
   unfiled impulse belongs while it waits: a dated note inside a real
   repository, never a loose file at a workspace root with no repository
   of its own.
+- `rules/prototyping-system.md` rule 13: an ID (milestone, deliverable,
+  phase, or any other planning-unit reference) is never mentioned bare —
+  its title goes with it every time, not just at first definition. Added
+  after a human collaborator lost track of a fast-moving multi-agent
+  handoff sequence because IDs kept appearing without their titles.
 
 ## [1.0.0] - 2026-08-26
 
