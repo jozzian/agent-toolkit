@@ -2,7 +2,7 @@
 type: Index
 title: Routines
 description: Catalog of self-contained, task-specific instruction sets that can be invoked in a local agent or pasted into an AI chat.
-timestamp: 2026-08-26
+timestamp: 2026-09-11
 ---
 
 # Routines
@@ -20,3 +20,6 @@ A routine does not depend on an approach, a rule, or another routine to
 make sense on its own. Where a routine's output feeds into a staged
 approach, or a rule names a routine as its enforcement mechanism, that
 link is stated in the other file; the routine itself stays self-contained.
+
+To write a new routine, start from
+[conventions/templates/routine.md](../conventions/templates/routine.md).

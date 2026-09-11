@@ -2,7 +2,7 @@
 type: Index
 title: Approaches
 description: Catalog of reusable ways of working that a human and an AI apply together across this toolkit.
-timestamp: 2026-08-26
+timestamp: 2026-09-11
 ---
 
 # Approaches
@@ -33,3 +33,6 @@ Approaches are expected to be fed and refined over time, not written
 complete on day one. `rules/prototyping-system.md` states the invariants
 these approaches operate under; an approach that only restates a rule
 should link to it instead.
+
+To write a new approach, start from
+[conventions/templates/approach.md](../conventions/templates/approach.md).
