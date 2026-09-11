@@ -2,7 +2,7 @@
 type: Index
 title: Rules
 description: Stable numbering contract and concise catalog for the invariant rules in prototyping-system.md.
-timestamp: 2026-08-26
+timestamp: 2026-09-11
 ---
 
 # Rules
@@ -41,3 +41,6 @@ Full text, rationale, and the evolving "Learnings" record live in
 `prototyping-system.md`. This index does not restate rule content; if a
 one-line summary above drifts from that file's actual text, the file is
 authoritative.
+
+To write a new rule, start from
+[conventions/templates/rule.md](../conventions/templates/rule.md).
