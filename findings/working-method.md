@@ -192,3 +192,69 @@ not inside this toolkit repository:
   hand off to Claude Code, note the review-independence cost explicitly")
   is a reasonable next step once someone has capacity to draft it, not
   done as part of this migration.
+
+---
+
+## [2026-09-12] The issue execution loop holds up when the deliverable is a runnable tool, but review shifts from prose to behavior
+Status: open
+Context: general, observed on the third run of the delegation loop (JOZ-179, the Repo Guardian scanner core); prior runs JOZ-170 and JOZ-177 delivered convention and template documents
+
+The linear-project-management skill's issue execution loop (clone,
+parent reads canonical files first, delegate with a self-contained
+brief, parent verifies independently, commit after approval) ran a
+third time, and for the first time the deliverable was software: a
+scanner CLI with generated test fixtures, acceptance assertions, and
+a redaction guarantee, rather than an OKF document. The loop's shape
+survived unchanged; what changed is the content of each step.
+
+What carried over without modification:
+
+- Naming the key design decision in the brief (wrap gitleaks versus
+write detection from scratch) produced a written, argued decision
+record with the rejected alternative named, the same effect it had
+on JOZ-170's closed-enum decision.
+- The parent-reads-first rule still applied, but the canonical files
+to read moved: for a tool, the prior art (gitleaks, truffleHog v3,
+GitHub secret scanning) and the engine's actual `--help` output
+replace README and conventions as the ground truth the review is
+judged against.
+- The subagent self-report remained a self-report. Its structural
+claims were re-verified with independent commands, exactly as the
+loop prescribes.
+
+What changed when the deliverable became runnable:
+
+- Verification became executable rather than textual. The review
+re-ran the acceptance suite from a clean fixture regeneration
+(25 of 25 assertions passed) and re-derived the redaction proof
+independently: planted values were extracted from the fixture's own
+git history and grepped against every byte of scanner output. For a
+document, review is grep plus reading; for a tool, review is
+running the thing and checking its output against evidence the tool
+itself did not produce. The bar is higher and cheaper to meet at the
+same time, because a passing suite is stronger evidence than a
+well-argued paragraph.
+- The brief needed an environment section a document brief never
+needed: which engine version was installed where, which Python,
+PEP 668 constraints, what must not be installed. Ambiguity about
+the environment turns into wasted subagent cycles, while ambiguity
+about prose turns into a rewording.
+- A negative guarantee (never emit the secret value) is a first-class
+acceptance criterion for a tool, and it must be verified twice:
+behaviorally (grep the output) and structurally (read the code path
+that could leak). Documents have no equivalent failure mode.
+- Test fixtures with secret-shaped content required an explicit
+generation strategy (scripted, seeded, gitignored) so the main repo
+never holds files that a future scanner run would flag. A tool's
+test data is itself part of the tool's threat model.
+
+Open question for the Determine step: whether any of this generalizes
+into the loop's own reference material (a short "when the deliverable
+is a tool" addendum to the execution-loop notes in the
+linear-project-management skill), or whether one data point is not
+yet enough. Recorded now, triaged later per the loop's own rule: do
+not promote off one instance.
+
+### Updates
+- [2026-09-12] Recorded during the JOZ-179 run itself, before commit,
+per the loop's step 8 (close the learning loop in the same run).

@@ -7,6 +7,16 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- `findings/working-method.md`: a new entry, recording what changed
+  in the issue execution loop on its third run, when the deliverable
+  was a runnable tool (the JOZ-179 Repo Guardian scanner) instead
+  of a convention document: verification becomes executable (re-run
+  the acceptance suite, re-derive redaction proofs from evidence
+  the tool did not produce), the brief needs an environment section,
+  negative guarantees need both behavioral and structural
+  verification, and secret-shaped test fixtures need a scripted,
+  gitignored generation strategy. Status `open`; promotion decision
+  deliberately deferred (do not promote off one instance).
 - `conventions/pr-description.md`: the house style for pull request
   descriptions, generalized from PR #1, which was written ad hoc with
   sections What / Placement decision / Verification and passed review
