@@ -7,6 +7,38 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- `conventions/pr-description.md`: the house style for pull request
+  descriptions, generalized from PR #1, which was written ad hoc with
+  sections What / Placement decision / Verification and passed review
+  without the structure being defined anywhere. Mandatory sections are
+  What (the change at the unit of decision, plus provenance the diff
+  cannot show), Verification (claims backed by checks actually run,
+  with real output), and Metadata (Linear ID, branch, commit range,
+  diff stat, so the body stands alone outside GitHub's UI, which does
+  not survive into the Linear result block or a terminal view).
+  Decisions is mandatory only when the PR makes a contestable
+  placement or model-level choice; a ritual empty
+  section is how templates get filled with filler. The file also fixes
+  the division of labor between the three records: the PR body serves
+  the reviewer now, the commit message (imperative subject, rationale
+  prose, `Linear:` trailer, and the GitHub noreply commit identity,
+  never a personal name or email, after a real identity leaked into
+  this repo's history) is the permanent record in git history,
+  and the Linear issue carries the four-part agent brief plus a dated
+  result block appended after the PR. Written spec-shaped, like
+  `conventions/okf.md` and `conventions/release-process.md`, rather
+  than standard-shaped like `conventions/repo-structure.md`: its
+  deliverable is a copyable format with an explicit scope and
+  exemptions, not an organizational layout, and a convention defining
+  a format should carry the format as its spec.
+- `.github/pull_request_template.md`: the copyable skeleton the
+  convention above prescribes, at the path GitHub prefills into every
+  new PR body. It is a tool-required format at a tool-required path,
+  exempt from OKF frontmatter the same way `agent-config/` tool files
+  are, and `conventions/pr-description.md` states that exemption
+  explicitly. Guidance lives in HTML comments so the filled-in body
+  stays clean; every line earns its place, since a skeleton long
+  enough to be a chore gets filled with noise instead of information.
 - `conventions/templates/`: a starting skeleton for each of the five
   authored artifact kinds (`rule.md`, `approach.md`, `routine.md`,
   `convention.md`, `output.md`, plus `templates/index.md`), each derived
