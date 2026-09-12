@@ -2,7 +2,7 @@
 type: Index
 title: Outputs
 description: Catalog of required shapes for recurring deliverables that this toolkit specifies but does not generate.
-timestamp: 2026-08-26
+timestamp: 2026-09-11
 ---
 
 # Outputs
@@ -17,3 +17,6 @@ generated files.
 |---|---|
 | [Artifact Adoption Ledger](artifact-adoption-ledger.md) | A project-local record of which toolkit artifacts a project uses, its adoption status, and any deliberate deviation. |
 | [Findings Log](findings-log.md) | The append-only, update-in-place log each of the two learning-loop approaches keeps per adopting repository. |
+
+To specify a new output, start from
+[conventions/templates/output.md](../conventions/templates/output.md).

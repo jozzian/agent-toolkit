@@ -7,6 +7,22 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- `conventions/templates/`: a starting skeleton for each of the five
+  authored artifact kinds (`rule.md`, `approach.md`, `routine.md`,
+  `convention.md`, `output.md`, plus `templates/index.md`), each derived
+  from the section structure the canonical example of that kind actually
+  uses rather than an idealized invention, with filling-in guidance and
+  links back to the examples. Placement decision: templates live under
+  `conventions/`, typed `Convention`, instead of a new top-level
+  `templates/` artifact kind. A template is a shared standard for how a
+  file of each kind gets structured, which is exactly what a convention
+  is; making it a seventh kind would have reopened the closed `type`
+  list in `conventions/okf.md` (which explicitly routes non-fitting
+  files to an existing directory before growing the model), forced the
+  README's six-kind model to seven, and added model surface for content
+  that no consumer cites or adopts the way they adopt a rule or an
+  approach. No template exists for `agent-config/`, whose files carry
+  their own tool's format, not an OKF skeleton.
 - `approaches/review-protocol.md`: a file-based handoff protocol
   (`reviews/next-to-execute.md`, `reviews/log.md`) for a genuinely
   separate agent session to review a plan or a diff before work
@@ -30,6 +46,10 @@ follows [Semantic Versioning](https://semver.org/).
   source of truth inside a real repository, not a loose root file).
 
 ### Changed
+- `rules/index.md`, `approaches/index.md`, `routines/index.md`,
+  `outputs/index.md`, and `conventions/index.md`: each gained a pointer
+  to its kind's template under `conventions/templates/`, so a reader who
+  lands in any catalog can find the skeleton without hunting for it.
 - `approaches/working-method-learning-loop.md` and `approaches/product-
   use-learning-loop.md` each gained a concrete `Status` value list in
   their Outputs section, derived from and explicitly mapped to their
