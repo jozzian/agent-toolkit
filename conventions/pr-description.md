@@ -88,7 +88,7 @@ What each section must do, and why it is mandatory or conditional:
   diff already lists every file. Add only what the diff cannot show:
   where content was derived from, why a piece exists, and what the PR
   deliberately does not do. PR #1's provenance notes ("derived from
-  `rules/prototyping-system.md`") earn this rule: that fact appears
+  `rules/rules-for-prototyping.md`") earn this rule: that fact appears
   nowhere in the diff itself.
 - **Decisions: conditional.** Include the section when, and only
   when, the PR makes a placement or model-level choice a reviewer

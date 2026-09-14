@@ -11,7 +11,7 @@ The concrete file both `approaches/product-use-learning-loop.md` and
 `approaches/working-method-learning-loop.md` produce once a project adopts
 either loop. This file specifies the shared mechanics only; each loop's own
 file states which status values and classification apply to it, rather than
-restating this shape (rule 4 of `rules/prototyping-system.md`: single source
+restating this shape (rule 4 of `rules/rules-for-prototyping.md`: single source
 of truth per fact).
 
 ## Where it lives

@@ -1,13 +1,13 @@
 ---
 type: Rule
-title: Prototyping & Coding System — Rules
+title: Rules for Prototyping
 description: Product-agnostic rules for AI-supported prototyping and coding, derived from real process postmortems. General mechanics only — no product-specific naming or content.
 tags: [prototyping, coding-agent, process]
-timestamp: 2026-08-26
+timestamp: 2026-08-31
 status: adopted — general, cross-cutting rules. Rule numbers are stable and may be cited by number from consuming projects; do not renumber when editing.
 ---
 
-# Prototyping & Coding System — Rules
+# Rules for Prototyping
 
 Derived from process postmortems (not code reviews) of real AI-coding-agent
 sessions. Each postmortem asked what should have been done differently in
@@ -32,6 +32,15 @@ artifact types (approaches, routines, conventions, outputs, agent
 configuration) are cataloged from the repository's own `README.md`; see
 `rules/index.md` for this file's own numbering contract and a one-line
 catalog of the rules below.
+
+`rules/` is a directory, not a single file: this is the general,
+cross-cutting set, scoped to prototyping and coding. A different domain
+with its own postmortem history and its own invariants — project
+management, for one candidate — earns its own sibling file (for example
+`rules-for-project-management.md`) with its own name and its own
+numbering, rather than being folded into this one just because it also
+produces rules. `rules/index.md` catalogs every file in the directory,
+not only this one.
 
 A repeatable way of working that a human and an AI apply together,
 whether staged, continuous, or coordination-shaped, is an *approach*
@@ -199,30 +208,19 @@ Revisit both once there's more than one instance to compare.
 
 ---
 
-## 11. Work is scoped as initiatives, decomposed into milestones and deliverables
+## 11. Work is scoped against a goal, decomposed into initiatives, milestones, deliverables, and tasks
 
-Three nested planning units, largest to smallest:
+The planning vocabulary itself — what a Goal, Initiative, Milestone,
+Deliverable, and Task each are, how they nest, and a worked example — is
+defined in `conventions/project-management.md` rather than here, since
+it's a shared naming standard applied consistently across projects (the
+`conventions/` artifact type), not an invariant. This rule's number stays
+reserved as a pointer rather than being removed, since it may already be
+cited by number from a consuming project — the same treatment rule 1
+gives the design pipeline.
 
-```
-Initiative
-└── Milestone
-    └── Deliverable
-```
-
-- **Initiative** — the general topic or iteration being worked on, scoped
-  implicitly in its own name rather than left open-ended (e.g. "Cross-
-  platform backups for local backups," not "Backups"). Framed with a
-  short definition doc before work starts — see Stage 0 of the
-  `design-pipeline` skill for the field list and which fields gate the
-  start of design work versus which are filled in as they become real.
-- **Milestone** — a moment of delivered value inside an initiative: a
-  named outcome that can be checked yes-reached or no-not-yet without
-  ambiguity, backed by at least one deliverable that would prove it. An
-  initiative produces one or more.
-- **Deliverable** — the concrete, reviewable output the team builds on
-  the way to a milestone. A milestone decomposes into one or more.
-  Deliverables are the execution slice (what a phase, task, or ticket
-  list actually tracks) — not the planning unit itself.
+What stays here, because it's a behavior requirement rather than a
+definition:
 
 Every milestone states what is explicitly **not** in scope, not just what
 is. The non-scope list is the load-bearing half: it's what stops a
@@ -282,6 +280,45 @@ what a milestone or deliverable *is*; this rule is about how it's
 through compression in conversation, not scope lost through ambiguity in
 definition).
 
+## 14. Never write a real secret to a file
+
+When a task requires a credential that has to live in a plaintext file
+(an FTP password, a database URL, an API key a tool reads from disk
+rather than a header), do not type the real value into that file. Create
+the file with a placeholder instead (`FTP_PASSWORD=changeme`, or a
+`.env.example` with no real `.env` alongside it), and ask the human to
+fill in the real value in their own editor. The real value should never
+pass through the agent's context or a tool call.
+
+A credential-injection proxy can protect HTTP-header-based authentication
+without the raw secret touching agent context, but that only covers
+HTTP. Protocols with no header to inject into (FTP, `.pgpass`, SSH
+config) have no equivalent, so the human has to be the one who types the
+real value.
+
+Treat "create the template and tell the human what to fill in" as the
+deliverable whenever a task needs a credential file, not "create the
+finished file."
+
+## 15. Verify decommissioned artifacts are actually gone
+
+When removing a feature or integration because it is no longer used, do
+not stop at removing the code or config that referenced it. Check
+explicitly whether the artifact itself (the credential file, the
+generated output, the cache) still exists on disk, and remove or flag it
+too.
+
+This happened concretely: an FTP-deploy setup was removed and its
+`.gitignore` entry for `.env` was removed along with it, on the reasoning
+that no credential file existed anymore. The actual `.env` file, holding
+a real password, was never deleted, and sat ungitignored for over a
+week.
+
+Add "confirm the artifact is gone, not just its reference" as an
+explicit checklist item whenever a task involves removing or migrating
+away from something that touched secrets, generated files, or external
+services.
+
 ---
 
 ## Learnings — evolving, not fixed
@@ -291,6 +328,40 @@ changed. The general process for observing, recording, and promoting a
 working-method lesson, whether or not it ends up here, is
 `approaches/working-method-learning-loop.md`; this section is where that
 process's output lands when the promoted artifact is a rule.
+
+**2026-09-06 — Rules 14 and 15 added: secret files need a human in the
+loop, and decommissioning needs to check the disk, not just the
+references.** Both trace to the same category of incident: a real
+credential written into a plaintext file by an agent, and a stale
+credential file left behind after its feature was decommissioned because
+only the code referencing it was checked, not the filesystem. Rule 14
+states that a credential requiring a plaintext file (no HTTP header to
+inject into) has to be typed by the human, not the agent. Rule 15 states
+that removing a feature requires checking whether the artifact it
+produced, especially a credential file, still exists on disk, not just
+whether anything still references it. See `routines/secret-scan.md` for
+the self-contained check these rules point to.
+
+**2026-08-31 — File renamed to `rules-for-prototyping.md`; rule 11
+becomes a pointer; vocabulary extended with Goal and Task.** Two separate
+problems, fixed together because the second was found while fixing the
+first. First: this file's old name, `prototyping-system.md`, didn't say
+which of the toolkit's several rule domains it held, and read as if
+`rules/` could only ever hold one file — the wrong signal for a directory
+meant to gain sibling files (e.g. a project-management rules set) over
+time. Renamed to name the domain instead of implying there's only one.
+Second: rule 11 defined Initiative, Milestone, and Deliverable inline and
+then stopped, the same shape rule 1 had before it became a pointer — a
+definition-heavy rule with nowhere to grow, decided at the time nobody
+had asked to grow it. Given the same treatment: the vocabulary moved to
+`conventions/project-management.md`, extended with Goal (the long-term
+outcome Initiatives serve) and Task (the durable-work unit beneath
+Deliverable, previously left as an unnamed gap between "deliverable" and
+"a phase, task, or ticket list" in the old text), and this repository's
+own artifact-model migration (`CHANGELOG.md`'s `[1.0.0]` entry) used as
+the worked example instead of an invented one. Rule 11 keeps the one part
+of its old text that was actually an invariant, not a definition: every
+milestone must state its non-scope.
 
 **2026-08-27 — Rule 13 added: bare IDs lose a human tracking a
 multi-agent session.** A human collaborator reviewing a fast-moving

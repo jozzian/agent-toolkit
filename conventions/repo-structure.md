@@ -59,7 +59,7 @@ given repo count is provably optimal for every product — revisit the
 boundary if a repo's own internal engine/product split hardens into two
 things that change on different schedules (a real signal to split
 further), and record that decision explicitly (rule 7 of
-`prototyping-system.md`) rather than letting it accrete.
+`rules-for-prototyping.md`) rather than letting it accrete.
 
 ## Applying this to a new product
 
@@ -70,4 +70,4 @@ further), and record that decision explicitly (rule 7 of
 3. Record the per-product inventory (which repos exist, their GitHub
    remotes, local paths) once, in the product's own docs repo — not here.
    This file states the convention; the product states its own facts
-   (rule 4 of `prototyping-system.md`: single source of truth per fact).
+   (rule 4 of `rules-for-prototyping.md`: single source of truth per fact).

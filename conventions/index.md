@@ -17,3 +17,4 @@ releasing work, applied consistently rather than decided fresh each time.
 | [Release Process](release-process.md) | The `VERSION` and `CHANGELOG.md` convention this toolkit uses for its own releases. |
 | [PR Description](pr-description.md) | The house style for pull request descriptions: required body sections, the PR-body versus commit-message versus Linear split, and the metadata block, generalized from PR #1. |
 | [Templates](templates/index.md) | Starting skeletons for each artifact kind (rule, approach, routine, convention, output), each derived from the canonical example of its kind. |
+| [Project Management Vocabulary](project-management.md) | Goal, Initiative, Milestone, Deliverable, and Task — the planning vocabulary rule 11 of `rules/rules-for-prototyping.md` points to instead of defining inline. |

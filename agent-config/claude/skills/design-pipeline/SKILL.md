@@ -9,7 +9,7 @@ This is Claude Code's discovery wrapper for the `design-pipeline`
 approach. The actual process — Stage 0 problem framing through Flows,
 Screens, Wireframes, and two hi-fi rounds — is defined once, at
 `approaches/design-pipeline.md` in this toolkit, not here (rule 4 of
-`rules/prototyping-system.md`: single source of truth per fact). Read
+`rules/rules-for-prototyping.md`: single source of truth per fact). Read
 that file for the stage sequence itself; this wrapper exists only
 because Claude Code's skill system looks for a file at exactly this
 path (`agent-config/claude/skills/<name>/SKILL.md`) and wouldn't

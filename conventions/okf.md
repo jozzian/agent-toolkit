@@ -139,5 +139,5 @@ Before publishing a file this convention applies to:
 Update the timestamp when making a material change, not on a typo fix.
 Review a file alongside the change it describes, not on a separate
 schedule. A file reviewed only "sometimes later" is how documentation
-drifts from what is actually true (see `rules/prototyping-system.md` on
+drifts from what is actually true (see `rules/rules-for-prototyping.md` on
 the doc-versus-app drift this convention exists partly to prevent).

@@ -39,7 +39,7 @@ Each entry in the ledger records:
   or git commit the entry was last checked against.
 - **Date last reviewed**: when the entry was last confirmed accurate.
 - **Artifact**: the artifact's identifier or relative path within this
-  toolkit, for example `rules/prototyping-system.md#3` or
+  toolkit, for example `rules/rules-for-prototyping.md#3` or
   `approaches/design-pipeline.md`.
 - **Status**: one of `adopted`, `adapted`, `not-applicable`, or
   `review-needed`.
@@ -75,7 +75,7 @@ Date last reviewed: <YYYY-MM-DD>
 
 | Artifact | Status | Where/how applied | Deviation | Last verified |
 |---|---|---|---|---|
-| rules/prototyping-system.md#3 | adopted | .claude/settings.json SessionStart hook | none | 2026-08-26 |
+| rules/rules-for-prototyping.md#3 | adopted | .claude/settings.json SessionStart hook | none | 2026-08-26 |
 | approaches/design-pipeline.md | adapted | docs/design/ | v2 hi-fi round skipped for low-risk screens | 2026-08-20 |
 | conventions/repo-structure.md | not-applicable | n/a | single-repo project | 2026-08-19 |
 

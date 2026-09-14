@@ -30,7 +30,7 @@ artifacts. A heading is only used where it adds information; not every
 approach needs every heading.
 
 Approaches are expected to be fed and refined over time, not written
-complete on day one. `rules/prototyping-system.md` states the invariants
+complete on day one. `rules/rules-for-prototyping.md` states the invariants
 these approaches operate under; an approach that only restates a rule
 should link to it instead.
 
