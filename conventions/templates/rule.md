@@ -1,7 +1,7 @@
 ---
 type: Convention
 title: Rule Template
-description: Starting skeleton for a rule file, derived from the actual structure of rules/prototyping-system.md, with the numbering contract stated up front.
+description: Starting skeleton for a rule file, derived from the actual structure of rules/rules-for-prototyping.md, with the numbering contract stated up front.
 timestamp: 2026-09-11
 tags: [template, rules]
 ---
@@ -10,13 +10,13 @@ tags: [template, rules]
 
 A rule is a stable, numbered invariant that governs work regardless of
 stage or task. This skeleton is derived from
-`rules/prototyping-system.md`, the canonical example. In this toolkit,
+`rules/rules-for-prototyping.md`, the canonical example. In this toolkit,
 new rules are added to that file rather than started as new files; use
 this skeleton when a consuming project needs its own rule file, or when
 reading the structure a rule entry must have.
 
 The canonical example to study before writing:
-[rules/prototyping-system.md](../../rules/prototyping-system.md).
+[rules/rules-for-prototyping.md](../../rules/rules-for-prototyping.md).
 
 ## Template
 
@@ -77,7 +77,7 @@ without a record here of why it changed.>
   Learnings entry in the same edit, per
   [approaches/working-method-learning-loop.md](../../approaches/working-method-learning-loop.md).
 - **Adding a rule to this toolkit** means three edits in one change:
-  the numbered section in `rules/prototyping-system.md`, a Learnings
+  the numbered section in `rules/rules-for-prototyping.md`, a Learnings
   entry in the same file, and a catalog line in `rules/index.md`.
 - Follow the house prose style (see
   [routines/sharpen.md](../../routines/sharpen.md)): lead with the

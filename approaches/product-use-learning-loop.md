@@ -50,7 +50,7 @@ It applies continuously, not at one fixed gate.
    - **Immediate fix**: cheap, safe, and within what is already being
      touched.
    - **Planned work**: folded into a milestone (rule 11 of
-     `rules/prototyping-system.md`) if it is actually part of that
+     `rules/rules-for-prototyping.md`) if it is actually part of that
      milestone's scope, not a new one invented on the spot.
    - **Explicit deferral**: named, with a reason it is not being picked
      up now.
@@ -121,7 +121,7 @@ to that one-time check, not a duplicate of it.
 - `approaches/toolkit-intake.md`: the general front door a friction
   report may arrive through before it is recognized as belonging to this
   loop specifically.
-- `rules/prototyping-system.md` rules 6 and 11.
+- `rules/rules-for-prototyping.md` rules 6 and 11.
 - `approaches/idea-to-mvp.md`: the Delivery phase this loop feeds small,
   real findings into.
 - `approaches/design-pipeline.md`: ongoing iteration on a shipped screen

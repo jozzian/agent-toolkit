@@ -49,7 +49,7 @@ Anything true across more than one session's scope — a cross-cutting
 plan, a shared vocabulary, a terminology decision — is stated once, in
 one place (often a docs repo or scope), and every other session
 references it by name or ID rather than restating or re-deciding it
-locally (rule 4 of `rules/prototyping-system.md`). This is what lets
+locally (rule 4 of `rules/rules-for-prototyping.md`). This is what lets
 independent sessions, each with no visibility into the others' history,
 stay coherent: they share a written fact, not a memory.
 
@@ -80,5 +80,5 @@ the missing capability has to close the loop before that work is trusted.
 
 - `conventions/repo-structure.md`: the boundary this approach assumes
   already exists.
-- `rules/prototyping-system.md` rules 2 and 4: the two invariants this
+- `rules/rules-for-prototyping.md` rules 2 and 4: the two invariants this
   approach applies at multi-session scale.

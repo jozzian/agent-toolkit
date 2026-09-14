@@ -74,7 +74,7 @@ scope beyond what was actually said.
    file only where no existing one fits, otherwise an addition or an
    amendment to an existing artifact.
 6. **Apply the change, and record why.** For a rule, that means an entry
-   in `rules/prototyping-system.md`'s own "Learnings" section, since rule
+   in `rules/rules-for-prototyping.md`'s own "Learnings" section, since rule
    numbers are stable and never renumbered. For any other artifact type,
    a short line in that file's own history, or in the toolkit's
    `CHANGELOG.md`, is enough.
@@ -97,7 +97,7 @@ left unclassified.
   `approaches/working-method-learning-loop.md`: the two friction-specific
   loops this approach routes to once an impulse turns out to fit one of
   them.
-- `rules/prototyping-system.md` rule 11: an impulse that becomes a new
+- `rules/rules-for-prototyping.md` rule 11: an impulse that becomes a new
   initiative still needs its own Stage 0 framing; this approach only
   covers getting the raw impulse safely to that point, not the framing
   itself.

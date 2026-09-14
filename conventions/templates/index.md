@@ -22,7 +22,7 @@ skeleton, fill every slot, register the new file in its kind's
 
 | Template | For writing | Derived from |
 |---|---|---|
-| [Rule](rule.md) | A stable, numbered invariant | `rules/prototyping-system.md` |
+| [Rule](rule.md) | A stable, numbered invariant | `rules/rules-for-prototyping.md` |
 | [Approach](approach.md) | A reusable way of working, any of the four kinds | `approaches/review-protocol.md`, `approaches/idea-to-mvp.md` |
 | [Routine](routine.md) | A self-contained instruction set, pasteable into any chat | `routines/sharpen.md` |
 | [Convention](convention.md) | A shared standard, including the spec-shaped variant | `conventions/repo-structure.md`, `conventions/okf.md` |

@@ -21,7 +21,7 @@ classification) are owned by the approaches that produce it, while the
 adoption ledger specifies every field itself. Pick deliberately which
 facts this specification owns and which the producing approach owns,
 and point at the owner rather than restating (rule 4 of
-`rules/prototyping-system.md`: single source of truth per fact).
+`rules/rules-for-prototyping.md`: single source of truth per fact).
 
 ## Template
 

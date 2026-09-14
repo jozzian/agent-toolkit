@@ -42,7 +42,7 @@ behind each type.
 - **A local coding agent reads or is pointed at a file.** Where the
   agent's own project can reference this repository, point it there
   instead of copying content into the project (rule 4 of
-  `rules/prototyping-system.md`: single source of truth per fact).
+  `rules/rules-for-prototyping.md`: single source of truth per fact).
 - **An AI chat session uses an artifact with no access to this
   repository.** A self-contained routine (see `routines/index.md`) can be
   pasted directly into the chat. This is why routines carry everything
@@ -68,8 +68,8 @@ integration to add, not ahead of one existing.
    example `<workspace>/agent-toolkit` next to
    `<workspace>/my-product-app`.
 2. Point your workspace or product's own agent-facing instruction file
-   (see rule 8 of `rules/prototyping-system.md`) at
-   `agent-toolkit/rules/prototyping-system.md` instead of restating its
+   (see rule 8 of `rules/rules-for-prototyping.md`) at
+   `agent-toolkit/rules/rules-for-prototyping.md` instead of restating its
    rules. Reference it; do not copy it.
 3. Skim `approaches/index.md`, `conventions/index.md`, and
    `outputs/index.md`, and adopt whichever artifacts actually apply. Not
@@ -93,7 +93,7 @@ updates. If you are proposing a change, edit and commit here directly
 rather than in a product session, then pull the update into consuming
 projects.
 
-Rule numbers in `rules/prototyping-system.md` are stable and may be cited
+Rule numbers in `rules/rules-for-prototyping.md` are stable and may be cited
 by number from consuming projects; a citing project should note which
 `agent-toolkit` version (`VERSION` or git tag) it was written against,
 since rule numbers do not shift but rule content can evolve. Other

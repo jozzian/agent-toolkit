@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Read-only repo-state check for prototyping-system.md rule 3 (session-boundary
+# Read-only repo-state check for rules-for-prototyping.md rule 3 (session-boundary
 # check as a skill precondition, not a memory rule). Never writes, never runs
 # a destructive git command.
 #

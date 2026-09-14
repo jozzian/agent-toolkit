@@ -20,7 +20,7 @@ its quality checklist in place of the sections below.
 
 A convention states the standard once, here, and consumers reference
 this file rather than restating it (rule 4 of
-`rules/prototyping-system.md`: single source of truth per fact).
+`rules/rules-for-prototyping.md`: single source of truth per fact).
 
 ## Template
 

@@ -20,7 +20,7 @@ start here and grow it (see Open questions) rather than backfilling every
 possible field up front.
 
 **Relationship to other files in this toolkit:** an "idea" here is the same
-thing as an Initiative in rule 11 of `rules/prototyping-system.md` — this
+thing as an Initiative in rule 11 of `rules/rules-for-prototyping.md` — this
 file is the lifecycle view of what an initiative passes through; rule 11
 is what its planning units (milestones, deliverables) look like once
 you're inside a phase. When Discovery's work includes building a
@@ -40,7 +40,7 @@ estimated cost, whether the MVP is actually ready to ship. An AI can draft
 the evidence, feasibility sketch, and readiness check that each gate
 needs, and must say plainly when a gate question cannot yet be answered
 rather than defaulting to an optimistic guess (rule 2 and rule 6 of
-`rules/prototyping-system.md`).
+`rules/rules-for-prototyping.md`).
 
 ## Overview
 
@@ -114,7 +114,7 @@ is not the same as one that was deliberately closed.
 **Goal:** turn the go decision into a shipped MVP.
 
 - **Planning** — turn Discovery's plan into real tasks and milestones (see
-  rule 11 of `rules/prototyping-system.md` for the
+  rule 11 of `rules/rules-for-prototyping.md` for the
   initiative/milestone/deliverable breakdown).
 - **Build & verify** — implement, test, review.
 - **Ready-to-ship check** — before calling it done: does it meet the
@@ -140,7 +140,7 @@ questions for what comes after.
   add one once there's a repeated, real need to calibrate how much of
   this process an idea's size warrants.
 - **Rules vs. approaches.** This file is a lifecycle-kind approach, as
-  distinct from a "rule" (an invariant) in `rules/prototyping-system.md`.
+  distinct from a "rule" (an invariant) in `rules/rules-for-prototyping.md`.
   That split is now explicit in the toolkit's artifact model; this note
   stays only as a pointer to `approaches/index.md` for the full
   classification.

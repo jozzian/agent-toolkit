@@ -36,7 +36,7 @@ answered, whether feedback on a wireframe or hi-fi round warrants another
 iteration, when a screen is done drifting and ready to freeze. An AI
 carries out drafting and updates inside a stage, and must flag rather
 than guess when a stage's own gate cannot yet be answered (rule 6 of
-`rules/prototyping-system.md`).
+`rules/rules-for-prototyping.md`).
 
 ## Before Stage 0: raw impulse intake
 
@@ -67,7 +67,7 @@ Before a raw batch becomes Stage 0 notes, milestone entries, or
      since there is nothing to describe as current yet.
    - **Naming or terminology**: anything renaming a screen, concept, or
      term. Triggers an explicit check against existing naming before
-     being scoped (rules 7 and 9 of `rules/prototyping-system.md`,
+     being scoped (rules 7 and 9 of `rules/rules-for-prototyping.md`,
      applied to product vocabulary rather than component vocabulary).
    - **Cross-cutting decision**: a change affecting multiple screens at
      once. Gets its own milestone rather than being folded into
@@ -88,7 +88,7 @@ Before a raw batch becomes Stage 0 notes, milestone entries, or
 Before any design artifact gets created, write a short Initiative note.
 Two tiers of fields — the first tier gates the start of Stage 1; the
 second fills in as it becomes real rather than being fabricated up front
-(rule 6 of `rules/prototyping-system.md`: every stage names its own open
+(rule 6 of `rules/rules-for-prototyping.md`: every stage names its own open
 questions — leaving a field explicitly open is better than a guessed
 answer).
 
@@ -203,7 +203,7 @@ long as the screen exists.
 
 ## Related artifacts
 
-This approach implements rule 1 of `rules/prototyping-system.md` (design
+This approach implements rule 1 of `rules/rules-for-prototyping.md` (design
 pipeline is local and sequential, before or alongside code); see that
 file for the general rules this stage sequence operates under, including
 why every stage's own output must name its open questions (rule 6), why

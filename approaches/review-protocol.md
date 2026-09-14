@@ -103,6 +103,6 @@ step; it does not close it.
   concrete mechanism for the environment-asymmetry and boundary-check
   concerns that approach raises at multi-session scale, specialized to
   the review moment specifically.
-- `rules/prototyping-system.md` rule 2: proposing before executing is
+- `rules/rules-for-prototyping.md` rule 2: proposing before executing is
   what makes a plan review possible in the first place. This protocol is
   how that proposal actually gets checked by a second party.

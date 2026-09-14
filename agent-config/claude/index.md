@@ -14,7 +14,7 @@ Code; it does not redefine any canonical artifact, it points to one.
 | File | Purpose |
 |---|---|
 | `settings.json` | Registers the `SessionStart` hook below with Claude Code. |
-| `session-start-repo-check.sh` | Implements rule 3 of `rules/prototyping-system.md` for Claude Code: a read-only repo-state check that runs automatically at the start of every session. |
+| `session-start-repo-check.sh` | Implements rule 3 of `rules/rules-for-prototyping.md` for Claude Code: a read-only repo-state check that runs automatically at the start of every session. |
 | `skills/design-pipeline/SKILL.md` | A thin wrapper so Claude Code discovers `approaches/design-pipeline.md` as a skill. It points to that file rather than duplicating it. |
 
 `skills/design-pipeline/` has no `index.md` of its own. Claude Code

@@ -70,7 +70,7 @@ gate questions.>
 <The files or entries this approach produces and where they live. If a
 produced file has a required shape specified under outputs/, point at
 that file rather than restating the shape (rule 4 of
-rules/prototyping-system.md: single source of truth per fact). Where
+rules/rules-for-prototyping.md: single source of truth per fact). Where
 entries carry a status, list the closed set of status values here,
 derived from the Method steps.>
 

@@ -15,6 +15,7 @@ repository.
 | Routine | What it does |
 |---|---|
 | [Sharpen](sharpen.md) | Cuts redundancy, filler, and AI-writing tells out of a piece of prose, and asks whether a proposed document needs to exist at all. |
+| [Secret Scan](secret-scan.md) | Scans a working tree for secret-shaped content at any point in a session, not just before a commit; prefers repo-guardian's `rg-scan` when available, falls back to a pattern grep, and checks whether each match is gitignored and whether it has ever been committed. |
 
 A routine does not depend on an approach, a rule, or another routine to
 make sense on its own. Where a routine's output feeds into a staged

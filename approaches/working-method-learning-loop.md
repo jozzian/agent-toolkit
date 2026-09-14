@@ -61,7 +61,7 @@ before there is a second instance to compare it against.
    approach, routine, convention, output, or agent configuration.
 6. **Apply** the change, and record why it changed in the artifact's own
    rationale mechanism (for rules, the "Learnings" section of
-   `rules/prototyping-system.md`).
+   `rules/rules-for-prototyping.md`).
 7. **Check** future use before treating the lesson as established. A
    promotion is provisional until it has been used again.
 
@@ -118,7 +118,7 @@ runs for as long as the human and the AI work together.
 - `approaches/toolkit-intake.md`: the general front door an observation
   may arrive through before it is recognized as belonging to this loop
   specifically.
-- `rules/prototyping-system.md`: the "Learnings" section is where a
+- `rules/rules-for-prototyping.md`: the "Learnings" section is where a
   promoted rule's rule-specific rationale lives; this approach is the
   general process that produces that entry, and the canonical place to
   look for how a working-method lesson gets captured and promoted,

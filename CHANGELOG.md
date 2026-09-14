@@ -7,6 +7,22 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- `conventions/project-management.md`: the Goal / Initiative / Milestone /
+  Deliverable / Task planning vocabulary, moved out of rule 11 of
+  `rules/rules-for-prototyping.md` and extended with Goal and Task (rule
+  11 previously stopped at Initiative/Milestone/Deliverable with nowhere
+  to grow), using this repository's own `[1.0.0]` artifact-model
+  migration as the worked example instead of an invented one.
+- `routines/secret-scan.md`: a self-contained routine for finding
+  secret-shaped content in a working tree at any point in a session, not
+  gated on a commit ever happening. Prefers repo-guardian's `rg-scan`
+  when available, falls back to a pattern grep otherwise.
+- `rules/rules-for-prototyping.md` rules 14 and 15: a credential that must
+  live in a plaintext file (no HTTP header to inject into) is typed by
+  the human, never the agent; and removing a feature requires checking
+  whether the artifact it produced (a credential file, generated output,
+  a cache) is actually gone from disk, not just whether anything still
+  references it.
 - `findings/working-method.md`: a new entry, recording what changed
   in the issue execution loop on its third run, when the deliverable
   was a runnable tool (the JOZ-179 Repo Guardian scanner) instead
@@ -88,6 +104,17 @@ follows [Semantic Versioning](https://semver.org/).
   source of truth inside a real repository, not a loose root file).
 
 ### Changed
+- `rules/prototyping-system.md` renamed to `rules/rules-for-prototyping.md`,
+  naming the domain it actually covers (prototyping and coding) instead of
+  implying `rules/` can only ever hold one file. Every in-repo and
+  cross-repo reference to the old filename updated to match. Rule numbers
+  did not change.
+- `rules/rules-for-prototyping.md` rule 11: now a pointer to
+  `conventions/project-management.md` for the Initiative/Milestone/
+  Deliverable/Goal/Task definitions, following the same treatment rule 1
+  already gives the design pipeline. Kept inline: the one part of the old
+  rule that was an invariant rather than a definition — every milestone
+  must state its own non-scope.
 - `rules/index.md`, `approaches/index.md`, `routines/index.md`,
   `outputs/index.md`, and `conventions/index.md`: each gained a pointer
   to its kind's template under `conventions/templates/`, so a reader who
@@ -104,7 +131,7 @@ follows [Semantic Versioning](https://semver.org/).
   unfiled impulse belongs while it waits: a dated note inside a real
   repository, never a loose file at a workspace root with no repository
   of its own.
-- `rules/prototyping-system.md` rule 13: an ID (milestone, deliverable,
+- `rules/rules-for-prototyping.md` rule 13: an ID (milestone, deliverable,
   phase, or any other planning-unit reference) is never mentioned bare —
   its title goes with it every time, not just at first definition. Added
   after a human collaborator lost track of a fast-moving multi-agent
@@ -156,7 +183,7 @@ follows [Semantic Versioning](https://semver.org/).
   which directories require an `index.md`. Every in-scope Markdown file
   in the repository brought into compliance with the corrected
   convention.
-- `rules/prototyping-system.md`: the rules-versus-patterns explanation
+- `rules/rules-for-prototyping.md`: the rules-versus-patterns explanation
   replaced with the artifact model and a link to `rules/index.md`. Rule 1
   now points to `approaches/design-pipeline.md`. Rule 3 reworded to state
   the session-boundary check as tool-independent, with the Claude Code
@@ -174,7 +201,7 @@ follows [Semantic Versioning](https://semver.org/).
 ## [0.3.0] - 2026-08-19
 
 ### Added
-- `rules/prototyping-system.md` rule 12 — before every commit, check for
+- `rules/rules-for-prototyping.md` rule 12 — before every commit, check for
   secrets/credentials, files that don't belong in version control, and
   leftover debug/scratch files; ask before committing rather than
   guessing whether to include or drop something found.
@@ -190,7 +217,7 @@ follows [Semantic Versioning](https://semver.org/).
 ## [0.1.0] - 2026-08-19
 
 ### Added
-- `rules/prototyping-system.md` — general rules 2-11 for AI-supported
+- `rules/rules-for-prototyping.md` — general rules 2-11 for AI-supported
   prototyping and coding, extracted from a prior product's process notes
   and generalized (product-specific incident detail left behind in that
   product's own repo).
