@@ -53,6 +53,26 @@ Decision rationale therefore appears in both the PR body and the
 commit message. That duplication is deliberate: one serves the review,
 the other survives it.
 
+## Disclosure boundary
+
+PR bodies and commit messages are public artifacts, written for a
+reviewer of this repository. They carry repo-facing facts, per the
+content requirements above, and nothing else. What they do not carry
+is incidental internal session detail: which tools happened to build
+or review the change, how review findings were triaged or rejected,
+plan or rate-limit particulars, host names, or personal workflow.
+That material belongs in the Linear issue's result block. A reviewer
+needs to know that an independent check ran and what it found, not
+the roster of tools that ran it, so the Verification section phrases
+checks tool-neutrally.
+
+One boundary case this repo hits regularly: process facts that are
+themselves the documented change. A finding entry about an agent
+tool's behavior, or a rule describing a specific hook, publishes
+those details as content, and the PR describing that change names
+them too. The exclusion targets session history leaking out beside
+the change, not the substance of the change.
+
 ## PR body spec
 
 Section order is fixed. The skeleton:
@@ -164,6 +184,9 @@ issue preserves what was asked alongside what was delivered.
 
 Before requesting review on a PR:
 
+- [ ] Body carries repo-facing facts only; incidental internal
+      session detail (builder/reviewer tool names, triage specifics,
+      hosts, plans) stays out, per the disclosure boundary section.
 - [ ] Body contains What, Verification, and Metadata, in that order,
       with Decisions present only if the PR makes a contestable
       placement or model-level choice.
