@@ -308,3 +308,48 @@ own rule about not promoting off one instance.
 
 ### Updates
 - [2026-09-15] Recorded during the run itself, before commit.
+
+---
+
+## [2026-09-15] Publishing a private process fact means publishing its shape, not its operating environment
+Status: open
+Context: general, observed while codifying the agent-brief convention
+and the write-agent-brief routine (PROJ-161) out of private operator
+notes
+
+The source material for this run was a set of private notes: a
+four-part brief anatomy, a ten-step kickoff skeleton, and worked
+examples, all written against one operator's actual environment.
+That environment showed up as host paths, a named credential
+mechanism, a roster of specific agent tools, plan and rate-limit
+references, and private skill file names. None of that particular
+content belongs in a public convention or routine, but the anatomy
+itself, the ordered steps, the division between invariant and
+issue-specific parts, does, and stayed intact across the rewrite.
+
+The boundary that did the actual work here was not "process facts
+are private." `conventions/pr-description.md` already establishes
+the opposite: a process fact that is itself the documented change
+publishes as content, name and all. The boundary that mattered was
+between the shape of a process and the operating environment of one
+operator running it. The shape, four parts in a fixed order, ten
+steps with six of them invariant, a short form that expands into a
+full form, is the convention; a cold reader in a different repository
+can use it as written. The operating environment, which directory a
+credential lives under, which specific tools built or reviewed a
+change, what subscription tier paid for a run, is a session particular
+that a cold reader cannot use and that exposes infrastructure if
+published. Every anonymization decision in this run reduced to asking
+which side of that line a given detail sat on, not whether the detail
+was, in the abstract, private.
+
+Lesson: when turning private operating notes into a public
+convention, keep the shape and drop the environment, and use "would a
+cold reader in a different repository need this to execute the
+process" as the test for which side a given detail falls on, rather
+than treating the whole source document as either fully publishable
+or fully off limits. Recorded now, triaged later per the loop's own
+rule about not promoting off one instance.
+
+### Updates
+- [2026-09-15] Recorded during the run itself, before commit.

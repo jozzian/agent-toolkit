@@ -2,7 +2,7 @@
 type: Index
 title: Routines
 description: Catalog of self-contained, task-specific instruction sets that can be invoked in a local agent or pasted into an AI chat.
-timestamp: 2026-09-11
+timestamp: 2026-09-15
 ---
 
 # Routines
@@ -16,6 +16,7 @@ repository.
 |---|---|
 | [Sharpen](sharpen.md) | Cuts redundancy, filler, and AI-writing tells out of a piece of prose, and asks whether a proposed document needs to exist at all. |
 | [Secret Scan](secret-scan.md) | Scans a working tree for secret-shaped content at any point in a session, not just before a commit; prefers repo-guardian's `rg-scan` when available, falls back to a pattern grep, and checks whether each match is gitignored and whether it has ever been committed. |
+| [Write Agent Brief](write-agent-brief.md) | Turns a vague task idea into a conforming four-part agent-executable brief, including the kickoff-message skeleton for handing the work to a fresh session or a different agent. |
 
 A routine does not depend on an approach, a rule, or another routine to
 make sense on its own. Where a routine's output feeds into a staged
