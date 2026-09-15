@@ -258,3 +258,53 @@ not promote off one instance.
 ### Updates
 - [2026-09-12] Recorded during the JOZ-179 run itself, before commit,
 per the loop's step 8 (close the learning loop in the same run).
+
+---
+
+## [2026-09-15] External briefs must be screened against the actual repo structure before building
+Status: open
+Context: general, observed during JOZ-184
+
+The JOZ-184 issue brief pointed to a `skills/` path that does not
+exist in this repository. The mismatch surfaced at the placement
+step, deciding where the new content should go, rather than at the
+build step, so build effort had already gone into a brief resting on
+a wrong assumption.
+
+Lesson: a screening pass over the brief against the actual repository
+tree before the build starts looks like the cheap fix, treating a
+mismatch as an intake defect to resolve first rather than a detail
+to paper over during placement. Recorded now, triaged later per the
+loop's own rule about not promoting off one instance.
+
+### Updates
+- [2026-09-15] Recorded during the run itself, before commit.
+
+---
+
+## [2026-09-15] A second CLI agent reviewing prose drafts catches drift that style scripts cannot
+Status: open
+Context: general, observed across JOZ-183 and JOZ-184
+
+Two consecutive runs show that an independent second-model review of
+prose catches issue classes that automated style checks miss. In
+JOZ-183 the reviewer caught a factual mischaracterization of
+rules/rules-for-prototyping.md rule 9: its own text says "Before
+introducing a new element, check whether something already on the
+list serves the need," but the draft described it as an after-the-fact
+rule. In JOZ-184 the reviewer caught a Claude-specific adapter trigger
+embedded in canonical, tool-neutral content, along with voice and
+wording drift.
+
+Style scripts check characters and line wrapping; they do not check
+whether new text accurately describes other repository files, or
+whether it stays tool-neutral.
+
+Lesson: cross-review staying mandatory for prose changes is already
+supported by approaches/review-protocol.md. Briefing reviewers to
+check every factual claim the new text makes about other files looks
+like a candidate addition; recorded now, triaged later per the loop's
+own rule about not promoting off one instance.
+
+### Updates
+- [2026-09-15] Recorded during the run itself, before commit.
