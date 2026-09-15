@@ -2,7 +2,7 @@
 type: Index
 title: Rules
 description: Stable numbering contract and concise catalog for the invariant rules in this directory's rule files.
-timestamp: 2026-08-31
+timestamp: 2026-09-15
 ---
 
 # Rules
@@ -66,6 +66,7 @@ adding more to it in place.
 | 13 | An ID is never referenced without its title. | `rules-for-prototyping.md` |
 | 14 | Never write a real secret to a file; give the human a placeholder to fill in themselves. | `rules-for-prototyping.md` |
 | 15 | Verify decommissioned artifacts (credential files, generated output, caches) are actually gone, not just their references. | `rules-for-prototyping.md` |
+| 16 | Before writing new code, run a build-versus-reuse ladder (need, codebase, stdlib, platform feature, dependency, one line, minimum code); every exit states what was skipped and when to revisit it. | `rules-for-prototyping.md` |
 
 Full text, rationale, and each file's own evolving "Learnings" record live
 in the file named in the table above. This index does not restate rule
