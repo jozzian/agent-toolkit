@@ -6,6 +6,21 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- `conventions/agent-brief.md`: the four-part anatomy (hook, repo
+  deliverable, agent brief, learning goal) for a work-order brief a
+  coding agent can execute cold, plus the writing rules that ground
+  every deliverable path in the real repository tree and the
+  optional extras (acceptance criteria, sources list, pairing note)
+  that earn their place on some tasks. References
+  `conventions/pr-description.md` for the downstream pipeline
+  rather than restating it.
+- `routines/write-agent-brief.md`: a self-contained routine that
+  turns a vague task idea into a conforming brief, including the
+  kickoff-message skeleton (full and short form) for handing a
+  scoped work order to a fresh session or a different agent without
+  relying on "as we discussed."
+
 ## [1.1.0] - 2026-09-15
 
 ### Added
