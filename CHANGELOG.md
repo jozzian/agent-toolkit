@@ -8,8 +8,17 @@ follows [Semantic Versioning](https://semver.org/).
 
 ### Added
 - `approaches/design-pipeline.md`: an optional Caliper pointer in
-  "Related artifacts" for regression evals when the Claude Code skill
-  adapter changes.
+  "Related artifacts" for regression evals when a skill adapter for
+  the pipeline changes.
+- `rules/rules-for-prototyping.md` rule 16: a build-versus-reuse ladder
+  run before new code is written (need, existing codebase, standard
+  library, native platform feature, already-installed dependency, one
+  line, minimum code), with every exit stating what was skipped and
+  when to revisit it. Distinct from rule 9, which governs a project's
+  adopted building-block vocabulary, a closed, inventoried list; this
+  rule reaches past that inventory to the standard library, native
+  platform features, and dependencies never adopted into any
+  inventory.
 - `conventions/project-management.md`: the Goal / Initiative / Milestone /
   Deliverable / Task planning vocabulary, moved out of rule 11 of
   `rules/rules-for-prototyping.md` and extended with Goal and Task (rule
