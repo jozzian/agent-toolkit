@@ -6,6 +6,8 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-09-15
+
 ### Added
 - `approaches/design-pipeline.md`: an optional Caliper pointer in
   "Related artifacts" for regression evals when a skill adapter for
@@ -254,7 +256,8 @@ follows [Semantic Versioning](https://semver.org/).
   session-boundary state check (rule 3), auto-discovering sibling repos
   instead of a hardcoded list.
 
-[Unreleased]: https://github.com/jozzian/agent-toolkit/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/jozzian/agent-toolkit/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/jozzian/agent-toolkit/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/jozzian/agent-toolkit/compare/v0.3.0...v1.0.0
 [0.3.0]: https://github.com/jozzian/agent-toolkit/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/jozzian/agent-toolkit/compare/v0.1.0...v0.2.0
