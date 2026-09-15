@@ -2,7 +2,7 @@
 type: Convention
 title: PR Description
 description: House style for pull request descriptions in this repo, covering mandatory What, Verification, and Metadata sections, a conditional Decisions section, and the division of labor between PR body, commit message, and Linear issue.
-timestamp: 2026-09-12
+timestamp: 2026-09-15
 ---
 
 # PR Description
@@ -121,9 +121,13 @@ What each section must do, and why it is mandatory or conditional:
 
 PR bodies are prose in this repo and follow house style.
 [routines/sharpen.md](../routines/sharpen.md) applies in full: lead
-with the point, no contractions, no em or en dashes, no filler. In
-addition, wrap at roughly 72 characters so the body reads the same in
-a terminal as in the browser.
+with the point, no contractions, no em or en dashes, no filler. Do
+not hard-wrap PR body paragraphs: GitHub renders the body with
+newlines preserved, so a 72-character wrap designed for terminal
+readers arrives looking chopped in the browser, which is where a PR
+body is actually read. Keep one sentence flow per paragraph and let
+the browser wrap it. The hard wrap belongs in commit messages (see
+below), which are read in `git log` and on the terminal.
 
 The description itself is subject to the style it reports on. PR #1's
 Verification section claimed "No em/en dashes or contractions in new
@@ -137,7 +141,8 @@ of the files and false of the description. House style binds both.
 - **Body:** prose carrying the what and the why, including the
   decision rationale. Written to stand alone: a reader of `git log`
   in a year, with no access to the PR or the issue, gets the full
-  account.
+  account. Hard-wrap at roughly 72 characters: the commit message
+  lives in the terminal, where the wrap is the formatting.
 - **Trailer:** `Linear: JOZ-NNN` as the final line, linking the
   permanent record back to the work order.
 - **Identity:** commits are authored as the GitHub noreply identity
@@ -170,8 +175,9 @@ Before requesting review on a PR:
 - [ ] The Metadata diff stat matches `git diff --stat` against the
       base branch at the time of writing.
 - [ ] House prose style applied to the description itself: no
-      contractions, no em or en dashes, roughly 72-character wrap.
+      contractions, no em or en dashes, paragraphs not hard-wrapped.
 - [ ] The commit message stands alone, with an imperative subject,
-      rationale in the body, and the `Linear:` trailer.
+      rationale in the body wrapped at roughly 72 characters, and the
+      `Linear:` trailer.
 - [ ] After the PR: a dated result block is appended to the Linear
       issue.

@@ -104,6 +104,14 @@ follows [Semantic Versioning](https://semver.org/).
   source of truth inside a real repository, not a loose root file).
 
 ### Changed
+- `conventions/pr-description.md` and `.github/pull_request_template.md`:
+  the wrap rule now distinguishes the medium each record is read in. PR
+  body paragraphs are not hard-wrapped, because GitHub renders the body in
+  a browser with newlines preserved, so a terminal-oriented 72-character
+  wrap arrives looking chopped; commit message bodies keep the wrap,
+  because they live in `git log` and on a terminal. Surfaced by
+  repo-guardian PR #1, whose first body followed the old rule and read as
+  "weird breaks" in the browser.
 - `rules/prototyping-system.md` renamed to `rules/rules-for-prototyping.md`,
   naming the domain it actually covers (prototyping and coding) instead of
   implying `rules/` can only ever hold one file. Every in-repo and
