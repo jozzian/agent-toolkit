@@ -22,5 +22,6 @@ it, and separate what was verified from what is assumed. -->
 - Diff stat:
 
 <!-- House style binds this text: no contractions, no em or en dashes,
-wrap at roughly 72 characters. Full spec:
-conventions/pr-description.md -->
+paragraphs not hard-wrapped (GitHub renders the body in a browser and
+preserves newlines, so a terminal wrap reads as chopped lines). Full
+spec: conventions/pr-description.md -->
