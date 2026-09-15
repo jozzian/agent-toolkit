@@ -7,6 +7,9 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- `approaches/design-pipeline.md`: an optional Caliper pointer in
+  "Related artifacts" for regression evals when the Claude Code skill
+  adapter changes.
 - `conventions/project-management.md`: the Goal / Initiative / Milestone /
   Deliverable / Task planning vocabulary, moved out of rule 11 of
   `rules/rules-for-prototyping.md` and extended with Goal and Task (rule
