@@ -218,3 +218,10 @@ this approach is handed off from.
 `approaches/toolkit-intake.md` covers the same verbatim-capture
 discipline for a new impulse about this toolkit itself, rather than
 about a product's screens or flows.
+
+Caliper (<https://github.com/edonadei/caliper>) is a local eval harness
+for AI agent skills that regression-tests changes against recorded
+scenarios. When this pipeline is packaged as a skill adapter for a coding
+agent (currently Claude Code, as noted in the frontmatter) and that
+adapter changes, Caliper regression evals are an optional way to check
+the changed skill against its prior behavior before shipping.
