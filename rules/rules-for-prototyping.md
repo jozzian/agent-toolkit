@@ -3,7 +3,7 @@ type: Rule
 title: Rules for Prototyping
 description: Product-agnostic rules for AI-supported prototyping and coding, derived from real process postmortems. General mechanics only — no product-specific naming or content.
 tags: [prototyping, coding-agent, process]
-timestamp: 2026-08-31
+timestamp: 2026-09-15
 status: adopted — general, cross-cutting rules. Rule numbers are stable and may be cited by number from consuming projects; do not renumber when editing.
 ---
 
@@ -319,6 +319,50 @@ explicit checklist item whenever a task involves removing or migrating
 away from something that touched secrets, generated files, or external
 services.
 
+## 16. New code runs through a build-versus-reuse ladder before it is written
+
+**Rule:** before writing new code to meet a need, work through this
+ladder in order, and stop at the first step that resolves it:
+
+1. Is it needed at all?
+2. Does this codebase already do it?
+3. Does the language or platform standard library already do it?
+4. Does a native platform feature already do it (a CSS rule instead
+   of JavaScript, a database constraint instead of application code)?
+5. Does an already-installed dependency already do it?
+6. Can it be done in one line, as a simple, direct expression of the
+   need rather than a clever or dense one?
+7. Otherwise, write the minimum code the need actually requires.
+
+Whichever step the ladder stops at, that exit states what was skipped
+and when to revisit it. "Skipped a config option because one call
+site covers today's case, revisit if a second call site needs a
+different value," stated at the moment of the decision, is the part
+of this rule that cannot be dropped even when the rest of the ladder
+is worked through loosely. The failure mode this answers is not extra
+code by itself; it is a shortcut that was never named, so a later
+reviewer has no way to tell a deliberate simplification from an
+oversight.
+
+Without a forced order, the default path is step 7 first: write new
+code before checking whether an earlier step already meets the need.
+That is how a codebase ends up with a hand-rolled version of
+something the standard library, the platform, or an already-installed
+dependency already provided.
+
+**Why this is its own rule, not rule 9:** the two rules differ in
+scope, not in when they run. Rule 9 governs a project's adopted
+building-block vocabulary, a closed, inventoried list; its check
+("before introducing a new element, check whether something already
+on the list serves the need") is scoped to that inventory. This rule
+reaches past that inventory entirely, to whether the need exists at
+all, to the standard library, to native platform features, and to
+dependencies already installed but never adopted into any inventory.
+It also carries a requirement rule 9 does not: every exit names what
+was skipped and when to revisit it. The "does this codebase already
+do it" step overlaps rule 9's check; this rule extends reuse-checking
+beyond the adopted inventory; it does not replace rule 9.
+
 ---
 
 ## Learnings — evolving, not fixed
@@ -328,6 +372,19 @@ changed. The general process for observing, recording, and promoting a
 working-method lesson, whether or not it ends up here, is
 `approaches/working-method-learning-loop.md`; this section is where that
 process's output lands when the promoted artifact is a rule.
+
+**2026-09-15: Rule 16 added, a build-versus-reuse ladder that reaches
+past this project's adopted vocabulary.** Distinct from rule 9, which
+governs a closed, inventoried list of building blocks this project
+has already adopted: this rule extends reuse-checking to the need
+itself, the standard library, native platform features, and
+already-installed dependencies never adopted into any inventory. The
+"does this codebase already do it" step overlaps rule 9's check; the
+two rules differ in scope, not in when they run. The part of the rule
+that must survive even when the ladder itself is followed loosely:
+every exit states what was skipped and when to revisit it, so a
+shortcut is named at decision time rather than discovered later in
+review.
 
 **2026-09-06 — Rules 14 and 15 added: secret files need a human in the
 loop, and decommissioning needs to check the disk, not just the
