@@ -6,9 +6,9 @@ description: Apply this tone whenever writing essays, explainers, LinkedIn/Mediu
 # Analytical Essayist Tone
 
 This is Claude Code's discovery wrapper for the
-`tone-analytical-essayist` routine. The full tone - voice, rules,
+`tone-analytical-essayist` routine. The full tone (voice, rules,
 structure, sentence-level habits, vocabulary register, examples, and the
-finalizing checklist - is defined once, at
+finalizing checklist) is defined once, at
 `routines/tone-analytical-essayist.md` in this toolkit, not here (rule 4
 of `rules/rules-for-prototyping.md`: single source of truth per fact).
 Read that file and follow every section of it when this skill applies;

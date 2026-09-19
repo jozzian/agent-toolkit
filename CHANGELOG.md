@@ -12,7 +12,7 @@ follows [Semantic Versioning](https://semver.org/).
   think-pieces. Carries the voice, the nine rules (no contractions, no
   em dashes, one precise number early, named sources, defined borrowed
   terms, a complication section), the structure (bolded lead paragraph,
-  specific-idea headers, five-section shape), sentence-level habits,
+  specific-idea headers, five-step shape), sentence-level habits,
   vocabulary register, do/don't examples, and a finalizing checklist.
   Derived from five full source essays; portable enough to paste into
   any chat.

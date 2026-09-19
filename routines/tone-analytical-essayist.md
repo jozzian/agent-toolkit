@@ -1,7 +1,7 @@
 ---
 type: Routine
 title: Analytical Essayist Tone
-description: A self-contained writing tone for essays, explainers, and analytical think-pieces: formal, structured, mildly skeptical, no contractions, no em dashes, sourced and defined before use.
+description: "A self-contained writing tone for essays, explainers, and analytical think-pieces: formal, structured, mildly skeptical, no contractions, no em dashes, sourced and defined before use."
 timestamp: 2026-09-19
 tags: [writing, tone]
 status: adopted; canonical, tool-neutral version. Do not fork a per-tool copy of this content.
@@ -18,7 +18,8 @@ chat, marketing copy, or short social posts.
 
 A formal, structured, mildly skeptical voice for essays that take a term,
 policy, or comparison and work out what it actually means. Derived from
-five full pieces (the innovation-job-titles intro post, the
+five full pieces by Julian, the writer whose voice this tone captures
+(the innovation-job-titles intro post, the
 vegetational-concepts-in-innovation essay, the Swiss Kantönligeist piece,
 the South Korea "Galapagos of Asia" piece, and the Hong Kong / Greater
 Bay Area piece) plus the titles and summaries of the remaining work on
@@ -33,22 +34,24 @@ interrogation rather than repetition. An essay usually opens by naming
 how widespread a term or practice has become, asks what it actually rests
 on, traces its origin or first use, and then works forward through the
 tension or cost that the popular version glosses over. The tone stays
-measured and even where the underlying claim is critical - it argues by
+measured and even where the underlying claim is critical: it argues by
 laying out evidence and structure, not by asserting outrage. There is no
 first-person confession and almost no "I" outside of pieces explicitly
 framed as a personal declaration.
 
-## Rules
+## What to do
 
-1. No contractions. Write "does not," "it is," "cannot," "there is" -
-   never "doesn't," "it's," "can't," "there's." This applies everywhere,
+1. No contractions. Write "does not," "it is," "cannot," "there is."
+   Never "doesn't," "it's," "can't," "there's." This applies everywhere,
    including headers and quoted paraphrase.
 2. No em dashes. Use a hyphen with spaces, a colon, or a semicolon
    instead of an em dash for asides and appositions.
 3. Third person, low personal presence. Default to an impersonal,
    analytical narrator. Reserve "I" for pieces explicitly framed as a
-   personal take (an opinion piece, a declaration) - and even then keep
+   personal take (an opinion piece, a declaration), and even then keep
    it to a sentence or two, not a running first-person narrative.
+   The brief credibility anecdote permitted by rule 8 is a separate,
+   bounded exception, not a license for a first-person narrator.
 4. One precise number early. Open factual pieces with a concrete figure
    (a percentage, a count, a date) rather than a general claim. "With
    around 40,000 newly founded entities a year, Switzerland ranks..."
@@ -62,7 +65,7 @@ framed as a personal declaration.
    concept from outside its home field (ecosystem from botany, creative
    destruction from Schumpeter, Kantönligeist from Swiss politics), give
    a short, sourced definition before putting the term to work.
-7. Complicate before concluding. Do not just describe a trend - test it.
+7. Complicate before concluding. Do not just describe a trend. Test it.
    A typical move: state the popular view, show what a closer look
    reveals, then explain why the popular view still falls short (or,
    occasionally, why it deserves more credit than it gets).
@@ -93,22 +96,22 @@ framed as a personal declaration.
   (under roughly 600 words) skip this.
 - ## headers as section titles, not numbered headers, each naming a
   specific idea rather than a generic label ("A unique Ecosystem," "The
-  shadow of Kantönligeist," "Connecting different worlds" - not
+  shadow of Kantönligeist," "Connecting different worlds," not
   "Background" or "Analysis").
 - Aim for three to six sections following this shape:
-  1. Framing / hook - already covered by the bolded lead paragraph; the
+  1. Framing / hook: already covered by the bolded lead paragraph; the
      first section proper can start closer to the ground, often with a
      first-person anecdote or a specific event (a conference attended, a
      first month in a new city, a report just released).
-  2. Origin or definition - trace where the term, figure, or policy comes
+  2. Origin or definition: trace where the term, figure, or policy comes
      from, with a named source and, where useful, a quoted definition.
-  3. Complication - introduce the friction: what the popular usage
+  3. Complication: introduce the friction: what the popular usage
      misses, what data or comparison undercuts it, what cost or
      contradiction it creates.
-  4. Illustration - a concrete example, comparison, or case that makes
+  4. Illustration: a concrete example, comparison, or case that makes
      the complication legible (comparing two countries, walking through a
      numbered breakdown of the actors or steps involved).
-  5. Closing section - restates the core claim in a sentence or two and
+  5. Closing section: restates the core claim in a sentence or two and
      states plainly where the writer lands. Longer, source-heavy pieces
      label this "Summary"; shorter pieces fold it into the last section's
      final lines without a separate label, often ending on a
@@ -136,7 +139,10 @@ framed as a personal declaration.
 
 ## Vocabulary register
 
-Latinate and systems-level vocabulary over casual phrasing:
+Latinate and systems-level vocabulary over casual phrasing. These
+substitutions apply where the technical term adds precision; an ordinary
+noun that already carries the meaning stays correct and should not be
+inflated:
 
 | Prefer | Avoid |
 |---|---|
@@ -155,10 +161,10 @@ memorable handle: "zombie startup" for a firm kept alive by grants rather
 than revenue, "jungle of readily available government grants" for an
 overcrowded support landscape, "melting pot of civilisations" for a
 cross-border economic zone. Introduce the image once, explain it in a
-sentence, then reuse the same phrase rather than varying it - do not pile
+sentence, then reuse the same phrase rather than varying it, and do not pile
 up multiple new metaphors in the same piece.
 
-## Do / Don't examples
+## Do and avoid examples
 
 Do:
 
@@ -167,7 +173,10 @@ Do:
 > institutional infrastructure is both a strength and, on closer
 > inspection, a source of waste.
 
-Don't (contraction, vague, no source):
+(In a published piece the count itself carries a named source or link,
+per rule 5; the example compresses that away to show the sentence shape.)
+
+Avoid (contraction, vague, no source):
 
 > Switzerland's got a ton of innovation agencies, and honestly it's kind
 > of a mess.
@@ -177,7 +186,7 @@ Do:
 > Arthur Tansley, a botanist researching systems of organic communities,
 > was the first to put the term to paper in 1935.
 
-Don't (unsourced, casual):
+Avoid (unsourced, casual):
 
 > The word "ecosystem" has been around forever and everyone just uses it
 > now.
@@ -208,5 +217,8 @@ article, or analytical, comparative, or think-piece, and no other tone is
 specified. An agent configuration may make it the default for those
 genres; whether it runs by default is a property of each tool's or chat's
 own configuration, not of this file. Pasting this file into a chat that
-has no access to this repository applies the full tone to whatever piece
-is then written there.
+has no access to this repository may establish the tone for that
+conversation, subject to how that interface actually handles pasted
+instructions; some interfaces hold pasted instructions for the rest of
+the conversation, others do not, and this file by itself cannot guarantee
+either behavior.
