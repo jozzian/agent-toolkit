@@ -7,6 +7,18 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- `routines/tone-analytical-essayist.md`: a self-contained writing tone
+  for essays, explainers, LinkedIn/Medium-style articles, and analytical
+  think-pieces. Carries the voice, the nine rules (no contractions, no
+  em dashes, one precise number early, named sources, defined borrowed
+  terms, a complication section), the structure (bolded lead paragraph,
+  specific-idea headers, five-step shape), sentence-level habits,
+  vocabulary register, do/don't examples, and a finalizing checklist.
+  Derived from five full source essays; portable enough to paste into
+  any chat.
+- `agent-config/claude/skills/analytical-essayist-tone/SKILL.md`: a thin
+  wrapper so Claude Code discovers the tone routine as a skill, pointing
+  at the canonical file rather than duplicating it.
 - `conventions/agent-brief.md`: the four-part anatomy (hook, repo
   deliverable, agent brief, learning goal) for a work-order brief a
   coding agent can execute cold, plus the writing rules that ground
