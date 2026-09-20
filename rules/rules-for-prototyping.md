@@ -3,7 +3,7 @@ type: Rule
 title: Rules for Prototyping
 description: Product-agnostic rules for AI-supported prototyping and coding, derived from real process postmortems. General mechanics only — no product-specific naming or content.
 tags: [prototyping, coding-agent, process]
-timestamp: 2026-09-15
+timestamp: 2026-09-20
 status: adopted — general, cross-cutting rules. Rule numbers are stable and may be cited by number from consuming projects; do not renumber when editing.
 ---
 
@@ -208,10 +208,11 @@ Revisit both once there's more than one instance to compare.
 
 ---
 
-## 11. Work is scoped against a goal, decomposed into initiatives, milestones, deliverables, and tasks
+## 11. Work is scoped against a goal, decomposed into milestones and tasks
 
-The planning vocabulary itself — what a Goal, Initiative, Milestone,
-Deliverable, and Task each are, how they nest, and a worked example — is
+The planning vocabulary itself — what an Initiative, Goal, Milestone,
+and Task each are, how they nest, what an outcome is and when it is
+required, and a worked example — is
 defined in `conventions/project-management.md` rather than here, since
 it's a shared naming standard applied consistently across projects (the
 `conventions/` artifact type), not an invariant. This rule's number stays
@@ -228,8 +229,11 @@ milestone from silently absorbing adjacent work until it can no longer be
 finished, and it's what makes "done" a decision made in advance rather than
 a judgement call made once everyone is tired of the milestone.
 
-A milestone whose outcome can't be checked, or that has no deliverable, is
-not a milestone yet — sharpen it or cut it. A sequence of numbered phases
+A milestone whose outcome can't be checked is
+not a milestone yet — sharpen it or cut it. The outcome need not be a
+deliverable (an inspectable output); it may be a state that holds or a
+decision that was made, but it must be checkable either way. A sequence
+of numbered phases
 with no stated outcome is a useful artifact, but it isn't a plan.
 
 ## 12. Before every commit, check for what shouldn't be in it
@@ -275,7 +279,7 @@ in memory. Re-pairing the title costs one clause; making a human stop and
 ask "which one was that again" costs the whole thread of the conversation.
 
 **Why this is its own rule, not folded into rule 11:** rule 11 defines
-what a milestone or deliverable *is*; this rule is about how it's
+what a milestone *is*; this rule is about how it's
 *referred to* once it exists — a different failure mode (context lost
 through compression in conversation, not scope lost through ambiguity in
 definition).
@@ -372,6 +376,20 @@ changed. The general process for observing, recording, and promoting a
 working-method lesson, whether or not it ends up here, is
 `approaches/working-method-learning-loop.md`; this section is where that
 process's output lands when the promoted artifact is a rule.
+
+**2026-09-20 — Rule 11 pointer re-aimed: four units, deliverable demoted
+to a kind of outcome.** The vocabulary this rule points to
+(`conventions/project-management.md`) was reworked around four units,
+Initiative, Goal, Milestone, and Task, with an outcome required for
+every goal, milestone, and task. Deliverable stopped being a planning
+unit of its own: it is now defined as an outcome that is an inspectable
+output, while an outcome may equally be a state that holds or a
+decision that was made. The old sentence rejecting a milestone "that
+has no deliverable" would have wrongly rejected a milestone whose
+outcome is a checkable state, so it now requires a checkable outcome
+and treats the deliverable as one shape an outcome can take. The rule
+number and its behavior requirements (non-scope stated per milestone)
+are unchanged.
 
 **2026-09-15: Rule 16 added, a build-versus-reuse ladder that reaches
 past this project's adopted vocabulary.** Distinct from rule 9, which
