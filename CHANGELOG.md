@@ -6,6 +6,25 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- `conventions/project-management.md`: reworked around four units
+  (Initiative, Goal, Milestone, Task) nested under an optional
+  initiative, with an outcome required for every goal, milestone,
+  and task. Deliverable is no longer a unit of its own: it is now
+  defined as an outcome that is an inspectable output, while an
+  outcome may also be a state or a decision with no deliverable.
+  Adds the achieved-wording and SMART requirements (required for
+  milestones, an ambition for goals), the one-sitting rule for
+  tasks, and a refreshed worked example of the toolkit's own
+  restructure.
+- `rules/rules-for-prototyping.md` rule 11 pointer follows: heading
+  now names the four units, the "no deliverable, not a milestone"
+  sentence requires a checkable outcome instead (a deliverable is
+  one shape an outcome can take, not a requirement), and the rule
+  13 cross-reference drops the stale "or deliverable" wording.
+  Rule numbers and the per-milestone non-scope requirement are
+  unchanged. A Learnings entry records the change.
+
 ### Added
 - `conventions/agent-brief.md`: the four-part anatomy (hook, repo
   deliverable, agent brief, learning goal) for a work-order brief a

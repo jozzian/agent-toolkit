@@ -1,150 +1,134 @@
 ---
 type: Convention
 title: Project Management Vocabulary
-description: The planning vocabulary this toolkit uses to scope and track work — Goal, Initiative, Milestone, Deliverable, Task — with this repository's own artifact-model migration as a worked example.
+description: The planning vocabulary this toolkit uses to scope and track work (Initiative, Goal, Milestone, Task), built on a required outcome for every goal, milestone, and task.
 tags: [planning, process]
-timestamp: 2026-08-31
+timestamp: 2026-09-20
 ---
 
 # Project Management Vocabulary
 
 A shared naming standard for the units used to scope and track work,
-referenced by rule 11 of `rules/rules-for-prototyping.md` rather than
-defined inline there — this is a vocabulary, applied consistently across
+referenced by rule 11 of rules/rules-for-prototyping.md rather than
+defined inline there. It is a vocabulary, applied consistently across
 projects, not an invariant.
 
-Loosely inspired by how Asana distinguishes milestones from tasks, goals,
-and deliverables (asana.com/resources/project-milestones); adapted and
-extended here rather than reproduced, with Task and Goal added as named
-terms of their own instead of left as background concepts the milestone
-definition leans on without naming.
+## The terms
 
-## The five terms
-
-Five nested units, longest-lived to shortest-lived:
+Four units, each nested in the one above, and one idea that runs
+through the lower three: the outcome.
 
 ```
-Goal
-└── Initiative
+Initiative   (optional, soft grouping of goals)
+└── Goal
     └── Milestone
-        └── Deliverable
-            └── Task
+        └── Task
 ```
 
-**Goal** — the long-term outcome the work is ultimately for. Ongoing, not
-something with a finish date; you don't "complete" a goal so much as keep
-serving it. A goal doesn't get a checkbox, an owner, or a deadline — it
-gets initiatives that move toward it, and it's the thing that tells you
-whether a proposed initiative is worth starting at all.
+| Term       | SMART                              | Outcome      |
+| ---------- | ---------------------------------- | ------------ |
+| Initiative | Not required                       | Not required |
+| Goal       | The ambition, not always possible  | Required     |
+| Milestone  | Required, and more concrete        | Required     |
+| Task       | Not required                       | Required     |
 
-**Initiative** — a scoped body of work taken on right now to advance a
-goal, named specifically enough that the name itself states the
-boundary (rule 7 of `rules-for-prototyping.md`: naming and structural
-splits are decided at Ideation, not discovered mid-build). An initiative
-is where "we should really improve X" turns into a thing with an actual
-edge — what's in, what's deliberately left for later or for a different
-initiative.
+## Outcome
 
-**Milestone** — a zero-duration checkpoint inside an initiative: a named
-point that is either reached or not, with no partial credit, proven by at
-least one deliverable that demonstrates it. A milestone has no duration
-of its own — it marks a moment, not a stretch of work — which is exactly
-what makes it legible to someone who only wants to know "where are we,"
-not "what's everyone doing today." Every milestone states what is
-explicitly **not** in scope, not just what is (the invariant rule 11
-keeps stated directly, since it's a requirement, not a definition).
+Every goal, milestone, and task has an outcome, defined before the work
+starts. The outcome is what is true once the work is done, stated so
+that someone other than the person who did the work can check it.
 
-**Deliverable** — the concrete, reviewable output that proves a milestone
-was reached. A milestone decomposes into one or more deliverables;
-producing a deliverable takes real time, unlike the milestone it proves.
-A deliverable is evidence, not the achievement itself — the achievement
-is the milestone; the deliverable is how anyone other than the person who
-did the work can check it actually happened.
+An outcome may be an output: something that exists afterwards and can be
+inspected, such as a document, a file, or a running tool. An outcome
+that is an output is called a deliverable. An outcome does not have
+to be an output. It can also be a state that holds (a check passes, a
+risk is retired) or a decision that was made (a proposal was accepted).
+In that case there is no deliverable, and the outcome is checked
+directly.
 
-**Task** — the smallest unit of execution: a single, boundable piece of
-work that one person or one agent session can pick up and finish in one
-sitting, that a deliverable decomposes into. This is where duration
-actually lives day to day. A milestone or deliverable only stays a fixed
-target if the tasks under it don't quietly expand past what was named —
-task-level scope creep is how a "zero-duration checkpoint" ends up taking
-three times as long as planned without anyone deciding that it should.
+## Achieved wording and SMART
 
-## Why five levels, not three
+Goals and milestones are written in past-tense, achieved wording, as if
+the outcome had already happened. The statement then reads as a fact
+that is either true or not, which is what makes it checkable. Two shapes
+cover most cases:
 
-The toolkit's planning vocabulary originally stopped at Initiative →
-Milestone → Deliverable. Two gaps showed up in practice: nothing named
-*why* an initiative was worth starting in the first place (so initiatives
-justified themselves in isolation, with no way to check whether one still
-served anything), and nothing named the actual unit of daily work below a
-deliverable (so "deliverable" was sometimes used to mean a single edit,
-other times an entire reviewable output, depending on who was writing).
-Goal closes the first gap; Task closes the second. Neither changes what a
-Milestone or a Deliverable is — they bookend the existing three rather
-than replacing them.
+- has reached: "Every convention file has reached conformance with
+  the OKF frontmatter spec."
+- was accepted: "The restructure proposal was accepted by the
+  repository owner."
 
-## Comparison
+The wording is meant to be SMART:
 
-| Term | Duration | Answers | Proven by |
-|---|---|---|---|
-| Goal | Ongoing, no end date | What are we ultimately trying to achieve? | A trend of initiatives that keep serving it |
-| Initiative | Weeks to months, scoped by its own name | What are we taking on right now to move toward the goal? | Its milestones, reached over time |
-| Milestone | Zero — a checkpoint, not a stretch | Have we reached a specific, named point of progress? | At least one deliverable |
-| Deliverable | As long as producing it actually takes | What tangible thing proves the milestone was reached? | Being reviewable independent of the person who built it |
-| Task | A single sitting | What is the next concrete thing someone does? | Being done or not — no partial states |
+- Specific: it names exactly what is reached or accepted, and by
+  whom, with no room for a second reading.
+- Measurable: it states how anyone can check that it holds.
+- Achievable: it is within reach given the time, people, and tools
+  available.
+- Relevant: it traces back to the item above it, or for a goal, to
+  the reason the work exists.
+- Time-bound: it carries the date by which it must hold.
 
-**Milestone vs. Task.** A task has duration and represents work; a
-milestone has none and represents a checkpoint. Tasks accumulate into a
-deliverable; the milestone is the moment that deliverable's completion is
-recognized. Using "milestone" for something with a duration, or treating
-a milestone as a container you assign tasks *to* rather than a checkpoint
-those tasks lead *toward*, is the most common way this vocabulary gets
-muddled in practice.
+For a goal, SMART is the ambition. It is not always possible, and a goal
+may fall short on one or more letters, as long as the gap is known
+rather than hidden. For a milestone, SMART is required.
 
-**Milestone vs. Deliverable.** The deliverable is the thing; the
-milestone is the moment. Two different deliverables can prove the same
-milestone (belt and suspenders); one deliverable can also be the sole
-proof of more than one milestone if it happens to close out two threads
-at once, though that's a sign worth double-checking rather than the
-common case.
+## Goal
 
-**Milestone vs. Goal.** A goal looks forward and never quite arrives; a
-milestone looks back at a specific, already-crossed line. An initiative
-without at least one milestone gives a goal nothing to check itself
-against; a milestone that doesn't trace back to any initiative's goal is
-probably busywork that happened to get organized.
+The end state the work is for. A goal follows the achieved wording above
+and has an outcome. It is broken down into milestones: when every
+milestone has been reached, the goal has been reached. If that would not
+be true, a milestone is missing.
 
-## Worked example: this repository
+## Milestone
 
-This toolkit's own history gives a real instance rather than an invented
-one.
+A section of a goal, smaller and more concrete than the goal itself,
+that is either reached or not, with no partial credit. A milestone
+follows the achieved wording, has an outcome, and is fully SMART: a
+milestone that cannot be checked cannot show that the goal is getting
+closer. Every milestone also states what is explicitly not in scope,
+the requirement that rule 11 of rules/rules-for-prototyping.md holds.
 
-- **Goal** — a repeatable, AI-supported system for prototyping and
-  coding products, stated in this repository's own `README.md`.
-- **Initiative** — "Restructure the toolkit around an artifact model"
-  (`CHANGELOG.md`'s `[1.0.0]` entry): scoped by its own name, not just
-  "improve the toolkit."
-- **Milestones** inside that initiative included "the six-kind artifact
-  model is defined and every existing file is reclassified into it" and
-  "every rule, approach, and convention file conforms to the corrected
-  OKF frontmatter spec" — each one binary (reached or not), each backed
-  by deliverables that prove it rather than a description of intended
-  effort.
-- **Deliverables** proving the first milestone: `README.md`'s six-kind
-  section, and the five per-kind catalogs (`rules/index.md`,
-  `approaches/index.md`, `routines/index.md`, `conventions/index.md`,
-  `outputs/index.md`) plus `agent-config/index.md`. Each is independently
-  reviewable; together they add up to "yes, the model is in place."
-- **Tasks** underneath those deliverables: renaming `patterns/` to
-  `approaches/`, updating each cross-reference to the new path, adding
-  the frontmatter block to each file that was missing one, writing each
-  index entry. None of these is independently interesting; each is the
-  unit an actual editing session finished in one pass.
+## Task
 
-## Related artifacts
+The smallest unit of execution: a single piece of work that one person
+or one agent session can pick up and finish in one sitting. A task has
+an outcome and belongs to a milestone. SMART is not required. A piece of
+work that cannot be finished in one sitting is split into several tasks.
 
-Rule 11 of `rules/rules-for-prototyping.md` states the one invariant this
-vocabulary doesn't cover on its own: every milestone must name its own
-non-scope. Stage 0 of `approaches/design-pipeline.md` is where an
-initiative gets its own definition doc before design work starts, gated
-on the field list stated there. `approaches/idea-to-mvp.md` covers the
-lifecycle an initiative moves through before it reaches Stage 0 at all.
+## Initiative
+A soft grouping of goals that belong together, for example by theme or
+by period of work. Through its goals, an initiative is associated with
+their milestones and tasks by hierarchy. It is deliberately loose: it
+has no required wording, no SMART requirement, no required outcome, and
+a goal can exist without one. An initiative orients; it does not hold
+anyone accountable. When a group of work needs a checkable end, that end
+is a goal.
+
+## Example
+
+The toolkit's own restructure, written in this form. The dates are
+illustrative.
+
+- Initiative: Restructure the toolkit around an artifact model.
+  - Goal: By 2026-09-14, the restructure was accepted by the
+    repository owner, with every file classified into one of the six
+    artifact kinds.
+    - Outcome: the merged restructure pull request (a deliverable).
+    - Milestone: By 2026-09-07, the six-kind model has been
+      defined in README.md and every existing file has been
+      reclassified into it.
+      - Outcome: the six-kind section in README.md and the per-kind
+        catalogs (deliverables).
+      - Not in scope: changing what any rule says.
+      - Task: Rename patterns/ to approaches/. Outcome:
+        patterns/ no longer exists and its files live in
+        approaches/ (a deliverable).
+    - Milestone: By 2026-09-10, every rule, approach, and
+      convention file has reached conformance with the corrected OKF
+      frontmatter spec.
+      - Outcome: every file passes the frontmatter check. This is a
+        state, not an output, so no deliverable exists.
+      - Not in scope: changing the spec itself.
+      - Task: Add the frontmatter block to each file that lacks
+        one. Outcome: every such file has the block (a deliverable).
