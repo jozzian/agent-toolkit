@@ -7,6 +7,17 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Changed
+- `conventions/project-management.md`: simplified and extended upward
+  around five units (Theme, Objective, Goal aka Key Result, Milestone,
+  Task). Initiative is retired: Theme names a strategic direction with
+  no outcome of its own, and Objective groups Goals, becoming checkable
+  only through them. An outcome is now required for every level below
+  Theme, and each level carries its own wording and SMART requirements.
+- `rules/rules-for-prototyping.md` rule 11 pointer follows: it now names
+  the five units. Rule number and behavior requirements unchanged; a
+  Learnings entry records the change.
+- `conventions/index.md` and `rules/index.md`: catalog rows and the term
+  set example updated to the new vocabulary.
 - `conventions/project-management.md`: reworked around four units
   (Initiative, Goal, Milestone, Task) nested under an optional
   initiative, with an outcome required for every goal, milestone,

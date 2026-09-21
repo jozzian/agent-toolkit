@@ -3,7 +3,7 @@ type: Rule
 title: Rules for Prototyping
 description: Product-agnostic rules for AI-supported prototyping and coding, derived from real process postmortems. General mechanics only — no product-specific naming or content.
 tags: [prototyping, coding-agent, process]
-timestamp: 2026-09-20
+timestamp: 2026-09-21
 status: adopted — general, cross-cutting rules. Rule numbers are stable and may be cited by number from consuming projects; do not renumber when editing.
 ---
 
@@ -210,9 +210,9 @@ Revisit both once there's more than one instance to compare.
 
 ## 11. Work is scoped against a goal, decomposed into milestones and tasks
 
-The planning vocabulary itself — what an Initiative, Goal, Milestone,
-and Task each are, how they nest, what an outcome is and when it is
-required, and a worked example — is
+The planning vocabulary itself — what a Theme, Objective, Goal,
+Milestone, and Task each are, how they nest, what an outcome is and when
+it is required — is
 defined in `conventions/project-management.md` rather than here, since
 it's a shared naming standard applied consistently across projects (the
 `conventions/` artifact type), not an invariant. This rule's number stays
@@ -376,6 +376,16 @@ changed. The general process for observing, recording, and promoting a
 working-method lesson, whether or not it ends up here, is
 `approaches/working-method-learning-loop.md`; this section is where that
 process's output lands when the promoted artifact is a rule.
+
+**2026-09-21 — Rule 11 pointer re-aimed: five units, Theme and Objective
+added above Goal.** The vocabulary this rule points to
+(`conventions/project-management.md`) was simplified and extended upward:
+Initiative was replaced by two explicit levels, Theme (a strategic
+direction with no outcome of its own, never "reached") and Objective (a
+grouping of Goals, present tense, checkable only through its Goals).
+Goal gained its Key Result framing, and Outcome is now required for every
+level below Theme. The rule number and its behavior requirements
+(non-scope stated per milestone, checkable outcome) are unchanged.
 
 **2026-09-20 — Rule 11 pointer re-aimed: four units, deliverable demoted
 to a kind of outcome.** The vocabulary this rule points to
