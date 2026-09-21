@@ -2,7 +2,7 @@
 type: Approach
 title: Idea to MVP Process
 description: A generic, growable phase-gate process for taking an idea through discovery to a shippable MVP — deliberately minimal to start.
-timestamp: 2026-08-26
+timestamp: 2026-09-21
 tags: [process, product, prototyping]
 status: draft — v1, deliberately minimal; see Open questions for what's left out on purpose
 ---
@@ -20,9 +20,10 @@ start here and grow it (see Open questions) rather than backfilling every
 possible field up front.
 
 **Relationship to other files in this toolkit:** an "idea" here is the same
-thing as an Initiative in rule 11 of `rules/rules-for-prototyping.md` — this
-file is the lifecycle view of what an initiative passes through; rule 11
-is what its planning units (milestones, deliverables) look like once
+thing as a Goal in rule 11 of `rules/rules-for-prototyping.md` — this
+file is the lifecycle view of what the work toward a goal passes through;
+rule 11 (via `conventions/project-management.md`) is what its planning
+units (milestones, tasks) look like once
 you're inside a phase. When Discovery's work includes building a
 prototype, that work is handed off to `approaches/design-pipeline.md`
 (Stage 0 onward) rather than re-described here.
@@ -115,7 +116,7 @@ is not the same as one that was deliberately closed.
 
 - **Planning** — turn Discovery's plan into real tasks and milestones (see
   rule 11 of `rules/rules-for-prototyping.md` for the
-  initiative/milestone/deliverable breakdown).
+  goal/milestone/task breakdown).
 - **Build & verify** — implement, test, review.
 - **Ready-to-ship check** — before calling it done: does it meet the
   acceptance criteria named in Discovery; do the tests that matter pass;

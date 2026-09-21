@@ -2,7 +2,7 @@
 type: Approach
 title: Design Pipeline
 description: Fixed, ordered set of design-artifact stages for building a new screen or flow — from initiative framing through two hi-fi rounds to ongoing iteration.
-timestamp: 2026-08-26
+timestamp: 2026-09-21
 tags: [process, design, prototyping]
 status: adopted — also packaged for Claude Code as the `design-pipeline` skill (`agent-config/claude/skills/design-pipeline/SKILL.md`), which points here rather than duplicating this content.
 ---
@@ -208,8 +208,8 @@ pipeline is local and sequential, before or alongside code); see that
 file for the general rules this stage sequence operates under, including
 why every stage's own output must name its open questions (rule 6), why
 the always-latest folder staying in sync is treated as structural, not
-optional, and why Stage 0's fields map onto the Initiative/Milestone/
-Deliverable hierarchy in rule 11.
+optional, and why Stage 0's fields map onto the Goal/Milestone/Task
+hierarchy in rule 11 (via `conventions/project-management.md`).
 
 Once a project's discovery work reaches the point of needing this
 sequence, see `approaches/idea-to-mvp.md`'s Discovery phase for where

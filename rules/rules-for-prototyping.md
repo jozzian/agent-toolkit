@@ -210,9 +210,9 @@ Revisit both once there's more than one instance to compare.
 
 ## 11. Work is scoped against a goal, decomposed into milestones and tasks
 
-The planning vocabulary itself — what a Theme, Objective, Goal,
-Milestone, and Task each are, how they nest, what an outcome is and when
-it is required — is
+The planning vocabulary itself (what a Theme, Objective, Goal,
+Milestone, and Task each are, how they nest, and what an outcome is and
+when it is required) is
 defined in `conventions/project-management.md` rather than here, since
 it's a shared naming standard applied consistently across projects (the
 `conventions/` artifact type), not an invariant. This rule's number stays

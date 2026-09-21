@@ -9,32 +9,25 @@ follows [Semantic Versioning](https://semver.org/).
 ### Changed
 - `conventions/project-management.md`: simplified and extended upward
   around five units (Theme, Objective, Goal aka Key Result, Milestone,
-  Task). Initiative is retired: Theme names a strategic direction with
-  no outcome of its own, and Objective groups Goals, becoming checkable
+  Task), superseding the four-unit rework earlier in this release cycle.
+  Initiative is retired: Theme names a strategic direction with no
+  outcome of its own, and Objective groups Goals, becoming checkable
   only through them. An outcome is now required for every level below
-  Theme, and each level carries its own wording and SMART requirements.
+  Theme, and each level carries its own wording and SMART requirements
+  (past-tense achieved wording and SMART as ambition for Goals, full
+  SMART for Milestones, imperative present tense for Tasks). Deliverable
+  remains a kind of outcome: an inspectable output, alongside states
+  and decisions.
 - `rules/rules-for-prototyping.md` rule 11 pointer follows: it now names
-  the five units. Rule number and behavior requirements unchanged; a
-  Learnings entry records the change.
+  the five units, requires a checkable outcome rather than a deliverable
+  per milestone, and drops the stale rule 13 cross-reference wording.
+  Rule number and behavior requirements unchanged; Learnings entries
+  record the changes.
 - `conventions/index.md` and `rules/index.md`: catalog rows and the term
   set example updated to the new vocabulary.
-- `conventions/project-management.md`: reworked around four units
-  (Initiative, Goal, Milestone, Task) nested under an optional
-  initiative, with an outcome required for every goal, milestone,
-  and task. Deliverable is no longer a unit of its own: it is now
-  defined as an outcome that is an inspectable output, while an
-  outcome may also be a state or a decision with no deliverable.
-  Adds the achieved-wording and SMART requirements (required for
-  milestones, an ambition for goals), the one-sitting rule for
-  tasks, and a refreshed worked example of the toolkit's own
-  restructure.
-- `rules/rules-for-prototyping.md` rule 11 pointer follows: heading
-  now names the four units, the "no deliverable, not a milestone"
-  sentence requires a checkable outcome instead (a deliverable is
-  one shape an outcome can take, not a requirement), and the rule
-  13 cross-reference drops the stale "or deliverable" wording.
-  Rule numbers and the per-milestone non-scope requirement are
-  unchanged. A Learnings entry records the change.
+- `approaches/idea-to-mvp.md` and `approaches/design-pipeline.md`: stale
+  cross-references attributing the retired Initiative/Milestone/
+  Deliverable hierarchy to rule 11 now point at the current vocabulary.
 
 ### Added
 - `routines/tone-analytical-essayist.md`: a self-contained writing tone
