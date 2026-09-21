@@ -1,7 +1,7 @@
 ---
 type: Convention
 title: Project Management Vocabulary
-description: "The planning vocabulary this toolkit uses to scope and track work (Theme, Objective, Goal, Milestone, Task), built on a required outcome for every level below Theme."
+description: The planning vocabulary this toolkit uses to scope and track work (Theme, Objective, Goal, Milestone, Task), built on a required outcome for every level below Theme.
 tags: [planning, process]
 timestamp: 2026-09-21
 ---
@@ -31,7 +31,7 @@ It can be a deliverable (so a concrete output like a document, a file, a
 running tool), a state (a check passes, a risk is retired), or a decision
 (a proposal was accepted).
 
--> Only a deliverable produces an output. A state or a decision is checked
+Only a deliverable produces an output. A state or a decision is checked
 directly.
 
 ## Theme
@@ -56,7 +56,7 @@ it has been reached.
 - If none of its Goals are dated yet, say so rather than treating it as
   equivalent to an Objective with real accountability underneath it.
 
-## Goal (aka Key Results)
+## Goal (aka Key Result)
 
 The Objective's Key Result: the measurable, dated proof that the Objective
 is progressing.
