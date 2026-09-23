@@ -1,134 +1,70 @@
 ---
 type: Convention
-title: Project Management Vocabulary
-description: The planning vocabulary this toolkit uses to scope and track work (Initiative, Goal, Milestone, Task), built on a required outcome for every goal, milestone, and task.
+title: Work structure
+description: The planning vocabulary this toolkit uses to scope and track work (Theme, Goal, Milestone, Task), built on a required outcome for every Goal, Milestone, and Task.
 tags: [planning, process]
-timestamp: 2026-09-20
+timestamp: 2026-09-23
 ---
 
-# Project Management Vocabulary
-
-A shared naming standard for the units used to scope and track work,
-referenced by rule 11 of rules/rules-for-prototyping.md rather than
-defined inline there. It is a vocabulary, applied consistently across
-projects, not an invariant.
-
-## The terms
-
-Four units, each nested in the one above, and one idea that runs
-through the lower three: the outcome.
+# Work structure
 
 ```
-Initiative   (optional, soft grouping of goals)
-└── Goal
-    └── Milestone
-        └── Task
+(Theme)
+ └── Goal
+      └── Milestone
+           └── Task
 ```
 
-| Term       | SMART                              | Outcome      |
-| ---------- | ---------------------------------- | ------------ |
-| Initiative | Not required                       | Not required |
-| Goal       | The ambition, not always possible  | Required     |
-| Milestone  | Required, and more concrete        | Required     |
-| Task       | Not required                       | Required     |
+Goal, Milestone and Task are the three main levels to work with. A Theme is an optional grouping above them.
 
-## Outcome
+## Theme (optional)
 
-Every goal, milestone, and task has an outcome, defined before the work
-starts. The outcome is what is true once the work is done, stated so
-that someone other than the person who did the work can check it.
+A Theme is a strategic direction that work aligns to. It names an ambition, not a fact to check. It can be mentioned, but doesn't have to be.
 
-An outcome may be an output: something that exists afterwards and can be
-inspected, such as a document, a file, or a running tool. An outcome
-that is an output is called a deliverable. An outcome does not have
-to be an output. It can also be a state that holds (a check passes, a
-risk is retired) or a decision that was made (a proposal was accepted).
-In that case there is no deliverable, and the outcome is checked
-directly.
-
-## Achieved wording and SMART
-
-Goals and milestones are written in past-tense, achieved wording, as if
-the outcome had already happened. The statement then reads as a fact
-that is either true or not, which is what makes it checkable. Two shapes
-cover most cases:
-
-- has reached: "Every convention file has reached conformance with
-  the OKF frontmatter spec."
-- was accepted: "The restructure proposal was accepted by the
-  repository owner."
-
-The wording is meant to be SMART:
-
-- Specific: it names exactly what is reached or accepted, and by
-  whom, with no room for a second reading.
-- Measurable: it states how anyone can check that it holds.
-- Achievable: it is within reach given the time, people, and tools
-  available.
-- Relevant: it traces back to the item above it, or for a goal, to
-  the reason the work exists.
-- Time-bound: it carries the date by which it must hold.
-
-For a goal, SMART is the ambition. It is not always possible, and a goal
-may fall short on one or more letters, as long as the gap is known
-rather than hidden. For a milestone, SMART is required.
+- A Theme doesn't have to be "reached" and has no outcome of its own.
+- Wording is present tense and aspirational.
+- A Theme groups a set of Goals and explains why they were chosen together. An Objective explains why one Goal matters. A Theme explains what several Goals have in common.
 
 ## Goal
 
-The end state the work is for. A goal follows the achieved wording above
-and has an outcome. It is broken down into milestones: when every
-milestone has been reached, the goal has been reached. If that would not
-be true, a milestone is missing.
+- Wording is in the completed form, as if it had already happened. Examples are "has reached conformance with the spec" or "was accepted by the repository owner". This makes the Goal a fact that is either true or not.
+- SMART is the ambition here. A Goal can fall short on a letter or two, as long as the gap is known.
+- A Goal breaks down into Milestones and is reached once every Milestone is reached. The Milestones together must fully cover the Goal, so that reaching all of them proves the Goal is true.
+- State explicitly what is out of scope.
+- Each Goal needs an explicitly stated Objective. The Objective is the qualitative reason the Goal matters, the change it is meant to bring about. Stating it separately makes it possible to pull the Objectives out later and rename the Goals as Key Results to form OKRs. For now, only the three levels are used.
 
 ## Milestone
 
-A section of a goal, smaller and more concrete than the goal itself,
-that is either reached or not, with no partial credit. A milestone
-follows the achieved wording, has an outcome, and is fully SMART: a
-milestone that cannot be checked cannot show that the goal is getting
-closer. Every milestone also states what is explicitly not in scope,
-the requirement that rule 11 of rules/rules-for-prototyping.md holds.
+A Milestone is a step toward a Goal, smaller and more concrete than the Goal itself. Milestones can build on each other or run in parallel. If one depends on another, state the dependency.
+
+- A Milestone is either reached or not. There is no partial credit.
+- Wording uses the same completed form as a Goal.
+- Unlike a Goal, a Milestone must be fully SMART. A Milestone that cannot be checked cannot prove that the Goal is getting closer.
+- State explicitly what is out of scope, within the scope of the Goal. A Milestone narrows the Goal's scope and never redefines it.
 
 ## Task
 
-The smallest unit of execution: a single piece of work that one person
-or one agent session can pick up and finish in one sitting. A task has
-an outcome and belongs to a milestone. SMART is not required. A piece of
-work that cannot be finished in one sitting is split into several tasks.
+A Task is the unit of execution. It is a single piece of work that one person or one agent session can finish in one sitting.
 
-## Initiative
-A soft grouping of goals that belong together, for example by theme or
-by period of work. Through its goals, an initiative is associated with
-their milestones and tasks by hierarchy. It is deliberately loose: it
-has no required wording, no SMART requirement, no required outcome, and
-a goal can exist without one. An initiative orients; it does not hold
-anyone accountable. When a group of work needs a checkable end, that end
-is a goal.
+- Wording starts with a verb in the imperative, such as Create, Add, Rename, Migrate or Remove.
+- A Task belongs to a Milestone and has an outcome, but does not need to be SMART.
 
-## Example
+## Outcomes
 
-The toolkit's own restructure, written in this form. The dates are
-illustrative.
+Every Goal, Milestone and Task must have a clear outcome. A Theme does not.
 
-- Initiative: Restructure the toolkit around an artifact model.
-  - Goal: By 2026-09-14, the restructure was accepted by the
-    repository owner, with every file classified into one of the six
-    artifact kinds.
-    - Outcome: the merged restructure pull request (a deliverable).
-    - Milestone: By 2026-09-07, the six-kind model has been
-      defined in README.md and every existing file has been
-      reclassified into it.
-      - Outcome: the six-kind section in README.md and the per-kind
-        catalogs (deliverables).
-      - Not in scope: changing what any rule says.
-      - Task: Rename patterns/ to approaches/. Outcome:
-        patterns/ no longer exists and its files live in
-        approaches/ (a deliverable).
-    - Milestone: By 2026-09-10, every rule, approach, and
-      convention file has reached conformance with the corrected OKF
-      frontmatter spec.
-      - Outcome: every file passes the frontmatter check. This is a
-        state, not an output, so no deliverable exists.
-      - Not in scope: changing the spec itself.
-      - Task: Add the frontmatter block to each file that lacks
-        one. Outcome: every such file has the block (a deliverable).
+An outcome is what will be true once the work is done. State it so that someone other than the person who did the work can verify it without asking them.
+
+An outcome is one of three kinds.
+
+- Deliverable. A concrete output, such as a document, a file or a running tool.
+- State. A condition that can be checked, such as a test suite passing or a risk being retired.
+- Decision. A choice that was made and recorded, such as a proposal being accepted.
+
+Every outcome must meet three rules.
+
+- Describe the result, not the activity. Write "the migration guide was published", not "worked on the migration guide".
+- Be binary. The outcome is either true or not. Words like "improved", "better" or "more stable" need a threshold, or they don't count.
+- Name how it is verified. Give a link to the deliverable, the check to run, or where the decision is recorded and who made it.
+
+How strict this is depends on the level. A Task outcome is usually a single deliverable or state. A Milestone outcome must be fully SMART. A Goal outcome is proven by its Milestones, so it can be broader, as long as the Milestones fully cover it.

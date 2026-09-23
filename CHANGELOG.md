@@ -7,23 +7,37 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Changed
-- `conventions/project-management.md`: reworked around four units
-  (Initiative, Goal, Milestone, Task) nested under an optional
-  initiative, with an outcome required for every goal, milestone,
-  and task. Deliverable is no longer a unit of its own: it is now
-  defined as an outcome that is an inspectable output, while an
-  outcome may also be a state or a decision with no deliverable.
-  Adds the achieved-wording and SMART requirements (required for
-  milestones, an ambition for goals), the one-sitting rule for
-  tasks, and a refreshed worked example of the toolkit's own
-  restructure.
-- `rules/rules-for-prototyping.md` rule 11 pointer follows: heading
-  now names the four units, the "no deliverable, not a milestone"
-  sentence requires a checkable outcome instead (a deliverable is
-  one shape an outcome can take, not a requirement), and the rule
-  13 cross-reference drops the stale "or deliverable" wording.
-  Rule numbers and the per-milestone non-scope requirement are
-  unchanged. A Learnings entry records the change.
+- `conventions/project-management.md`: rewritten as a work structure of
+  three main levels, Goal, Milestone, and Task, under an optional Theme
+  (a strategic direction that names an ambition, is never "reached",
+  and carries no outcome of its own). Initiative is retired. Each Goal
+  now states its Objective, the qualitative reason it matters, which
+  keeps the option open to pull the Objectives out later and rename
+  the Goals as Key Results to form OKRs. Adds the outcome rules
+  (deliverable, state, or
+  decision; result not activity; binary; verification named), the
+  full-SMART requirement for milestones against the ambition-level
+  SMART for goals, explicit non-scope statements for goals and
+  milestones, milestone dependency statements, and the imperative-verb
+  wording for tasks. Deliverable remains defined as an outcome that is
+  an inspectable output, alongside state and decision outcomes.
+- `rules/rules-for-prototyping.md` rule 11 pointer follows: the
+  vocabulary sentence now names Theme, Goal, Milestone, and Task, and a
+  Learnings entry records that Initiative is retired and each Goal
+  gains a required Objective statement. Rule numbers and the
+  per-milestone non-scope requirement are unchanged.
+- `rules/index.md` and `conventions/index.md`: catalog rows for rule 11
+  and the project management vocabulary updated to the new level names.
+- `approaches/idea-to-mvp.md`: an "idea" now maps to a Goal (not an
+  Initiative) in rule 11, and the Delivery planning step cites the
+  goal/milestone/task breakdown.
+- `approaches/design-pipeline.md`: the rule-11 mapping line now points
+  at the Goal/Milestone/Task hierarchy via
+  `conventions/project-management.md`. Stage 0 keeps its own
+  initiative-framing vocabulary, which is local to the design pipeline.
+- `outputs/findings-log.md`: the template's Context line now asks for
+  the goal/milestone a finding came up in, dropping the retired
+  deliverable/initiative vocabulary.
 
 ### Added
 - `routines/tone-analytical-essayist.md`: a self-contained writing tone

@@ -2,7 +2,7 @@
 type: Output
 title: Findings Log
 description: Required shape for the append-only, update-in-place log each of the two learning-loop approaches keeps per adopting repository.
-timestamp: 2026-08-27
+timestamp: 2026-09-23
 ---
 
 # Findings Log
@@ -47,7 +47,7 @@ that may not even be versioned yet.
 Status: <see the adopting loop's own status values>
 <Loop-specific classification field(s) — e.g. Category, or which artifact
 an observation was Promoted to>
-Context: <which milestone/deliverable/initiative this came up in, or
+Context: <which goal/milestone this came up in, or
 "general">
 
 <Body: what happened, why it matters. As short as a papercut-style 1-3
