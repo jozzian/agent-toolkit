@@ -3,7 +3,7 @@ type: Rule
 title: Rules for Prototyping
 description: Product-agnostic rules for AI-supported prototyping and coding, derived from real process postmortems. General mechanics only — no product-specific naming or content.
 tags: [prototyping, coding-agent, process]
-timestamp: 2026-09-20
+timestamp: 2026-09-23
 status: adopted — general, cross-cutting rules. Rule numbers are stable and may be cited by number from consuming projects; do not renumber when editing.
 ---
 
@@ -210,9 +210,9 @@ Revisit both once there's more than one instance to compare.
 
 ## 11. Work is scoped against a goal, decomposed into milestones and tasks
 
-The planning vocabulary itself — what an Initiative, Goal, Milestone,
-and Task each are, how they nest, what an outcome is and when it is
-required, and a worked example — is
+The planning vocabulary itself (what a Theme, Goal, Milestone, and
+Task each are, how they nest, what an outcome is and when it is
+required) is
 defined in `conventions/project-management.md` rather than here, since
 it's a shared naming standard applied consistently across projects (the
 `conventions/` artifact type), not an invariant. This rule's number stays
@@ -376,6 +376,20 @@ changed. The general process for observing, recording, and promoting a
 working-method lesson, whether or not it ends up here, is
 `approaches/working-method-learning-loop.md`; this section is where that
 process's output lands when the promoted artifact is a rule.
+
+**2026-09-23: Rule 11 pointer re-aimed: Theme replaces Initiative, and
+each Goal gains a required Objective statement.** The vocabulary this
+rule points to
+(`conventions/project-management.md`) was rewritten as a work structure
+of three main levels, Goal, Milestone, and Task, under an optional Theme
+(a strategic direction, present tense and aspirational, never "reached"
+and with no outcome of its own). Initiative is retired from the
+vocabulary. Each Goal now states its Objective, the qualitative reason
+it matters, which keeps the option
+open to pull the Objectives out later and rename the Goals as Key
+Results to form OKRs. Outcome remains required for every goal,
+milestone, and task. The rule number and its behavior requirements
+(non-scope stated per milestone, checkable outcome) are unchanged.
 
 **2026-09-20 — Rule 11 pointer re-aimed: four units, deliverable demoted
 to a kind of outcome.** The vocabulary this rule points to

@@ -2,7 +2,7 @@
 type: Index
 title: Rules
 description: Stable numbering contract and concise catalog for the invariant rules in this directory's rule files.
-timestamp: 2026-09-15
+timestamp: 2026-09-23
 ---
 
 # Rules
@@ -31,7 +31,7 @@ becomes a pointer to a dedicated file instead, the way rules 1 and 11 do,
 when either is true:
 
 - **It defines a vocabulary or a staged sequence rather than a single
-  behavior.** A term set (Goal, Initiative, Milestone...) or an ordered
+  behavior.** A term set (Theme, Goal, Milestone, Task) or an ordered
   set of stages (Stage 0 through ongoing iteration) has room to grow,
   gain examples, or need its own revision history independent of the
   rule that cites it — a rule statement isn't the right shape for that,
@@ -61,7 +61,7 @@ adding more to it in place.
 | 8 | One tool-neutral file carries agent-facing instructions; README stays human-facing. | `rules-for-prototyping.md` |
 | 9 | A shared building-block vocabulary is a closed, audited list. | `rules-for-prototyping.md` |
 | 10 | Practices worth watching, not yet rules. | `rules-for-prototyping.md` |
-| 11 | Work is scoped against a goal, decomposed into initiatives, milestones, deliverables, and tasks — vocabulary defined in `conventions/project-management.md`. | `rules-for-prototyping.md` |
+| 11 | Work is scoped against a goal, decomposed into milestones and tasks, with the vocabulary defined in `conventions/project-management.md`. | `rules-for-prototyping.md` |
 | 12 | Before every commit, check for what should not be in it. | `rules-for-prototyping.md` |
 | 13 | An ID is never referenced without its title. | `rules-for-prototyping.md` |
 | 14 | Never write a real secret to a file; give the human a placeholder to fill in themselves. | `rules-for-prototyping.md` |
