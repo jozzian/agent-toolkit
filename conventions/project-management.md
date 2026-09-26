@@ -1,9 +1,9 @@
 ---
 type: Convention
 title: Work structure
-description: The planning vocabulary this toolkit uses to scope and track work (Theme, Goal, Milestone, Task), built on a required outcome for every Goal, Milestone, and Task.
+description: The planning vocabulary this toolkit uses to scope and track work (Intent, Theme, Goal, Milestone, Task), built on a required outcome for every Goal, Milestone, and Task.
 tags: [planning, process]
-timestamp: 2026-09-23
+timestamp: 2026-09-26
 ---
 
 # Work structure
@@ -17,13 +17,22 @@ timestamp: 2026-09-23
 
 Goal, Milestone and Task are the three main levels to work with. A Theme is an optional grouping above them.
 
+## Intent
+
+Intent is the reason the work exists at all, before any Goal is chosen. It answers: what change is wanted in the world, for whom, and why does it matter. Intent is broader than any single Goal or feature, and outliving both is expected.
+
+- Intent should be written down once per project or effort, in one short paragraph. An intent that exists only in someone's head is unknown, and every decision below it will be guessed at.
+- The test of a known intent is that someone else can read it and judge whether a proposed Goal fits it, without asking the author.
+- Intent flows downward through the structure. A Theme aligns a set of Goals to the intent. A Goal's Objective states what the intent looks like for that one Goal. A feature that does not trace back to the intent is a signal to question the feature, not to stretch the intent.
+- Intent is revised deliberately, not drifted into. If a Goal no longer fits, first check whether the Goal is wrong; only change the intent if the reason the work exists has genuinely changed, and record that decision.
+
 ## Theme (optional)
 
 A Theme is a strategic direction that work aligns to. It names an ambition, not a fact to check. It can be mentioned, but doesn't have to be.
 
 - A Theme doesn't have to be "reached" and has no outcome of its own.
 - Wording is present tense and aspirational.
-- A Theme groups a set of Goals and explains why they were chosen together. An Objective explains why one Goal matters. A Theme explains what several Goals have in common.
+- A Theme groups a set of Goals and explains why they were chosen together. An Objective states the intent of one Goal. A Theme explains what several Goals have in common.
 
 ## Goal
 
@@ -31,7 +40,7 @@ A Theme is a strategic direction that work aligns to. It names an ambition, not 
 - SMART is the ambition here. A Goal can fall short on a letter or two, as long as the gap is known.
 - A Goal breaks down into Milestones and is reached once every Milestone is reached. The Milestones together must fully cover the Goal, so that reaching all of them proves the Goal is true.
 - State explicitly what is out of scope.
-- Each Goal needs an explicitly stated Objective. The Objective is the qualitative reason the Goal matters, the change it is meant to bring about. Stating it separately makes it possible to pull the Objectives out later and rename the Goals as Key Results to form OKRs. For now, only the three levels are used.
+- Each Goal needs an explicitly stated Objective. The Objective states the intent of the Goal in one or two sentences: the change it is meant to bring about, why that matters, for whom, and by when. It is the Goal's share of the project Intent, so it must trace back to one; a Goal whose Objective cannot be connected to a written intent is a signal that the intent is unknown or the Goal does not belong. Stating it separately makes it possible to pull the Objectives out later and rename the Goals as Key Results to form OKRs. For now, only the three levels are used. An Objective that cannot name a beneficiary or a time frame is a signal to revisit the Goal itself, not a license to pad the sentence.
 
 ## Milestone
 

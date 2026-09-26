@@ -11,9 +11,16 @@ follows [Semantic Versioning](https://semver.org/).
   three main levels, Goal, Milestone, and Task, under an optional Theme
   (a strategic direction that names an ambition, is never "reached",
   and carries no outcome of its own). Initiative is retired. Each Goal
-  now states its Objective, the qualitative reason it matters, which
-  keeps the option open to pull the Objectives out later and rename
-  the Goals as Key Results to form OKRs. Adds the outcome rules
+  now states its Objective, which states the intent of the Goal in one
+  or two sentences: the change it brings, why that matters, for whom,
+  and by when, with an unnamed beneficiary or time frame treated as a
+  signal to revisit the Goal. A new Intent section defines the reason
+  the work exists before any Goal is chosen: written down once per
+  project, judgeable by others, traced downward through Theme and
+  Objective, and revised deliberately rather than drifted into.
+  Stating the Objective separately keeps
+  the option open to pull the Objectives out later and rename the
+  Goals as Key Results to form OKRs. Adds the outcome rules
   (deliverable, state, or
   decision; result not activity; binary; verification named), the
   full-SMART requirement for milestones against the ambition-level
