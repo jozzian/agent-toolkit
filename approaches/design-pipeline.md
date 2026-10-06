@@ -25,7 +25,11 @@ edited in the same pass as whatever change it describes, never left stale
 
 A new screen or flow needs a design artifact before or alongside code, or
 an existing screen's documentation has drifted from its actual behavior
-and needs to be brought back in sync.
+and needs to be brought back in sync. "Alongside" applies to backend
+work: backend implementation may proceed while design stages advance.
+Frontend implementation of a screen or flow starts only once its
+wireframe has the owner's explicit approval, recorded as a dated
+decision, per rule 18 of `rules/rules-for-prototyping.md`.
 
 ## Human and AI responsibilities
 
@@ -204,7 +208,9 @@ long as the screen exists.
 ## Related artifacts
 
 This approach implements rule 1 of `rules/rules-for-prototyping.md` (design
-pipeline is local and sequential, before or alongside code); see that
+pipeline is local and sequential, before or alongside code, where
+alongside covers backend work only; rule 18 gates frontend
+implementation on an owner-approved wireframe); see that
 file for the general rules this stage sequence operates under, including
 why every stage's own output must name its open questions (rule 6), why
 the always-latest folder staying in sync is treated as structural, not

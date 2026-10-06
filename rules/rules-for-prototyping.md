@@ -367,6 +367,76 @@ was skipped and when to revisit it. The "does this codebase already
 do it" step overlaps rule 9's check; this rule extends reuse-checking
 beyond the adopted inventory; it does not replace rule 9.
 
+## 17. Every work item traces to the delegated intent, or it does not happen
+
+**Rule:** a delegated work item (agent brief, milestone, task) carries an
+explicit **Intent anchor**: the intent it serves, stated in one or two
+sentences, in the item itself, not only in a tracker field or a parent
+document the executing agent may never read. Every sub-item of the work
+must trace to that anchor. An item that cannot be traced is a *side
+quest*: it is surfaced to the owner as accept or cut, never executed
+silently and never absorbed into the work in progress.
+
+The mechanical check, at write time and at review time: for each task or
+acceptance criterion, ask "which sentence of the Intent anchor does this
+serve?" If the answer is none, the task does not belong in this item;
+it belongs in a new item with its own anchor, or nowhere.
+
+This is the requirement-traceability discipline (every work product
+traces to a stated requirement or objective) applied at the granularity
+of a single delegation. The failure mode it answers: an agent given a
+brief with an implicit goal invents adjacent work (hardening,
+refactors, extra features) that looks productive, passes review
+item-by-item, and quietly redefines what the work was for. A non-scope
+list (rule 11) states what is excluded; the Intent anchor states what the
+work is *for*, and the traceability check makes exclusion enforceable
+line by line rather than by memory of a list.
+
+**Relation to the Intent chain:** `conventions/project-management.md`
+defines Intent (the reason the work exists, once per project) and the
+Objective (a Goal's one or two sentence share of that Intent), and
+already requires features to trace back to the Intent. This rule does
+not restate that chain; it carries it down one more level, to the
+individual delegated item, and adds what the convention deliberately
+leaves open: the anchor must sit inside the item itself (a cold
+executor may never read the project's Intent), and a failed trace has
+a fixed procedure (surface as accept-or-cut side quest) rather than a
+signal to question. Where an item is a Task under a Goal, its Intent
+anchor is normally that Goal's Objective, quoted or condensed.
+
+**Why this is its own rule, not folded into rule 11:** rule 11 governs
+how a milestone is scoped when it is planned; this rule governs what an
+executor, human or agent, does with an item mid-flight, and where the
+anchor must live so that a cold executor with no session history can
+apply the check. Rule 13 keeps IDs legible in conversation; this rule
+keeps work legible against its purpose.
+
+## 18. Frontend and backend are separate; frontend gates on approval
+
+**Rule:** in any effort that produces both, frontend work and backend
+work are planned, delegated, and reviewed as separate tracks with their
+own items, never one blended brief. Frontend implementation does not
+start until the screen or flow it implements has a wireframe the owner
+has explicitly approved. An agent that hits a frontend need while
+executing backend work stops and surfaces the need; it does not design
+and build UI on its own initiative.
+
+The gate is an *owner approval*, not the existence of a design artifact:
+a wireframe nobody approved does not unblock frontend work, and approval
+is recorded (a dated decision on the item, per rule 11's outcome
+vocabulary) so a later session can check the gate was actually passed.
+
+This composes with `approaches/design-pipeline.md`, which defines the
+stages that produce wireframes and hi-fi designs; this rule states the
+hard boundary the pipeline's existence implies: no frontend code ahead
+of an approved design, and no agent crossing the FE/BE line silently.
+
+**Why this is its own rule, not part of rule 1:** rule 1 is a pointer to
+a staged approach an owner may adopt; this rule is an invariant that
+holds even in projects that run no design pipeline at all: blended
+delegations and unapproved UI are failure modes independent of whether
+stages exist.
+
 ---
 
 ## Learnings — evolving, not fixed
@@ -376,6 +446,21 @@ changed. The general process for observing, recording, and promoting a
 working-method lesson, whether or not it ends up here, is
 `approaches/working-method-learning-loop.md`; this section is where that
 process's output lands when the promoted artifact is a rule.
+
+**2026-10-06: Rules 17 and 18 added: a Intent anchor with traceability,
+and a frontend design gate.** Both trace to the same delegation
+postmortem shape: an agent executing a brief whose goal lived only in
+the owner's head produced plausible adjacent work that nobody asked
+for, including UI built without any approved design. Rule 17 requires
+the intent to sit inside the work item itself and every sub-item to
+trace to it, with untraceable items surfaced as accept-or-cut side
+quests instead of absorbed. It is the requirements-traceability
+discipline applied at single-delegation granularity, and it is distinct
+from rule 11 (planning-time scope) because it governs executor behavior
+mid-flight. Rule 18 separates frontend and backend tracks and gates
+frontend implementation on an explicitly recorded owner approval of the
+wireframe; it composes with, and does not restate, the design pipeline
+approach (rule 4).
 
 **2026-09-23: Rule 11 pointer re-aimed: Theme replaces Initiative, and
 each Goal gains a required Objective statement.** The vocabulary this

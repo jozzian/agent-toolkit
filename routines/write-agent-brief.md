@@ -2,7 +2,7 @@
 type: Routine
 title: Write Agent Brief
 description: Turns a vague task idea into a conforming four-part agent-executable brief, portable enough to paste into any chat.
-timestamp: 2026-09-15
+timestamp: 2026-10-06
 tags: [work-orders, briefs, delegation]
 status: adopted; canonical, tool-neutral version. Do not fork a per-tool copy of this content.
 ---
@@ -27,6 +27,10 @@ repository.
 2. Write a hook: one to two sentences stating why this task
    exists. Link the source, an article, a tool, a prior work
    order, by its identifier, not by restating its content.
+   The hook must also carry the Intent anchor: state the intent
+   this task serves, in words the executing agent can check its
+   work against. A hook that only names a prior work order
+   without stating the intent does not conform.
 3. Write the repo deliverable: the concrete file or files to
    create or amend, with exact paths from the real repository
    tree. Always include the repository's own bookkeeping
@@ -50,22 +54,34 @@ repository.
    the paired identifier for a task that forms a natural duo with
    another (for example, a training half and an inference half of
    one feature).
-8. Cross-link related work by identifier rather than a
-   hand-written URL; most work-order systems resolve an
-   identifier into a link on their own, and a hand-written URL
-   goes stale.
-9. Write the whole brief in plain, direct prose: no contractions,
-   no em dashes or en dashes (use a period, a comma, a colon, or
-   "and" instead), no filler phrases, no inflated words where a
-   plain one would do, no stacked hedging, lead with the point in
-   every sentence.
-10. Before handing off the brief, check it against this list: all
+8. Check the track: the brief covers frontend work or backend
+   work, never both. A frontend brief names the owner-approved
+   wireframe it implements; if no approved wireframe exists, the
+   brief does not proceed to frontend implementation.
+9. Trace every part to the Intent anchor: each deliverable,
+   instruction, and acceptance criterion must serve a sentence of
+   the anchor. An item that serves none is a side quest; cut it
+   from this brief or give it its own work order with its own
+   anchor. State in the brief that the executing agent surfaces
+   untraceable work for accept or cut instead of performing it.
+10. Cross-link related work by identifier rather than a
+    hand-written URL; most work-order systems resolve an
+    identifier into a link on their own, and a hand-written URL
+    goes stale.
+11. Write the whole brief in plain, direct prose: no contractions,
+    no em dashes or en dashes (use a period, a comma, a colon, or
+    "and" instead), no filler phrases, no inflated words where a
+    plain one would do, no stacked hedging, lead with the point in
+    every sentence.
+12. Before handing off the brief, check it against this list: all
     four parts present and in order; every deliverable path
     grounded in the real repository tree; the repository's own
     bookkeeping artifacts included; the title verb-first; related
     work cross-linked by identifier; at least one committed
     deliverable; optional extras present only where they earn
-    their place.
+    their place; the hook carries a Intent anchor and every part
+    traces to it; a single track, with an approved wireframe named
+    for any frontend brief.
 
 ## Kickoff message
 

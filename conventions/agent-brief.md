@@ -1,8 +1,8 @@
 ---
 type: Convention
 title: Agent Brief
-description: Convention for writing an agent-executable work-order brief, covering the four-part anatomy and the writing rules that keep it grounded in the real repository.
-timestamp: 2026-09-15
+description: Convention for writing an agent-executable work-order brief, covering the four-part anatomy, the Intent anchor and traceability requirement, and the writing rules that keep it grounded in the real repository.
+timestamp: 2026-10-06
 ---
 
 # Agent Brief
@@ -26,7 +26,7 @@ a conversation does not need it.
 A conforming brief has four parts, in order:
 
 ```markdown
-<1-2 sentence hook: why this exists, linking source material or prior work orders by identifier>
+<1-2 sentence hook: why this exists, linking source material or prior work orders by identifier, and carrying the Intent anchor (see below)>
 
 **Repo deliverable (<repo-name>):**
 - Concrete file(s) to create or amend, exact paths from the real repository tree.
@@ -40,6 +40,12 @@ A conforming brief has four parts, in order:
 - **Hook.** One to two sentences on why the task exists. Link the
   source material, an article, a tool, or a prior work order, by
   identifier rather than restating it.
+  The hook doubles as the brief's **Intent anchor**: it must state,
+  in words the executing agent can check work against, the intent
+  this task serves. A hook that only narrates history ("follow-up
+  to PROJ-140") without stating the intent fails rule 17; see
+  [rules/rules-for-prototyping.md](../rules/rules-for-prototyping.md)
+  rule 17 for what a side quest is and how it is resolved.
 - **Repo deliverable.** The concrete file or files to create or
   amend, with exact paths from the real repository tree. Always
   include the repository's own bookkeeping artifacts, a changelog
@@ -54,6 +60,16 @@ A conforming brief has four parts, in order:
 
 Writing rules that keep a brief executable:
 
+- **Every part traces to the Intent anchor.** Each repo deliverable,
+  each agent-brief instruction, and each acceptance criterion must
+  serve a sentence of the anchor; the executing agent holds the same
+  obligation in reverse for work it proposes. Rule 17 defines the
+  side-quest procedure that applies when a trace fails.
+- **One brief, one track.** Frontend and backend work are separate
+  briefs, and a frontend brief names the owner-approved wireframe
+  it implements; a brief that blends both tracks, or asks an agent
+  to build UI with no approved design behind it, does not conform
+  (rule 18).
 - **Ground every path in the real repository tree.** Clone first,
   read the README and the indexes, cite actual paths. An invented
   path makes the executing agent hallucinate a deliverable that
@@ -165,6 +181,12 @@ Before handing off a brief:
 
 - [ ] All four parts present, in order: hook, repo deliverable,
       agent brief, learning goal.
+- [ ] The hook carries a Intent anchor: the intent of the task,
+      stated so work can be traced to it.
+- [ ] Every deliverable, instruction, and criterion traces to the
+      anchor; untraceable items were cut or filed separately.
+- [ ] Single track only (frontend or backend, not both); a
+      frontend brief names its owner-approved wireframe.
 - [ ] Every path in the repo deliverable exists in the real
       repository tree, or is a clearly new path under an existing
       directory the repository's own conventions define.

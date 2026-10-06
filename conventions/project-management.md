@@ -23,7 +23,7 @@ Intent is the reason the work exists at all, before any Goal is chosen. It answe
 
 - Intent should be written down once per project or effort, in one short paragraph. An intent that exists only in someone's head is unknown, and every decision below it will be guessed at.
 - The test of a known intent is that someone else can read it and judge whether a proposed Goal fits it, without asking the author.
-- Intent flows downward through the structure. A Theme aligns a set of Goals to the intent. A Goal's Objective states what the intent looks like for that one Goal. A feature that does not trace back to the intent is a signal to question the feature, not to stretch the intent.
+- Intent flows downward through the structure. A Theme aligns a set of Goals to the intent. A Goal's Objective states what the intent looks like for that one Goal. A feature that does not trace back to the intent is a signal to question the feature, not to stretch the intent. At the level of an individual delegated work item, rule 17 of `rules/rules-for-prototyping.md` carries this chain down one step: the item quotes its share of the intent (normally its Goal's Objective) and every part of the item must trace to that quote.
 - Intent is revised deliberately, not drifted into. If a Goal no longer fits, first check whether the Goal is wrong; only change the intent if the reason the work exists has genuinely changed, and record that decision.
 
 ## Theme (optional)
