@@ -17,6 +17,7 @@ repository.
 | [Sharpen](sharpen.md) | Cuts redundancy, filler, and AI-writing tells out of a piece of prose, and asks whether a proposed document needs to exist at all. |
 | [Secret Scan](secret-scan.md) | Scans a working tree for secret-shaped content at any point in a session, not just before a commit; prefers repo-guardian's `rg-scan` when available, falls back to a pattern grep, and checks whether each match is gitignored and whether it has ever been committed. |
 | [Write Agent Brief](write-agent-brief.md) | Turns a vague task idea into a conforming four-part agent-executable brief, including the kickoff-message skeleton for handing the work to a fresh session or a different agent. |
+| [Alignment Review](alignment-review.md) | Reviews a plan, brief, or diff against its quoted Intent anchor, classifies every part as aligned or side quest, and records an owner decision (accept with anchor amendment, or cut) for each side quest. |
 | [Analytical Essayist Tone](tone-analytical-essayist.md) | Applies a formal, structured, mildly skeptical voice to essays, explainers, and analytical think-pieces: no contractions, no em dashes, one precise number early, named sources, defined borrowed terms, a complication section, and a closing verdict. |
 
 A routine does not depend on an approach, a rule, or another routine to

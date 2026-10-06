@@ -67,6 +67,8 @@ adding more to it in place.
 | 14 | Never write a real secret to a file; give the human a placeholder to fill in themselves. | `rules-for-prototyping.md` |
 | 15 | Verify decommissioned artifacts (credential files, generated output, caches) are actually gone, not just their references. | `rules-for-prototyping.md` |
 | 16 | Before writing new code, run a build-versus-reuse ladder (need, codebase, stdlib, platform feature, dependency, one line, minimum code); every exit states what was skipped and when to revisit it. | `rules-for-prototyping.md` |
+| 17 | Every work item carries a Intent anchor and every sub-item traces to it; untraceable items are side quests, surfaced for accept or cut, never executed silently. | `rules-for-prototyping.md` |
+| 18 | Frontend and backend work are separate tracks; frontend implementation starts only from an owner-approved wireframe, with the approval recorded. | `rules-for-prototyping.md` |
 
 Full text, rationale, and each file's own evolving "Learnings" record live
 in the file named in the table above. This index does not restate rule

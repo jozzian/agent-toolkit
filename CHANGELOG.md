@@ -6,7 +6,49 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- `rules/rules-for-prototyping.md` rules 17 and 18, with a Learnings
+  entry dated 2026-10-06. Rule 17: every delegated work item carries an
+  Intent anchor (the intent it serves, stated inside the item itself) and
+  every sub-item must trace to it; an untraceable item is a side quest,
+  surfaced to the owner for accept or cut, never executed silently.
+  Rule 18: frontend and backend work are separate tracks, and frontend
+  implementation starts only from an owner-approved wireframe, with the
+  approval recorded as a dated decision.
+- `routines/alignment-review.md`: the self-contained checklist that
+  enforces rule 17 at two moments (before execution on the plan, after
+  execution on the diff): quote the anchor, enumerate parts, verdict
+  each part aligned or side quest, record an owner disposition per side
+  quest (accept amends the anchor in the same pass; cut removes or
+  re-files the work), and write the review down where the item lives.
+
+  The anchor is named for the Intent chain of
+  `conventions/project-management.md`: rule 17 carries Intent/Objective
+  down one level, to the individual delegated item, where the item
+  quotes its share of the intent (normally its Goal's Objective).
+
 ### Changed
+- `conventions/agent-brief.md`: the hook now doubles as the brief's
+  Intent anchor, and two new writing rules require every part of a brief
+  to trace to the anchor and keep one track per brief (a frontend brief
+  names its owner-approved wireframe). The quality checklist gains the
+  matching items.
+- `routines/write-agent-brief.md`: step 2 requires the hook to carry
+  the Intent anchor; new steps 8 and 9 add the single-track check and the
+  trace-every-part check; the handoff checklist follows.
+- `approaches/design-pipeline.md`: "before or alongside code" is now
+  explicit that alongside covers backend work only, and frontend
+  implementation gates on an owner-approved wireframe per rule 18,
+  reconciling the pipeline with the new rule.
+- `conventions/project-management.md`: the Intent bullet now points at
+  rule 17 as the level below the chain, so the two mechanisms
+  cross-reference in both directions.
+- `conventions/agent-brief.md` no longer re-derives rule 17's
+  side-quest procedure; it states the brief-specific application (the
+  hook is where the anchor lives) and points at the rule.
+- `rules/index.md`, `conventions/index.md`, `routines/index.md`:
+  catalog rows for rules 17 and 18, the extended agent-brief
+  convention, and the new alignment-review routine.
 - `conventions/project-management.md`: rewritten as a work structure of
   three main levels, Goal, Milestone, and Task, under an optional Theme
   (a strategic direction that names an ambition, is never "reached",
