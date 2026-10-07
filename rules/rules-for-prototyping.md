@@ -462,6 +462,18 @@ frontend implementation on an explicitly recorded owner approval of the
 wireframe; it composes with, and does not restate, the design pipeline
 approach (rule 4).
 
+**2026-10-06 (same day, PR #17 review): the Decisions gate bites its own
+author.** The PR that added rules 17 and 18 shipped with a filled-in
+Decisions section whose two entries only restated wording the new rules
+already define (where wireframe approvals are recorded, the side-quest
+channel). `conventions/pr-description.md` permits the section only for a
+placement or model-level choice a reviewer could reasonably contest, and
+instructs deleting it otherwise; restating a rule's own text as an open
+question is filler, not a decision. The section was removed from the PR
+body. Lesson for delegated execution: the house conventions apply to the
+delegation artifacts themselves, and the conditional sections of a
+template are checked at authoring time, not only at review time.
+
 **2026-09-23: Rule 11 pointer re-aimed: Theme replaces Initiative, and
 each Goal gains a required Objective statement.** The vocabulary this
 rule points to
