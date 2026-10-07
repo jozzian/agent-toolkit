@@ -7,6 +7,14 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- `routines/write-handover.md`: a self-contained routine that turns the
+  current session state into a structured handover block (TITLE / TIME &
+  DATE / INTENT/GOAL / DONE LAST / REPOS UPDATED / REPOS ARE UP-TO-DATE /
+  DO NEXT). Requirements: verify every claim with real commands before
+  writing, tracker ID first on DONE LAST and DO NEXT, human-readable
+  main block, dense machine-oriented detail in a separate labeled
+  compact block, no secrets in either block, explicit correction of
+  earlier wrong claims, and a closing feedback line.
 - `rules/rules-for-prototyping.md` rules 17 and 18, with a Learnings
   entry dated 2026-10-06. Rule 17: every delegated work item carries an
   Intent anchor (the intent it serves, stated inside the item itself) and

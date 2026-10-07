@@ -2,7 +2,7 @@
 type: Index
 title: Routines
 description: Catalog of self-contained, task-specific instruction sets that can be invoked in a local agent or pasted into an AI chat.
-timestamp: 2026-09-19
+timestamp: 2026-10-07
 ---
 
 # Routines
@@ -19,6 +19,7 @@ repository.
 | [Write Agent Brief](write-agent-brief.md) | Turns a vague task idea into a conforming four-part agent-executable brief, including the kickoff-message skeleton for handing the work to a fresh session or a different agent. |
 | [Alignment Review](alignment-review.md) | Reviews a plan, brief, or diff against its quoted Intent anchor, classifies every part as aligned or side quest, and records an owner decision (accept with anchor amendment, or cut) for each side quest. |
 | [Analytical Essayist Tone](tone-analytical-essayist.md) | Applies a formal, structured, mildly skeptical voice to essays, explainers, and analytical think-pieces: no contractions, no em dashes, one precise number early, named sources, defined borrowed terms, a complication section, and a closing verdict. |
+| [Write Handover](write-handover.md) | Turns the current session state into a structured handover block (TITLE / TIME & DATE / INTENT/GOAL / DONE LAST / REPOS UPDATED / REPOS ARE UP-TO-DATE / DO NEXT) that a fresh session or a different agent can pick up cold, with verified state, a human-readable main block, and a separate compact AI-only block. |
 
 A routine does not depend on an approach, a rule, or another routine to
 make sense on its own. Where a routine's output feeds into a staged
