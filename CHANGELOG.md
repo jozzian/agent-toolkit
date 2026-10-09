@@ -6,6 +6,46 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Repository simplified to one canonical method file. `AGENTS.md`
+  ("How we work") added at the root, carrying the principle, the
+  four-phase path (Frame / Design / Build / Learn), the task brief
+  template with Intent anchor and side-quest rule, the reuse ladder,
+  review, commit, secrets, docs, and Learn rules, and the PROJECT.md
+  inventory model. It replaces `rules/rules-for-prototyping.md` (rules
+  1 to 18, minus numbering), the approaches catalog, the planning and
+  OKF conventions, and the artifact-template system.
+- Deleted as covered by AGENTS.md: `rules/` (both files),
+  `approaches/` (all eight), `conventions/okf.md`,
+  `conventions/project-management.md`, `conventions/agent-brief.md`,
+  `conventions/templates/` (all six), `routines/index.md`,
+  `routines/write-agent-brief.md`, `routines/alignment-review.md`,
+  `outputs/` (all three), `agent-config/claude/skills/design-pipeline/`.
+- Deleted as team or history residue with no surviving consumer:
+  `conventions/repo-structure.md`, `conventions/release-process.md`,
+  `VERSION` (last value 1.1.0, recorded here), `findings/product-use.md`
+  (empty).
+- `findings/working-method.md` deleted after salvage: the Codex
+  `apply_patch` devbox failure report moved into the operating agent's
+  `codex` skill; the full report remains under git tag
+  `before-simplification`.
+- `approaches/multi-agent-collaboration.md` deleted; parallel-session
+  coordination lives in the operating agent's own delegation skills,
+  and AGENTS.md keeps the review rule (an agent never approves its own
+  work).
+- Kept and rewritten: `README.md` (human orientation for the new
+  layout), `agent-config/index.md` and `agent-config/claude/index.md`
+  (describe the surviving wiring). Kept unchanged: `CHANGELOG.md`,
+  `conventions/pr-description.md`, `.github/pull_request_template.md`,
+  `routines/sharpen.md`, `routines/secret-scan.md`,
+  `routines/write-handover.md`, `routines/tone-analytical-essayist.md`,
+  `agent-config/claude/settings.json`,
+  `agent-config/claude/skills/analytical-essayist-tone/SKILL.md`,
+  `.gitignore`.
+- `agent-config/claude/session-start-repo-check.sh` updated: implements
+  the AGENTS.md session-start drift check and now also reports whether
+  `AGENTS.md` and `PROJECT.md` exist in each discovered repo.
+
 ### Added
 - `routines/write-handover.md`: a self-contained routine that turns the
   current session state into a structured handover block (TITLE / TIME &

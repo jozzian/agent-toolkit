@@ -9,8 +9,8 @@ This is Claude Code's discovery wrapper for the
 `tone-analytical-essayist` routine. The full tone (voice, rules,
 structure, sentence-level habits, vocabulary register, examples, and the
 finalizing checklist) is defined once, at
-`routines/tone-analytical-essayist.md` in this toolkit, not here (rule 4
-of `rules/rules-for-prototyping.md`: single source of truth per fact).
+`routines/tone-analytical-essayist.md` in this toolkit, not here (one
+home per fact, per `AGENTS.md`).
 Read that file and follow every section of it when this skill applies;
 this wrapper exists only because Claude Code's skill system looks for a
 file at exactly this path
