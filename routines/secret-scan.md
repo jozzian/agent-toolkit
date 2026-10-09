@@ -63,19 +63,19 @@ any time before telling a human "safe to push or share this."
 
 ## Why this exists as a routine, not just a commit-time rule
 
-Rule 12 in `rules/rules-for-prototyping.md` ("before every commit, check
-for what shouldn't be in it") only fires at the moment someone runs
-`git commit`. A secret can sit exposed in a working tree for an
-arbitrary amount of time before that ever happens. This routine exists
-to be run proactively, independent of git state.
+The pre-commit check in `AGENTS.md` ("before every commit, check what
+is staged") only fires at the moment someone runs `git commit`. A
+secret can sit exposed in a working tree for an arbitrary amount of
+time before that ever happens. This routine exists to be run
+proactively, independent of git state.
 
 ## Invocation
 
 Explicit invocation applies this routine to the current working tree,
 right now. A consuming project or an agent configuration may wire it in
 as an automatic trigger (for example, right after any file write in a
-session, or alongside rule 3's session-start state check) so it runs
-without being asked each time.
+session, or alongside the AGENTS.md session-start drift check) so it
+runs without being asked each time.
 
 This file, by itself, cannot make that automatic. It states what the
 routine does once invoked; whether it runs by default in a given tool is

@@ -107,9 +107,9 @@ What each section must do, and why it is mandatory or conditional:
   at the unit of decision. Do not restate the diff file by file; the
   diff already lists every file. Add only what the diff cannot show:
   where content was derived from, why a piece exists, and what the PR
-  deliberately does not do. PR #1's provenance notes ("derived from
-  `rules/rules-for-prototyping.md`") earn this rule: that fact appears
-  nowhere in the diff itself.
+  deliberately does not do. PR #1's provenance notes (content derived
+  from the toolkit's rule set, now `AGENTS.md`) earn this rule: that
+  fact appears nowhere in the diff itself.
 - **Decisions: conditional.** Include the section when, and only
   when, the PR makes a placement or model-level choice a reviewer
   could reasonably contest: where a new artifact lives, whether the
