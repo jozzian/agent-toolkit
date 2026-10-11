@@ -6,6 +6,36 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- `conventions/okf.md` restored in a slim form. The 9 October
+  simplification said AGENTS.md replaced it, but AGENTS.md carried none
+  of its rules, and a product agent then filed docs under ticket names
+  and committed session logs. The type list now covers product docs
+  (Flow, Surface, Decision, Design system, Learning), not only toolkit
+  files.
+- `conventions/capability.md` and a Capabilities section in AGENTS.md.
+  CareerOS grew organisation intake and taxonomy logic that other
+  products need, and nothing said where shared logic lives or how a
+  product depends on it.
+- AGENTS.md component gate. A text sketch approved for the CareerOS
+  Jobs board settled structure but not look, and the built page did not
+  match what the owner wanted. The agent now proposes components,
+  renders a specimen and waits for approval before building a surface.
+- AGENTS.md Tests rule. A product agent wrote about 570 tests, many
+  asserting markup strings and all browser tests running against mocked
+  data. The rule sets a minimum per rule, surface, contract and bug,
+  and requires seeing a new test fail once.
+
+### Changed
+- AGENTS.md: a product copy names the toolkit commit it came from, and
+  the toolkit sits beside the product repo so conventions can be read.
+  The reuse ladder checks shared capabilities before outside
+  dependencies. Docs rules point to OKF and keep session material out
+  of repos. The inventory lists capabilities and points to the design
+  system doc, which holds the adopted components.
+- `conventions/pr-description.md`: removed the dead link to the deleted
+  `release-process.md`.
+
 ### Changed
 - Repository simplified to one canonical method file. `AGENTS.md`
   ("How we work") added at the root, carrying the principle, the

@@ -124,9 +124,7 @@ What each section must do, and why it is mandatory or conditional:
 - **Verification: mandatory.** List what was actually run or checked,
   and paste real output where a claim depends on it. "All internal
   links resolve" is a claim; the command and its clean exit are the
-  verification. Separate what was verified from what is assumed, the
-  same rule [release-process.md](release-process.md) applies to
-  CHANGELOG entries. This section is what makes a review rest on
+  verification. Separate what was verified from what is assumed. This section is what makes a review rest on
   evidence rather than trust, so it never gets dropped for being
   inconvenient.
 - **Metadata: mandatory.** Four lines, fixed order. GitHub's own UI
