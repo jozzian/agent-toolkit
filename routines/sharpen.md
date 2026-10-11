@@ -2,12 +2,13 @@
 type: Routine
 title: Sharpen
 description: A self-contained editing routine for cutting AI-writing tells and unnecessary scope out of prose, portable enough to paste into any chat.
-timestamp: 2026-08-26
-tags: [writing, editing]
-status: adopted; canonical, tool-neutral version. Do not fork a per-tool copy of this content.
+timestamp: 2026-10-11
+status: approved 2026-10-11
 ---
 
 # Sharpen
+
+This is the canonical, tool-neutral version. Do not fork a per-tool copy of this content.
 
 Apply this routine to the piece of writing at hand: a draft, a message, a
 document, or a section of one. Follow every instruction below on the

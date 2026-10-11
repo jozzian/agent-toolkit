@@ -45,7 +45,7 @@ Do not use a value outside this list. A doc that fits none of them is either in 
 - One concept per file. Name it in kebab-case after the concept, never after a ticket, milestone, batch or date. "jobs.md", not "m0-jobs-board-sketch.md". Tickets are linked from the doc, not encoded in its name.
 - A directory with more than five docs gets an index.md that names each one in a line.
 - Links: relative paths inside a repo, the repository name and doc title across repos, full URLs for external pages.
-- Material that must not be committed: scratch files, session logs, build notes, review prompts, agent plans and handovers. Add their patterns to .gitignore. Anything an approval depends on, such as a mockup, is committed beside the doc that records the approval, never left in /tmp.
+- Material that must not be committed is listed by the Docs rule in AGENTS.md. Add the patterns for such material to .gitignore. OKF adds one rule of its own: anything an approval depends on, such as a mockup, is committed beside the doc that records the approval, never left in /tmp.
 
 ## Checklist
 

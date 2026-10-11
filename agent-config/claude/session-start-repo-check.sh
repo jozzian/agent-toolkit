@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
-# Read-only repo-state check implementing the session-start drift check from
-# AGENTS.md ("Every session starts the same way"). Never writes, never runs a
-# destructive git command.
+# Read-only repo-state check covering the mechanical part of the session-start
+# drift check from AGENTS.md ("Every session starts the same way"). Never
+# writes, never runs a destructive git command. The qualitative part of the
+# rule (docs that disagree with the app, work no doc mentions) is the agent's
+# job, not this script's.
 #
 # Auto-discovers every git repo one level below the workspace root — no
 # hardcoded repo list to keep in sync (one home per fact; the filesystem is
 # the fact here). For each repo it reports working-tree state, unpushed
-# commits, and whether AGENTS.md and PROJECT.md are present and when they
-# were last touched, so a stale or missing method doc is visible before work
-# starts. Assumes this script lives at <workspace-root>/.claude/
+# commits, whether AGENTS.md and PROJECT.md are present and when they were
+# last touched, and, when AGENTS.md is a product copy naming a toolkit
+# commit, whether the agent-toolkit repo beside it has moved past that
+# commit. Assumes this script lives at <workspace-root>/.claude/
 # session-start-repo-check.sh; override with WORKSPACE_ROOT if installed
 # elsewhere.
 set -uo pipefail
@@ -40,6 +43,34 @@ for dir in "$WORKSPACE_ROOT"/*/; do
       section+=$'\n'"$doc MISSING — AGENTS.md requires it at repo root"
     fi
   done
+  # Product-copy toolkit drift: if AGENTS.md first line names a toolkit
+  # commit and agent-toolkit sits beside this repo, say whether the toolkit
+  # has moved past that commit.
+  if [ "$repo" != "agent-toolkit" ] && [ -f "$dir/AGENTS.md" ]; then
+    first_line=$(head -n 1 "$dir/AGENTS.md")
+    case "$first_line" in
+      *"Copied from agent-toolkit at "*)
+        pin=$(printf '%s' "$first_line" | sed -n 's/.*Copied from agent-toolkit at \([0-9a-f]\{7,40\}\).*/\1/p')
+        toolkit_dir="$WORKSPACE_ROOT/agent-toolkit"
+        if [ -n "$pin" ] && [ -d "$toolkit_dir/.git" ]; then
+          if git -C "$toolkit_dir" cat-file -e "$pin^{commit}" 2>/dev/null; then
+            if git -C "$toolkit_dir" merge-base --is-ancestor "$pin" HEAD 2>/dev/null; then
+              if [ "$(git -C "$toolkit_dir" rev-parse HEAD)" = "$(git -C "$toolkit_dir" rev-parse "$pin")" ]; then
+                section+=$'\n'"agent-toolkit at pinned commit $pin (copy current)"
+              else
+                behind=$(git -C "$toolkit_dir" rev-list --count "$pin..HEAD" 2>/dev/null)
+                section+=$'\n'"agent-toolkit is $behind commit(s) past pinned $pin: copy may be stale"
+              fi
+            else
+              section+=$'\n'"pinned toolkit commit $pin is not an ancestor of agent-toolkit HEAD"
+            fi
+          else
+            section+=$'\n'"pinned toolkit commit $pin not found in agent-toolkit"
+          fi
+        fi
+        ;;
+    esac
+  fi
   report+="$section"
 done
 

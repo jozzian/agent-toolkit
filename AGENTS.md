@@ -85,7 +85,7 @@ Design happens in documents that always describe the app as it is now. Edit them
 - Pasted or typed input is never rejected. It always produces a record, even if everything after it fails, and the failure is visible with a way to retry.
 - Nothing in the interface stands for a feature that does not exist.
 
-**Component gate.** A sketch settles structure. It does not settle how a surface looks. Before building a new surface or rebuilding an existing one, the agent proposes the components and waits for approval.
+**Component gate.** A sketch settles structure. It does not settle how a surface looks. The gate applies to surfaces a person looks at, meaning screens. An endpoint, command or document settles its shape in the sketch instead, with an example request and response or an outline with sample text. Before building a new screen or rebuilding an existing one, the agent proposes the components and waits for approval.
 
 1. Read the design system record in the inventory and the project's design system doc. If no design system is recorded, say "No design system recorded" and stop. Do not pick one.
 2. List what the surface uses today, if it exists, and which adopted components already cover each part.
@@ -144,7 +144,7 @@ Every exit states what was skipped and when to revisit it.
 **Tests.** A test protects behavior that would hurt if it broke. Start with the minimum below. Add tests when a part becomes important or breaks, not in advance.
 
 - Each product rule in PROJECT.md gets one test that fails if the rule is broken.
-- Each surface gets one smoke test that loads it against the real backend with sample data, without mocks.
+- Each surface gets one smoke test that exercises it against the real backend with sample data, without mocks. A screen loads, an endpoint answers a real call, a command runs.
 - Each endpoint or function another part depends on gets one contract test.
 - Each fixed bug gets one regression test.
 - A pure function with many edge cases gets one table-driven test.
@@ -185,7 +185,7 @@ If an item conflicts with something already recorded, name the conflict and the 
 
 ## Capabilities
 
-A capability is logic that is not about one product and that another product could use, such as matching an organisation to known records or classifying it against a standard taxonomy. Each capability lives in its own repository, listed in the toolkit README. A product depends on a pinned version and never edits a copy.
+A capability is logic that is not about one product and that another product could use, such as matching an organisation to known records or classifying it against a standard taxonomy. An extracted capability lives in its own repository, listed in the toolkit README, and a product depends on a pinned version and never edits a copy. Before extraction a capability stays inside the product as a separate module, as the bullets below say.
 
 - At Frame, check the capability list and use what exists before building.
 - When product work creates logic another product could use, say so when it happens. Keep it free of product concepts. It imports nothing from product modules, receives product data as plain input, and gets storage, network and model access passed in.

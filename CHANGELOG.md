@@ -35,8 +35,15 @@ follows [Semantic Versioning](https://semver.org/).
   system doc, which holds the adopted components.
 - `conventions/pr-description.md`: removed the dead link to the deleted
   `release-process.md`.
-
-### Changed
+- Review fixes on the additions above: the component gate and smoke
+  test rule now apply to screens and non-visual surfaces respectively
+  as written; capability.md no longer contradicts itself about naming
+  products and points at AGENTS.md instead of repeating it; okf.md
+  points at the Docs rule instead of restating its list; the two
+  agent-config index.md files and the routines/*.md frontmatter were
+  brought under the restored OKF spec; the duplicate `### Changed`
+  heading under [Unreleased] was merged; the session-start check
+  script now verifies the toolkit commit a product copy pins.
 - Repository simplified to one canonical method file. `AGENTS.md`
   ("How we work") added at the root, carrying the principle, the
   four-phase path (Frame / Design / Build / Learn), the task brief

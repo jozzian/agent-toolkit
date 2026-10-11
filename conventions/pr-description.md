@@ -23,10 +23,9 @@ every new PR body.
 Every pull request opened against this repo, including changes that
 touch documentation only. The prefilled skeleton lives at
 `.github/pull_request_template.md`. That file is a tool-required
-format at a tool-required path: it sits outside the directories
-[okf.md](okf.md) declares in scope, the same situation as the
-`agent-config/` files, so it carries no OKF frontmatter and needs no
-index of its own. Editing the skeleton is a material change to this
+format at a tool-required path, which [okf.md](okf.md) exempts from
+frontmatter, so it carries no OKF frontmatter and needs no index of
+its own. Editing the skeleton is a material change to this
 convention and goes through a PR that updates both files together.
 
 ## Division of labor

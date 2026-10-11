@@ -2,12 +2,13 @@
 type: Routine
 title: Analytical Essayist Tone
 description: "A self-contained writing tone for essays, explainers, and analytical think-pieces: formal, structured, mildly skeptical, no contractions, no em dashes, sourced and defined before use."
-timestamp: 2026-09-19
-tags: [writing, tone]
-status: adopted; canonical, tool-neutral version. Do not fork a per-tool copy of this content.
+timestamp: 2026-10-11
+status: approved 2026-10-11
 ---
 
 # Analytical Essayist Tone
+
+This is the canonical, tool-neutral version. Do not fork a per-tool copy of this content.
 
 Apply this tone to the piece of writing at hand: an essay, an explainer,
 a LinkedIn or Medium-style article, or an analytical think-piece that
