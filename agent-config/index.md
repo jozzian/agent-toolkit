@@ -1,3 +1,10 @@
+---
+type: Index
+title: Agent configuration
+description: A catalog of the optional, tool-specific adapter directory.
+timestamp: 2026-10-11
+---
+
 # Agent configuration
 
 Optional, tool-specific discovery and automation. An adapter points at

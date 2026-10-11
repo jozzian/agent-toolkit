@@ -2,12 +2,13 @@
 type: Routine
 title: Write Handover
 description: Turns the current session state into a structured handover block that a fresh session, a different agent, or the owner can pick up cold, portable enough to paste into any chat.
-timestamp: 2026-10-07
-tags: [handover, sessions, delegation]
-status: adopted; canonical, tool-neutral version. Do not fork a per-tool copy of this content.
+timestamp: 2026-10-11
+status: approved 2026-10-11
 ---
 
 # Write Handover
+
+This is the canonical, tool-neutral version. Do not fork a per-tool copy of this content.
 
 Apply this routine when a session is about to end, when context is about
 to be compacted, or when the owner asks for a handover: produce one

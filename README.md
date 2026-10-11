@@ -15,6 +15,10 @@ product's own docs, not here.
 - **README.md**: this file, for humans.
 - **CHANGELOG.md**: what changed and why. The Learn loop in AGENTS.md
   lands lessons here before they are promoted into the method.
+- **conventions/okf.md**: how docs are written and filed, here and in
+  every product and capability repo.
+- **conventions/capability.md**: the shape of a repository that holds a
+  capability shared by several products.
 - **conventions/pr-description.md**: the house style for pull request
   descriptions, commit messages, and Linear result blocks. AGENTS.md
   states the rule; this file carries the copyable format.
@@ -33,12 +37,24 @@ product's own docs, not here.
 ## Setting this up in a new project
 
 1. Copy `AGENTS.md` into the product repository. Agents read it there.
-2. Add a `PROJECT.md` beside it, using the Frame, planning, and
+   Make its first line `Copied from agent-toolkit at <commit>, <date>.`
+2. Check out this repository beside the product repository, so agents
+   can read the conventions AGENTS.md names.
+3. Add a `PROJECT.md` beside it, using the Frame, planning, and
    inventory sections of AGENTS.md as the shape.
-3. Adopt `conventions/pr-description.md` and the PR template if the
+4. Adopt `conventions/pr-description.md` and the PR template if the
    project opens pull requests.
-4. Paste routines into a chat when needed; nothing in `routines/`
+5. Paste routines into a chat when needed; nothing in `routines/`
    self-activates.
+
+## Capabilities
+
+Shared logic used by several products, one repository each. See the
+Capabilities section of AGENTS.md.
+
+| Capability | Repository | Status |
+|---|---|---|
+| Organisation intake and taxonomy enrichment | not created yet | proposed, extracted from CareerOS |
 
 ## Updating
 

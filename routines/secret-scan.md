@@ -2,12 +2,13 @@
 type: Routine
 title: Secret Scan
 description: Finds secret-shaped content sitting in a working tree, runnable at any point in a session, not gated on a commit ever happening. Prefers repo-guardian's rg-scan when available; falls back to a plain pattern grep otherwise.
-tags: [security, secrets, git]
-timestamp: 2026-09-14
-status: adopted; canonical, tool-neutral version. Do not fork a per-tool copy of this content.
+timestamp: 2026-10-11
+status: approved 2026-10-11
 ---
 
 # Secret Scan
+
+This is the canonical, tool-neutral version. Do not fork a per-tool copy of this content.
 
 A self-contained routine any agent can run at any point in a session:
 not gated on a commit ever happening, not a one-time pre-push check. Run

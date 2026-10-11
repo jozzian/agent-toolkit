@@ -16,7 +16,7 @@ When the agent cannot answer a gate question, it says so. It does not fill the g
 
 ## Every session starts the same way
 
-Before anything else, read this file and the project's PROJECT.md. Then compare the repo with the last known state and report what you find. Look for uncommitted changes, work that no doc mentions, and docs that disagree with the app. If anything has drifted, wait for your reply before continuing.
+Before anything else, read this file and the project's PROJECT.md. A product repo holds a copy of this file whose first line names the toolkit commit it came from. The toolkit repository sits beside the product repo, and the conventions named here are read there. If the toolkit has moved past the copy, say so. Then compare the repo with the last known state and report what you find. Look for uncommitted changes, work that no doc mentions, and docs that disagree with the app. If anything has drifted, wait for your reply before continuing.
 
 A tool with startup hooks can run this check automatically. In a plain chat, the agent runs it by hand.
 
@@ -51,6 +51,7 @@ Required before Design. If one cannot be answered in a sentence or two, the idea
 - Smallest version. Described as value to the user, not as a technical spec.
 - Dependencies. Anything the flows cannot work without. A missing dependency is a blocker now, not a note for later.
 - Decisions that are expensive to change. Naming, how the system is divided, which design system. Make each one on purpose and record it.
+- Capabilities. Which shared capabilities this uses, and whether it creates logic another product could use. See Capabilities.
 - Later list. Things that came up and are deliberately not in this version.
 
 Filled in when real, never invented. Evidence, success signal, risks, privacy check. A field left open is better than a guessed one.
@@ -84,7 +85,17 @@ Design happens in documents that always describe the app as it is now. Edit them
 - Pasted or typed input is never rejected. It always produces a record, even if everything after it fails, and the failure is visible with a way to retry.
 - Nothing in the interface stands for a feature that does not exist.
 
-**Polish rounds.** After the sketch is approved, a polish round applies the chosen design system. Record the system and its component inventory before the first round. Each round gets feedback before the next. The current doc is edited in place. Save a frozen copy of a round only when you want to compare it with the next one.
+**Component gate.** A sketch settles structure. It does not settle how a surface looks. The gate applies to surfaces a person looks at, meaning screens. An endpoint, command or document settles its shape in the sketch instead, with an example request and response or an outline with sample text. Before building a new screen or rebuilding an existing one, the agent proposes the components and waits for approval.
+
+1. Read the design system record in the inventory and the project's design system doc. If no design system is recorded, say "No design system recorded" and stop. Do not pick one.
+2. List what the surface uses today, if it exists, and which adopted components already cover each part.
+3. For each part not covered, name the design system component that fits, with a link to its documentation. If nothing fits, propose the smallest custom element and mark it custom.
+4. Render a specimen. One screenshot of the densest piece of the surface, in every state, built only from the proposed components.
+5. Add the proposal to the design system doc with every new entry marked proposed. You approve each entry with a dated line. Build starts after approval.
+
+Adopted components are reused, never restyled for one surface. Overriding a design system token or component needs a reason recorded in the design system doc.
+
+**Polish rounds.** After the surface is built, a polish round adjusts it within the approved components. Each round gets feedback before the next. The current doc is edited in place. Save a frozen copy of a round only when you want to compare it with the next one.
 
 ## Build
 
@@ -120,14 +131,25 @@ Every part of the task must trace to a sentence of the Intent anchor. Anything t
 1. Is it needed at all?
 2. Does something here already do it?
 3. Can an existing element be extended or merged?
-4. Does the standard library, the platform or the design system do it?
-5. Does an installed dependency do it?
-6. Can it be done in one simple line?
-7. Otherwise write the minimum the need requires.
+4. Does a shared capability do it?
+5. Does the standard library, the platform or the design system do it?
+6. Does an installed dependency do it?
+7. Can it be done in one simple line?
+8. Otherwise write the minimum the need requires.
 
 Every exit states what was skipped and when to revisit it.
 
 **Done means live.** A user-facing outcome is accepted when a person clicks through a running instance, following a short written list of checks. Passing tests are necessary and never enough.
+
+**Tests.** A test protects behavior that would hurt if it broke. Start with the minimum below. Add tests when a part becomes important or breaks, not in advance.
+
+- Each product rule in PROJECT.md gets one test that fails if the rule is broken.
+- Each surface gets one smoke test that exercises it against the real backend with sample data, without mocks. A screen loads, an endpoint answers a real call, a command runs.
+- Each endpoint or function another part depends on gets one contract test.
+- Each fixed bug gets one regression test.
+- A pure function with many edge cases gets one table-driven test.
+
+Do not test literal markup, CSS, class names or source text, behavior a library already guarantees, or the same path twice. Every test file opens with one line naming what it protects. A new test must be seen failing once. Break the code it protects, run the test, restore the code, and say so in the verification. While working, run the tests near the change. Run the full suite once before commit. Report test counts as tests written, not as parametrized cases.
 
 **Propose before executing** when the result cannot be checked first. If a test or an independent check exists, run it and show the result. If none exists, describe the change and wait.
 
@@ -144,6 +166,9 @@ Every exit states what was skipped and when to revisit it.
 ## Docs
 
 - One home per fact. State it once and let other files point to it.
+- Docs follow conventions/okf.md in the toolkit.
+- Session logs, build notes, review prompts and agent plans stay out of the repo. They go to the tracker or the handover. What survives a session is a decision, a learning or a changed doc.
+- A surprise about the product or a capability goes to that repo's docs/learnings.md with date and context.
 - Update the doc in the same change as the app.
 - A claim like "all tests pass" gives the command that produces it, or a date.
 - Every doc that describes work lists its own open questions.
@@ -157,6 +182,15 @@ Every exit states what was skipped and when to revisit it.
 - Blocked. Say exactly what is missing and who acts on it. Do not skip or guess.
 
 If an item conflicts with something already recorded, name the conflict and the resolution in the same change.
+
+## Capabilities
+
+A capability is logic that is not about one product and that another product could use, such as matching an organisation to known records or classifying it against a standard taxonomy. An extracted capability lives in its own repository, listed in the toolkit README, and a product depends on a pinned version and never edits a copy. Before extraction a capability stays inside the product as a separate module, as the bullets below say.
+
+- At Frame, check the capability list and use what exists before building.
+- When product work creates logic another product could use, say so when it happens. Keep it free of product concepts. It imports nothing from product modules, receives product data as plain input, and gets storage, network and model access passed in.
+- Move it into its own repository when a second product needs it or you decide so. Until then it stays in the product as a separate module.
+- A capability repository follows conventions/capability.md in the toolkit.
 
 ## Learn
 
@@ -175,4 +209,5 @@ Every project keeps one in PROJECT.md. It is read at the start of every session 
 | Actions | name, the one place it lives |
 | States | name, whether it is a user decision or a fact |
 | Fixed lists | field, the allowed values |
-| Design system | which, which components are adopted |
+| Design system | which system and version, and a link to the design system doc that lists adopted components |
+| Capabilities | name, repository, pinned version |

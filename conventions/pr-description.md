@@ -23,10 +23,9 @@ every new PR body.
 Every pull request opened against this repo, including changes that
 touch documentation only. The prefilled skeleton lives at
 `.github/pull_request_template.md`. That file is a tool-required
-format at a tool-required path: it sits outside the directories
-[okf.md](okf.md) declares in scope, the same situation as the
-`agent-config/` files, so it carries no OKF frontmatter and needs no
-index of its own. Editing the skeleton is a material change to this
+format at a tool-required path, which [okf.md](okf.md) exempts from
+frontmatter, so it carries no OKF frontmatter and needs no index of
+its own. Editing the skeleton is a material change to this
 convention and goes through a PR that updates both files together.
 
 ## Division of labor
@@ -124,9 +123,7 @@ What each section must do, and why it is mandatory or conditional:
 - **Verification: mandatory.** List what was actually run or checked,
   and paste real output where a claim depends on it. "All internal
   links resolve" is a claim; the command and its clean exit are the
-  verification. Separate what was verified from what is assumed, the
-  same rule [release-process.md](release-process.md) applies to
-  CHANGELOG entries. This section is what makes a review rest on
+  verification. Separate what was verified from what is assumed. This section is what makes a review rest on
   evidence rather than trust, so it never gets dropped for being
   inconvenient.
 - **Metadata: mandatory.** Four lines, fixed order. GitHub's own UI

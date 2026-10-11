@@ -1,3 +1,10 @@
+---
+type: Index
+title: Claude adapter
+description: A catalog of the Claude adapter directory.
+timestamp: 2026-10-11
+---
+
 # Claude adapter
 
 Wiring that makes the canonical method automatic inside Claude Code. It
