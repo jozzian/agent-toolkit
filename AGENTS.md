@@ -107,6 +107,8 @@ Adopted components are reused, never restyled for one surface. Overriding a desi
 
 Every goal, milestone and task has an outcome, which is either a deliverable, a state that holds, or a decision that was recorded. An outcome describes the result and not the activity. It is true or false, with a threshold if the wording is relative. It names how it is verified.
 
+A chunk is a set of tasks that one build and one review cover. It is not a planning level, does not appear in PROJECT.md on its own, and carries no outcome of its own.
+
 **Task brief.** Every delegated task carries this inside the task itself, because the agent may never read the parent doc.
 
 ```
