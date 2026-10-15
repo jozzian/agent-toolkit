@@ -105,6 +105,8 @@ Adopted components are reused, never restyled for one surface. Overriding a desi
 - Milestone. A step toward a goal that is either reached or not. It is checkable and it states what is out of scope. Milestones together must prove the goal.
 - Task. One piece of work finishable in one sitting. It starts with an imperative verb.
 
+A chunk is a set of tasks dispatched to one build and review round. It is a dispatch unit, not a tracked level: a chunk never appears in the tracker on its own, and its tasks keep their own outcomes.
+
 Every goal, milestone and task has an outcome, which is either a deliverable, a state that holds, or a decision that was recorded. An outcome describes the result and not the activity. It is true or false, with a threshold if the wording is relative. It names how it is verified.
 
 **Task brief.** Every delegated task carries this inside the task itself, because the agent may never read the parent doc.
