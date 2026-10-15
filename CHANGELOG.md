@@ -7,9 +7,11 @@ follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
-- AGENTS.md: the chunk, defined in the Build planning vocabulary. It
-  names a set of tasks dispatched to one build and review round, and
-  is a dispatch unit rather than a tracked level.
+- AGENTS.md: the chunk, defined in the Build planning vocabulary.
+  Working sessions already said chunk for a set of tasks given to one
+  build and review, with no definition anywhere, so each agent
+  inferred its own meaning. The entry states that a chunk is not a
+  planning level and carries no outcome of its own.
 - `conventions/okf.md` restored in a slim form. The 9 October
   simplification said AGENTS.md replaced it, but AGENTS.md carried none
   of its rules, and a product agent then filed docs under ticket names
